@@ -1,0 +1,15 @@
+{
+  "name": "Building Software at Scale in the AI & Cloud Era",
+  "short_name": "Software Book",
+  "description": "A free online book on building software at scale: the codebase, testing, the development loop, AI assistance, internal and SaaS platforms, ecosystems, teams and planning.",
+  "start_url": "/buildsoftware-book/",
+  "scope": "/buildsoftware-book/",
+  "display": "standalone",
+  "background_color": "#f3f1ec",
+  "theme_color": "#f3f1ec",
+  "icons": [
+    { "src": "/buildsoftware-book/assets/icons/icon-192.png?v=3", "sizes": "192x192", "type": "image/png" },
+    { "src": "/buildsoftware-book/assets/icons/icon-512.png?v=3", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/buildsoftware-book/assets/icons/icon-512-maskable.png?v=3", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,10 @@
+# Building Software at Scale in the AI & Cloud Era
+
+> A free online book on building software at scale — the codebase, testing strategy, the development loop, building with AI assistance, the internal platform as a product, the SaaS platform, ecosystems and InnerSource, teams at scale, and planning and flow. 11 chapters, one running example (Encore, a concert-ticketing company carrying one change from its legacy core to production), a kata per chapter. Book 3 of the AI & Cloud Era series; follows "Building Products in the AI & Cloud Era" (the Products book) and is followed by "Building Resilient Systems in the AI & Cloud Era" (the Resilience book).
+
+- [Full book, single page](https://oleksiyp.github.io/buildsoftware-book/)
+- [Full book as raw markdown](https://oleksiyp.github.io/buildsoftware-book/llms-full.txt)
+- Per-chapter pages: https://oleksiyp.github.io/buildsoftware-book/ch/1/ through /ch/11/
+- Architecture book: [Software Architecture in the AI & Cloud Era](https://oleksiyp.github.io/arch-book/)
+- Products book: [Building Products in the AI & Cloud Era](https://oleksiyp.github.io/buildproducts-book/)
+- License: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) — free to share and adapt non-commercially, with attribution

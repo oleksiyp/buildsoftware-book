@@ -1,0 +1,14 @@
+title: "Building Software at Scale in the AI & Cloud Era"
+tag_line: "the system that builds the system"
+description: "A free online book on building software at scale: the codebase, testing, the development loop, AI assistance, internal and SaaS platforms, ecosystems, teams and planning."
+theme: jekyll-theme-cayman
+# GA4 measurement ID (G-XXXXXXXXXX); empty disables analytics entirely. Shared with the arch book; filter by path.
+google_analytics: "G-N146BPW9JR"
+# Weekly digest API; empty hides every newsletter control
+newsletter_api: ""
+# Firebase Realtime Database URL for the live reader counter and reading statistics; empty hides them
+presence_database_url: ""
+exclude: [scripts, venv, cover-lab, drafting, OUTLINE.md]
+# This book's place in the series (_data/series.yml) and the page that ends it, where the shelf shows again
+series_key: software
+series_last: /ch/11/
