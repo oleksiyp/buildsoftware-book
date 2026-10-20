@@ -1,0 +1,53 @@
+<div class="dg-figure" data-fig="fig-3-4" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 384" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-3-4-title fig-3-4-desc">
+<title id="fig-3-4-title">Two loops</title>
+<desc id="fig-3-4-desc">The outer loop starts with an acceptance test for a whole feature, written from the outside in the language of the domain, which fails because the feature does not exist yet; the Resale team&#x27;s first was that a resold ticket moves to the buyer and the old barcode dies. Inside it runs Kent Beck&#x27;s inner loop, many times per feature: write a small failing unit test, make it pass with the simplest code that works, then refactor while the tests stay green, and start again. When the acceptance test passes the feature is done and the outer loop turns once, to the next feature. Fucci and colleagues found in 2017 that small, steady cycles went with better outcomes, and that whether the test came before the code did not.</desc>
+<defs><marker id="fig-3-4-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-3-4-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-3-4-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="248" y="100" width="400" height="184" rx="8"/><rect class="dg-mask" x="260" y="94" width="272" height="12" rx="2"/><text class="dg-eyebrow" x="396" y="103">INNER LOOP · BECK, 2002 · MANY TURNS PER FEATURE</text>
+<path class="dg-a dg-a-muted" d="M 768,148 L 768,64 Q 768,56 760,56 L 120,56 Q 112,56 112,64 L 112,148" marker-end="url(#fig-3-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 200,156 L 272,156" marker-end="url(#fig-3-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 432,156 L 464,156" marker-end="url(#fig-3-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 544,184 L 544,228 Q 544,236 536,236 L 528,236" marker-end="url(#fig-3-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 368,236 L 360,236 Q 352,236 352,228 L 352,184" marker-end="url(#fig-3-4-m-muted)"/>
+<path class="dg-a dg-a-muted dg-dash" d="M 624,156 L 696,156" marker-end="url(#fig-3-4-m-muted)"/>
+<rect class="dg-mask" x="330" y="36" width="220" height="12" rx="2"/><text class="dg-label" x="440" y="45">FEATURE DONE: THE OUTER LOOP TURNS ONCE</text>
+<rect class="dg-mask" x="24" y="148" width="176" height="64" rx="6"/>
+<rect class="dg-n dg-n-focal" x="24" y="148" width="176" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-focal" x="32" y="154" width="64" height="12" rx="2"/>
+<text class="dg-tag dg-t-focal" x="64" y="163">OUTER LOOP</text>
+<text class="dg-name" x="112" y="186">Acceptance test</text>
+<text class="dg-sub" x="112" y="201">fails: feature not built</text>
+<rect class="dg-mask" x="272" y="128" width="160" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="272" y="128" width="160" height="56" rx="6"/>
+<text class="dg-name" x="352" y="158">Failing unit test</text>
+<text class="dg-sub" x="352" y="173">one small step</text>
+<rect class="dg-mask" x="464" y="128" width="160" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="464" y="128" width="160" height="56" rx="6"/>
+<text class="dg-name" x="544" y="158">Make it pass</text>
+<text class="dg-sub" x="544" y="173">simplest code that works</text>
+<rect class="dg-mask" x="368" y="208" width="160" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="368" y="208" width="160" height="56" rx="6"/>
+<text class="dg-name" x="448" y="238">Refactor</text>
+<text class="dg-sub" x="448" y="253">tests stay green</text>
+<rect class="dg-mask" x="696" y="148" width="144" height="64" rx="6"/>
+<rect class="dg-n dg-n-backend" x="696" y="148" width="144" height="64" rx="6"/>
+<text class="dg-name" x="768" y="182">Feature done</text>
+<text class="dg-sub" x="768" y="197">acceptance passes</text>
+<text class="dg-note" x="24" y="236" text-anchor="start">written first, from outside,</text>
+<text class="dg-note" x="24" y="250" text-anchor="start">in the domain&#x27;s language</text>
+<text class="dg-note" x="24" y="270" text-anchor="start">e.g. a resold ticket moves</text>
+<text class="dg-note" x="24" y="284" text-anchor="start">and the old barcode dies</text>
+<text class="dg-note" x="696" y="236" text-anchor="start">when the steps add up</text>
+<text class="dg-note" x="696" y="250" text-anchor="start">to the whole feature</text>
+<text class="dg-note" x="256" y="312" text-anchor="start">Fucci et al., 2017: small, steady cycles went with better outcomes;</text>
+<text class="dg-note" x="256" y="326" text-anchor="start">whether the test came before the code did not.</text>
+<line class="dg-rule" x1="24" y1="344" x2="840" y2="344"/>
+<rect class="dg-n dg-n-focal" x="24" y="355" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="363">The executable goal</text>
+<rect class="dg-n dg-n-backend" x="180" y="355" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="202" y="363">A small, test-backed step</text>
+<line class="dg-a dg-a-muted" x1="370" y1="360" x2="394" y2="360" marker-end="url(#fig-3-4-m-muted)"/>
+<text class="dg-legend" x="402" y="363">Next step</text>
+<line class="dg-a dg-a-muted dg-dash" x1="480" y1="360" x2="504" y2="360" marker-end="url(#fig-3-4-m-muted)"/>
+<text class="dg-legend" x="512" y="363">Until the acceptance test passes</text>
+</svg></div></div>

@@ -1,0 +1,42 @@
+<div class="dg-figure" data-fig="fig-6-4" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 324" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-6-4-title fig-6-4-desc">
+<title id="fig-6-4-title">Adoption funnel for webhook delivery</title>
+<desc id="fig-6-4-desc">Two funnels side by side for the 14 services whose manifests declared exposure: partner by month 11, one at month 9 and one at month 11. Aware means the owning team has seen the path&#x27;s brief or newsletter entry: 14 at month 9, 14 at month 11. Tried means the service has sent a webhook through it in the sandbox: 7, then 10. Adopted means the service sends its production webhooks through it: 2, then 6. Still using after six months means adopted and has not reintroduced its own sender: no count yet at either month. The stall between tried and adopted lasted until retries became configurable per partner.</desc>
+<defs><marker id="fig-6-4-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-6-4-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-6-4-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<path class="dg-ill-accent" d="M 513,140 h 8 v 52 h -8"/>
+<rect class="dg-mask" x="529" y="160" width="148" height="12" rx="2"/><text class="dg-label dg-l-accent" x="603" y="169">STALL: 7 TRIED, 2 ADOPTED</text>
+<rect class="dg-n dg-n-input" x="358" y="72" width="196" height="32" rx="3"/>
+<rect class="dg-n dg-n-backend" x="606" y="72" width="196" height="32" rx="3"/>
+<rect class="dg-n dg-n-input" x="407" y="124" width="98" height="32" rx="3"/>
+<rect class="dg-n dg-n-backend" x="634" y="124" width="140" height="32" rx="3"/>
+<rect class="dg-n dg-n-input" x="442" y="176" width="28" height="32" rx="3"/>
+<rect class="dg-n dg-n-backend" x="662" y="176" width="84" height="32" rx="3"/>
+<rect class="dg-n dg-n-optional" x="408" y="228" width="96" height="32" rx="3" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="656" y="228" width="96" height="32" rx="3" stroke-dasharray="4,3"/>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">SHARED WEBHOOK DELIVERY · 14 SERVICES WITH EXPOSURE: PARTNER</text>
+<text class="dg-note" x="456" y="60" text-anchor="middle">MONTH 9</text>
+<text class="dg-note" x="704" y="60" text-anchor="middle">MONTH 11</text>
+<text class="dg-name" x="24" y="86" style="text-anchor:start">Aware</text>
+<text class="dg-note" x="24" y="100" text-anchor="start">has seen the path&#x27;s brief or newsletter</text>
+<text class="dg-name" x="456" y="92">14</text>
+<text class="dg-name" x="704" y="92">14</text>
+<text class="dg-name" x="24" y="138" style="text-anchor:start">Tried</text>
+<text class="dg-note" x="24" y="152" text-anchor="start">sent a webhook through it in the sandbox</text>
+<text class="dg-name" x="456" y="144">7</text>
+<text class="dg-name" x="704" y="144">10</text>
+<text class="dg-name" x="24" y="190" style="text-anchor:start">Adopted</text>
+<text class="dg-note" x="24" y="204" text-anchor="start">sends its production webhooks through it</text>
+<text class="dg-name" x="456" y="196">2</text>
+<text class="dg-name" x="704" y="196">6</text>
+<text class="dg-name" x="24" y="242" style="text-anchor:start">Still using at six months</text>
+<text class="dg-note" x="24" y="256" text-anchor="start">adopted, and no sender of its own again</text>
+<text class="dg-sub" x="456" y="247">no count yet</text>
+<text class="dg-sub" x="704" y="247">no count yet</text>
+<line class="dg-rule" x1="24" y1="284" x2="840" y2="284"/>
+<rect class="dg-n dg-n-input" x="24" y="295" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="303">Month 9</text>
+<rect class="dg-n dg-n-backend" x="113" y="295" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="135" y="303">Month 11</text>
+<rect class="dg-n dg-n-optional" x="207" y="295" width="16" height="10" rx="2" stroke-dasharray="4,3"/>
+<text class="dg-legend" x="229" y="303">No count yet</text>
+</svg></div></div>

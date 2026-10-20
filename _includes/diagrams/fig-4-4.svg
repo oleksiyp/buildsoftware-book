@@ -1,0 +1,81 @@
+<div class="dg-figure" data-fig="fig-4-4" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 496" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-4-4-title fig-4-4-desc">
+<title id="fig-4-4-title">encore-core&#x27;s CI before and after</title>
+<desc id="fig-4-4-desc">Paired bars for each step of continuous integration on encore-core, in minutes, before and after the work of months five to eight. Check out and set up: 3 to 1, by a shallow clone with the toolchain and dependencies prebuilt into the runner image. Compile: 9 to 3, by a remote cache, since most modules are unchanged by any one change. Unit and component tests: 14 to 3, by running only the tests the module graph says a change can affect. Static analysis: 3 to 1, by analyzing changed modules only. Package the artifact: 2 to 1, by cached layers. Total, from push to verdict: 31 to 9 minutes. Test selection and the remote cache account for 17 of the 22 minutes saved. A dashed line marks about 6 minutes, the CI time of a golden-path service.</desc>
+<defs><marker id="fig-4-4-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-4-4-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-4-4-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="296" y1="412" x2="808" y2="412"/>
+<line class="dg-axis" x1="296" y1="412" x2="296" y2="56"/>
+<line class="dg-axis" x1="296.0" y1="412" x2="296.0" y2="416"/>
+<text class="dg-tick" x="296.0" y="428" text-anchor="middle">0</text>
+<line class="dg-axis" x1="376.0" y1="412" x2="376.0" y2="416"/>
+<text class="dg-tick" x="376.0" y="428" text-anchor="middle">5</text>
+<line class="dg-axis" x1="456.0" y1="412" x2="456.0" y2="416"/>
+<text class="dg-tick" x="456.0" y="428" text-anchor="middle">10</text>
+<line class="dg-axis" x1="536.0" y1="412" x2="536.0" y2="416"/>
+<text class="dg-tick" x="536.0" y="428" text-anchor="middle">15</text>
+<line class="dg-axis" x1="616.0" y1="412" x2="616.0" y2="416"/>
+<text class="dg-tick" x="616.0" y="428" text-anchor="middle">20</text>
+<line class="dg-axis" x1="696.0" y1="412" x2="696.0" y2="416"/>
+<text class="dg-tick" x="696.0" y="428" text-anchor="middle">25</text>
+<line class="dg-axis" x1="776.0" y1="412" x2="776.0" y2="416"/>
+<text class="dg-tick" x="776.0" y="428" text-anchor="middle">30</text>
+<text class="dg-axis-label" x="808" y="444" text-anchor="end">MINUTES</text>
+<line class="dg-grid" x1="376.0" y1="56" x2="376.0" y2="412"/>
+<line class="dg-grid" x1="456.0" y1="56" x2="456.0" y2="412"/>
+<line class="dg-grid" x1="536.0" y1="56" x2="536.0" y2="412"/>
+<line class="dg-grid" x1="616.0" y1="56" x2="616.0" y2="412"/>
+<line class="dg-grid" x1="696.0" y1="56" x2="696.0" y2="412"/>
+<line class="dg-grid" x1="776.0" y1="56" x2="776.0" y2="412"/>
+<line class="dg-rule" x1="24" y1="360" x2="840" y2="360"/>
+<line class="dg-series dg-s-soft" x1="392.0" y1="366" x2="392.0" y2="410" stroke-dasharray="5 4"/>
+<rect class="dg-n dg-n-input" x="296.0" y="64" width="48.0" height="14" rx="2"/>
+<rect class="dg-dot dg-dot-ink" x="296.0" y="82" width="16.0" height="14" rx="2"/>
+<rect class="dg-n dg-n-input" x="296.0" y="124" width="144.0" height="14" rx="2"/>
+<rect class="dg-dot dg-dot-ink" x="296.0" y="142" width="48.0" height="14" rx="2"/>
+<rect class="dg-n dg-n-input" x="296.0" y="184" width="224.0" height="14" rx="2"/>
+<rect class="dg-dot dg-dot-ink" x="296.0" y="202" width="48.0" height="14" rx="2"/>
+<rect class="dg-n dg-n-input" x="296.0" y="244" width="48.0" height="14" rx="2"/>
+<rect class="dg-dot dg-dot-ink" x="296.0" y="262" width="16.0" height="14" rx="2"/>
+<rect class="dg-n dg-n-input" x="296.0" y="304" width="32.0" height="14" rx="2"/>
+<rect class="dg-dot dg-dot-ink" x="296.0" y="322" width="16.0" height="14" rx="2"/>
+<rect class="dg-n dg-n-input" x="296.0" y="372" width="496.0" height="14" rx="2"/>
+<rect class="dg-ill-fill-accent" x="296.0" y="390" width="144.0" height="14" rx="2"/>
+<text class="dg-eyebrow" x="24" y="40" style="text-anchor:start">STEP IN ENCORE-CORE’S CI · WHAT CHANGED</text>
+<text class="dg-eyebrow" x="296" y="40" style="text-anchor:start">BEFORE AND AFTER, MINUTES</text>
+<text class="dg-name" x="24" y="74" style="text-anchor:start">Check out and set up</text>
+<text class="dg-note" x="24" y="89" style="text-anchor:start">Shallow clone; toolchain and dependencies</text>
+<text class="dg-note" x="24" y="101" style="text-anchor:start">prebuilt into the runner image</text>
+<text class="dg-tick" x="350.0" y="74">3</text>
+<text class="dg-tick" x="318.0" y="92" style="text-anchor:start;font-size:8.5px">1</text>
+<text class="dg-name" x="24" y="134" style="text-anchor:start">Compile</text>
+<text class="dg-note" x="24" y="149" style="text-anchor:start">Remote cache; most modules unchanged</text>
+<text class="dg-note" x="24" y="161" style="text-anchor:start">by any one change</text>
+<text class="dg-tick" x="446.0" y="134">9</text>
+<text class="dg-tick" x="350.0" y="152" style="text-anchor:start;font-size:8.5px">3</text>
+<text class="dg-name" x="24" y="194" style="text-anchor:start">Unit and component tests</text>
+<text class="dg-note" x="24" y="209" style="text-anchor:start">Run only the tests the module graph</text>
+<text class="dg-note" x="24" y="221" style="text-anchor:start">says a change can affect</text>
+<text class="dg-tick" x="526.0" y="194">14</text>
+<text class="dg-tick" x="350.0" y="212" style="text-anchor:start;font-size:8.5px">3</text>
+<text class="dg-name" x="24" y="254" style="text-anchor:start">Static analysis</text>
+<text class="dg-note" x="24" y="269" style="text-anchor:start">Analyze changed modules only</text>
+<text class="dg-tick" x="350.0" y="254">3</text>
+<text class="dg-tick" x="318.0" y="272" style="text-anchor:start;font-size:8.5px">1</text>
+<text class="dg-name" x="24" y="314" style="text-anchor:start">Package the artifact</text>
+<text class="dg-note" x="24" y="329" style="text-anchor:start">Cached layers</text>
+<text class="dg-tick" x="334.0" y="314">2</text>
+<text class="dg-tick" x="318.0" y="332" style="text-anchor:start;font-size:8.5px">1</text>
+<text class="dg-name" x="24" y="382" style="text-anchor:start">Total, push to verdict</text>
+<text class="dg-note" x="24" y="397" style="text-anchor:start">Golden-path service: about 6</text>
+<text class="dg-tick" x="798.0" y="382">31</text>
+<text class="dg-label dg-l-accent" x="446.0" y="400" style="text-anchor:start;font-size:8.5px">9</text>
+<text class="dg-label dg-l-accent" x="468.0" y="400" style="text-anchor:start;font-size:8.5px">17 OF 22 MINUTES SAVED: TEST SELECTION + REMOTE CACHE</text>
+<line class="dg-rule" x1="24" y1="456" x2="840" y2="456"/>
+<rect class="dg-n dg-n-input" x="24" y="467" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="475">Before</text>
+<rect class="dg-dot dg-dot-ink" x="176" y="467" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="198" y="475">After months five to eight</text>
+<line class="dg-series dg-s-soft" x1="380" y1="472" x2="404" y2="472" stroke-dasharray="5 4"/>
+<text class="dg-legend" x="412" y="475">Golden-path CI, about 6 minutes</text>
+
+</svg></div></div>

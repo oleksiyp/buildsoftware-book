@@ -1,0 +1,111 @@
+<div class="dg-figure" data-fig="fig-6-1" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-6-1-title fig-6-1-desc">
+<title id="fig-6-1-title">The Programmer&#x27;s Workbench, 1973–78</title>
+<desc id="fig-6-1-desc">Schematic, not a floor plan. Left: programmers, about 1,100 of them by the end of 1977, who before the workbench carried decks of punched cards and sent their jobs straight to each target machine. Centre: the Programmer&#x27;s Workbench, PWB/UNIX, a set of PDP-11s dedicated to development (seven PDP-11/45s and /70s by the end of 1977), with its small tools: the PWB shell by John Mashey, the Source Code Control System by Marc Rochkind, find, cpio and expr by Dick Haight, and the Remote Job Entry subsystem, which sent jobs to the targets and brought their output back. Right: the target machines, two IBM 370/168s, two UNIVAC 1100-series systems and an XDS Sigma 5. Bottom: a timeline. In 1972 Rochkind began SCCS on an IBM System/370; in mid-1973 Evan Ivie proposed doing development on a dedicated machine; late in 1973 the first PDP-11/45 was installed; PWB/UNIX 1.0 was released on 1 July 1977; by the end of 1977 the main installation ran seven PDP-11s for about 1,100 people; in 1978 Dolotta, Haight and Mashey described it in the Bell System Technical Journal.</desc>
+<defs><marker id="fig-6-1-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-6-1-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-6-1-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-n dg-n-focal" x="224" y="64" width="360" height="256" rx="8"/>
+<rect class="dg-mask" x="236" y="58" width="188" height="12" rx="2"/><text class="dg-eyebrow" x="330" y="67">PROGRAMMER&#x27;S WORKBENCH · PWB/UNIX</text>
+<line class="dg-axis" x1="48" y1="456" x2="816" y2="456"/>
+<line class="dg-axis" x1="48.0" y1="453" x2="48.0" y2="459"/>
+<line class="dg-axis" x1="157.7" y1="453" x2="157.7" y2="459"/>
+<line class="dg-axis" x1="267.4" y1="453" x2="267.4" y2="459"/>
+<line class="dg-axis" x1="377.1" y1="453" x2="377.1" y2="459"/>
+<line class="dg-axis" x1="486.9" y1="453" x2="486.9" y2="459"/>
+<line class="dg-axis" x1="596.6" y1="453" x2="596.6" y2="459"/>
+<line class="dg-axis" x1="706.3" y1="453" x2="706.3" y2="459"/>
+<line class="dg-axis" x1="816.0" y1="453" x2="816.0" y2="459"/>
+<line class="dg-ill-soft" x1="136" y1="410" x2="136" y2="456"/>
+<line class="dg-ill-soft" x1="213" y1="456" x2="213" y2="471"/>
+<line class="dg-ill-soft" x1="256" y1="432" x2="256" y2="456"/>
+<line class="dg-ill-soft" x1="651" y1="456" x2="651" y2="471"/>
+<line class="dg-ill-soft" x1="701" y1="410" x2="701" y2="456"/>
+<line class="dg-ill-soft" x1="761" y1="456" x2="761" y2="493"/>
+<path class="dg-a dg-a-muted" d="M 176,116 L 224,116" marker-end="url(#fig-6-1-m-muted)"/>
+<path class="dg-a dg-a-muted dg-dash" d="M 100,144 L 100,216" marker-end="url(#fig-6-1-m-muted)"/>
+<path class="dg-a dg-a-muted dg-dash" d="M 100,272 L 100,344 Q 100,352 108,352 L 748,352 Q 756,352 756,344 L 756,296" marker-end="url(#fig-6-1-m-muted)"/>
+<path class="dg-a dg-a-link" d="M 568,260 L 608,260 Q 616,260 616,252 L 616,124 Q 616,116 624,116 L 672,116" marker-end="url(#fig-6-1-m-link)"/>
+<path class="dg-a dg-a-link" d="M 568,260 L 608,260 Q 616,260 616,252 L 616,196 Q 616,188 624,188 L 672,188" marker-end="url(#fig-6-1-m-link)"/>
+<path class="dg-a dg-a-link" d="M 568,260 L 672,260" marker-end="url(#fig-6-1-m-link)"/>
+<rect class="dg-mask" x="298" y="360" width="260" height="12" rx="2"/><text class="dg-label" x="428" y="369">BEFORE: CARDS AND JOBS STRAIGHT TO EACH TARGET</text>
+<rect class="dg-mask" x="580" y="268" width="80" height="12" rx="2"/><text class="dg-label dg-l-link" x="620" y="277">JOBS · OUTPUT</text>
+<rect class="dg-ill-fill" x="240" y="84" width="28" height="20" rx="2"/>
+<line class="dg-ill-soft" x1="246" y1="98" x2="262" y2="98"/>
+<rect class="dg-ill-fill" x="280" y="84" width="28" height="20" rx="2"/>
+<line class="dg-ill-soft" x1="286" y1="98" x2="302" y2="98"/>
+<rect class="dg-ill-fill" x="320" y="84" width="28" height="20" rx="2"/>
+<line class="dg-ill-soft" x1="326" y1="98" x2="342" y2="98"/>
+<rect class="dg-ill-fill" x="360" y="84" width="28" height="20" rx="2"/>
+<line class="dg-ill-soft" x1="366" y1="98" x2="382" y2="98"/>
+<rect class="dg-ill-fill" x="400" y="84" width="28" height="20" rx="2"/>
+<line class="dg-ill-soft" x1="406" y1="98" x2="422" y2="98"/>
+<rect class="dg-ill-fill" x="440" y="84" width="28" height="20" rx="2"/>
+<line class="dg-ill-soft" x1="446" y1="98" x2="462" y2="98"/>
+<rect class="dg-ill-fill" x="480" y="84" width="28" height="20" rx="2"/>
+<line class="dg-ill-soft" x1="486" y1="98" x2="502" y2="98"/>
+<rect class="dg-mask" x="240" y="148" width="144" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="240" y="148" width="144" height="56" rx="6"/>
+<text class="dg-name" x="312" y="178">PWB shell</text>
+<text class="dg-sub" x="312" y="193">John Mashey</text>
+<rect class="dg-mask" x="424" y="148" width="144" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="424" y="148" width="144" height="56" rx="6"/>
+<text class="dg-name" x="496" y="178">SCCS</text>
+<text class="dg-sub" x="496" y="193">Marc Rochkind</text>
+<rect class="dg-mask" x="240" y="232" width="144" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="240" y="232" width="144" height="56" rx="6"/>
+<text class="dg-name" x="312" y="262">find, cpio, expr</text>
+<text class="dg-sub" x="312" y="277">Dick Haight</text>
+<rect class="dg-mask" x="424" y="232" width="144" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="424" y="232" width="144" height="56" rx="6"/>
+<text class="dg-name" x="496" y="262">Remote Job Entry</text>
+<text class="dg-sub" x="496" y="277">jobs out, output back</text>
+<rect class="dg-mask" x="24" y="88" width="152" height="56" rx="6"/>
+<rect class="dg-n dg-n-input" x="24" y="88" width="152" height="56" rx="6"/>
+<text class="dg-name" x="100" y="118">Programmers</text>
+<text class="dg-sub" x="100" y="133">about 1,100 by 1977</text>
+<rect class="dg-mask" x="24" y="216" width="152" height="56" rx="6"/>
+<rect class="dg-n dg-n-optional" x="24" y="216" width="152" height="56" rx="6" stroke-dasharray="4,3"/>
+<text class="dg-name" x="100" y="246">Card decks</text>
+<text class="dg-sub" x="100" y="261">thrown away by most</text>
+<rect class="dg-mask" x="672" y="88" width="168" height="56" rx="6"/>
+<rect class="dg-n dg-n-external" x="672" y="88" width="168" height="56" rx="6"/>
+<text class="dg-name" x="756" y="118">2 × IBM 370/168</text>
+<text class="dg-sub" x="756" y="133">batch, own job language</text>
+<rect class="dg-mask" x="672" y="160" width="168" height="56" rx="6"/>
+<rect class="dg-n dg-n-external" x="672" y="160" width="168" height="56" rx="6"/>
+<text class="dg-name" x="756" y="190">2 × UNIVAC 1100</text>
+<text class="dg-sub" x="756" y="205">1100-series systems</text>
+<rect class="dg-mask" x="672" y="232" width="168" height="56" rx="6"/>
+<rect class="dg-n dg-n-external" x="672" y="232" width="168" height="56" rx="6"/>
+<text class="dg-name" x="756" y="262">XDS Sigma 5</text>
+<text class="dg-sub" x="756" y="277">one machine</text>
+<circle class="dg-dot dg-dot-ink" cx="136" cy="456" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="213" cy="456" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="256" cy="456" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="651" cy="456" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="701" cy="456" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="761" cy="456" r="3.5"/>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">SCHEMATIC · THE MAIN BELL LABS INSTALLATION AT THE END OF 1977</text>
+<text class="dg-note" x="240" y="124" text-anchor="start">seven PDP-11/45s and /70s, for development only</text>
+<text class="dg-note" x="672" y="76" text-anchor="start">TARGET MACHINES</text>
+<text class="dg-note" x="824" y="459" text-anchor="start">1979</text>
+<text class="dg-note" x="40" y="459" text-anchor="end">1972</text>
+<text class="dg-note" x="140" y="406" text-anchor="start">1972 · ROCHKIND BEGINS SCCS ON AN IBM 370</text>
+<text class="dg-note" x="217" y="480" text-anchor="start">MID-1973 · IVIE: DEVELOP ON A DEDICATED MACHINE</text>
+<text class="dg-note" x="260" y="428" text-anchor="start">LATE 1973 · FIRST PDP-11/45 INSTALLED</text>
+<text class="dg-note" x="647" y="480" text-anchor="end">1 JULY 1977 · PWB/UNIX 1.0</text>
+<text class="dg-note" x="697" y="406" text-anchor="end">END OF 1977 · 7 PDP-11 MACHINES, ABOUT 1,100 USERS</text>
+<text class="dg-note" x="757" y="502" text-anchor="end">1978 · THE BELL SYSTEM TECHNICAL JOURNAL PAPER</text>
+<line class="dg-rule" x1="24" y1="520" x2="840" y2="520"/>
+<rect class="dg-n dg-n-input" x="24" y="531" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="539">Users</text>
+<rect class="dg-n dg-n-focal" x="102" y="531" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="124" y="539">Dedicated to development</text>
+<rect class="dg-n dg-n-backend" x="286" y="531" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="308" y="539">Small tool</text>
+<rect class="dg-n dg-n-external" x="392" y="531" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="414" y="539">Target machine</text>
+<line class="dg-a dg-a-link" x1="520" y1="536" x2="544" y2="536" marker-end="url(#fig-6-1-m-link)"/>
+<text class="dg-legend" x="552" y="539">Remote Job Entry</text>
+<line class="dg-a dg-a-muted dg-dash" x1="669" y1="536" x2="693" y2="536" marker-end="url(#fig-6-1-m-muted)"/>
+<text class="dg-legend" x="701" y="539">Before PWB</text>
+</svg></div></div>

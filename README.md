@@ -117,7 +117,11 @@ The participants did not agree on what to call their predicament. The report spe
 
 A common reading of Garmisch holds that its participants thought of scale as a matter of code and underrated the problem of people. The report shows the opposite. Alan Perlis told the meeting that "we must learn how to build software systems with hundreds, possibly thousands of people." John Buxton warned that more than 20 programmers on one project was usually a disaster, and Opler said he knew how to organize communication for projects of 10 to 50 people and was sure he did not know how to do it for much larger ones. Ed David's position paper cautioned that scale did not refer only to the size of the code. Randell cited Melvin Conway's paper, published in *Datamation* that April, and proposed out loud what we now call the inverse Conway manoeuvre: since a system will tend to mirror the structure of the group that builds it, the group's structure should be designed deliberately to produce the system we want. Garmisch, in other words, already understood that the hard part of large software lies in the many people who must change it together.
 
-What it did not have was a method. Peter Naur and Brian Randell wrote the report in Munich in the week after the meeting, from rapporteurs' notes and tape recordings, and published it in January 1969. A second conference followed, near Rome, from 27 to 31 October 1969, and its report, edited by Buxton and Randell, is unusually frank. The meeting "bore little resemblance to its predecessor," the editors wrote; the sense of shared urgency had faded, and "a lack of communication between different sections of the participants became, in the editors' opinions at least, a dominant feature." No attempt was made to continue the series. Randell later recalled that at Garmisch it had been "fully accepted that the term software engineering expressed a need rather than a reality," and Rome had shown how far the field still was from agreeing on how to meet that need.
+What it did not have was a method. Peter Naur and Brian Randell wrote the report in Munich in the week after the meeting, from rapporteurs' notes and tape recordings, and published it in January 1969. A second conference followed, near Rome, from 27 to 31 October 1969, and its report, edited by Buxton and Randell, is unusually frank. The meeting "bore little resemblance to its predecessor," the editors wrote; the sense of shared urgency had faded, and "a lack of communication between different sections of the participants became, in the editors' opinions at least, a dominant feature." No attempt was made to continue the series. Randell later recalled that at Garmisch it had been "fully accepted that the term software engineering expressed a need rather than a reality," and Rome had shown how far the field still was from agreeing on how to meet that need. Figure 1.1 draws the meeting in outline and places it among the years around it.
+
+{% include diagrams/fig-1-1.svg %}
+
+*Figure 1.1 — Garmisch in outline: three constituencies, three working groups and a report, and on the timeline below, the short distance from Conway's paper to the meeting and the long one to the phrase "software crisis."*
 
 I find this the most useful way to read the conference. Garmisch named the problem this book addresses: a gap between what organizations needed to build and what their methods could build, a gap that opened wherever systems and the groups building them became large. Its participants even distrusted easy answers; Ross warned that there was "no worse word than 'breakthrough'" in discussing solutions, 18 years before Fred Brooks's "No Silver Bullet." The decades since have been spent finding practices that close the gap a little, testing them and keeping the ones that work. Some were found quickly and some took 40 years. Some, like version control and automated testing, became so ordinary that we forget they once had to be invented. The engineering system of a company like Encore is the accumulated answer to the question Garmisch asked, and the last chapter of this book will return to that Alpine meeting to ask how much of the gap has closed.
 
@@ -157,17 +161,13 @@ Readers who know Encore from the earlier books may skim this introduction. Encor
 
 #### How Encore got here {#c1-how-encore-got-here}
 
-Encore's engineering system was never designed as a whole. It grew in three stages, and at each stage the people building it made choices by default that were reasonable for their size and became constraints at the next. Figure 1.1 sets them side by side.
+Encore's engineering system was never designed as a whole. It grew in three stages, and at each stage the people building it made choices by default that were reasonable for their size and became constraints at the next. Figure 1.2 sets them side by side.
 
-| Stage | People | Code | Path to production | Decision made by default |
-|---|---|---|---|---|
-| Year 1 | 9 engineers, one team | One modular monolith in one repository | A pipeline one founder wrote; a few deploys a week | Everyone reads everything, so nothing needs an owner |
-| Year 4 | 70 engineers, nine teams | Seven services split from the monolith; the monolith's repository kept as the shared repository | A pipeline per service; about 20 deploys a day | Code that did not move with a service stays where it is, owned by whoever last touched it |
-| Year 7 | 400 engineers, 40 teams and a platform group | Services in the shared repository and in their own; web and mobile frontends on one design system | Golden path, trunk-based development, canaries; about 180 deploys a working day | Code that works is left alone |
+{% include diagrams/fig-1-2.svg %}
 
-*Figure 1.1 — Encore's engineering system at three sizes. The last column is the one nobody wrote down at the time.*
+*Figure 1.2 — Encore's engineering system at three sizes. The outlined row, the decision each size made by default, is the one nobody wrote down at the time.*
 
-The right-hand column deserves a slower reading than the others, because it holds the engineering system's history in compressed form. At nine people, ownership is unnecessary; everyone knows who wrote what, and anyone can change anything. At 70, the split into services (the Architecture book's Chapter 5) gave each service a team, but some code belonged to no service in particular, and it stayed in the old repository with no clear owner. At 400, the golden path made new services easy to build well, and the old code that still worked was, sensibly, left alone. Each default was a good decision on its own day. Taken together they produced a company with excellent paths for new code and a quiet reluctance to touch old code, and Verified Resale needs to change the oldest code of all.
+The bottom row deserves a slower reading than the others, because it holds the engineering system's history in compressed form. At nine people, ownership is unnecessary; everyone knows who wrote what, and anyone can change anything. At 70, the split into services (the Architecture book's Chapter 5) gave each service a team, but some code belonged to no service in particular, and it stayed in the old repository with no clear owner. At 400, the golden path made new services easy to build well, and the old code that still worked was, sensibly, left alone. Each default was a good decision on its own day. Taken together they produced a company with excellent paths for new code and a quiet reluctance to touch old code, and Verified Resale needs to change the oldest code of all.
 
 The fuller story of how Encore's organization grew, including what broke at each size, belongs to Chapter 9. Here we need only the engineering system as it stands now.
 
@@ -206,18 +206,11 @@ The file says that the Inventory team owns barcode issuance, and the review hist
 
 #### What engineers say hurts {#c1-what-hurts}
 
-Encore asks its engineers every quarter how their work is going. The survey has 10 core items that never change, so that answers can be compared across years, and a free-text question about the single thing that most slows them down. About 68% of engineers answered the most recent one. The practice of a regular, stable survey is well established. Google's engineering productivity researchers have described a quarterly Engineering Satisfaction survey that samples about a third of the company's engineers each quarter, and Chapter 6 discusses how to design one properly. What matters here is what Encore's engineers said.
+Encore asks its engineers every quarter how their work is going. The survey has 10 core items that never change, so that answers can be compared across years, and a free-text question about the single thing that most slows them down. About 68% of engineers answered the most recent one. The practice of a regular, stable survey is well established. Google's engineering productivity researchers have described a quarterly Engineering Satisfaction survey that samples about a third of the company's engineers each quarter, and Chapter 6 discusses how to design one properly. What matters here is what Encore's engineers said, and Figure 1.3 shows it.
 
-| What slows people down | Share naming it in their top three | Where the book takes it up |
-|---|---|---|
-| Waiting for CI on the shared repository | 54% | Chapter 4 |
-| Waiting for review, especially from other teams | 46% | Chapters 4 and 10 |
-| Flaky end-to-end tests that fail for no reason anyone can find | 39% | Chapter 3 |
-| Fear of changing old code nobody fully understands | 31% | Chapter 2 |
-| Building plumbing the platform should provide, such as partner webhooks | 24% | Chapter 6 |
-| New engineers taking about a quarter to make a meaningful change | 21% | Chapter 9 |
+{% include diagrams/fig-1-3.svg %}
 
-*Figure 1.2 — The six most common answers in Encore's latest developer survey, with the chapter that addresses each.*
+*Figure 1.3 — The six most common answers in Encore's latest developer survey, with the chapter that addresses each. Fear of old code is not the commonest complaint, but it is the one Verified Resale meets first.*
 
 A physician learns early that a patient's complaint is precious evidence and a poor diagnosis. "My chest hurts" is true and important, and it might mean a heart, a lung, a rib or anxiety; the doctor takes the symptom seriously by refusing to treat it at face value. Developer complaints work the same way. "CI is slow" is true, and the cause might be the size of the repository, the absence of caching, a test suite that runs everything for every change, or a build system that cannot tell what a change affects. "Review takes forever" might mean too few reviewers, changes that are too large, or ownership drawn so that every change crosses a team boundary. The analogy fails at one point, and the failure is useful. A patient has one body, while an engineering system's symptoms often share a cause across several complaints. Encore's slow review and its fear of old code turn out, in Chapter 2, to be partly the same problem, because changes to code nobody understands are hard to review as well as hard to write.
 
@@ -237,7 +230,7 @@ To engineering, that paragraph is a list of changes to code that already exists,
 
 #### The 12 teams and the 23 dependencies {#c1-dependencies}
 
-When the first quarterly plan for Verified Resale was drawn in month four, it touched 12 teams. They are the new Resale team; Inventory, which owns barcode issuance; Venue Entry, which owns the gate scanners and their revocation lists; Orders & Payments; Billing & Payouts; Partner APIs; Bot Screening; Organizer Console, for the rules console; Mobile App, for the release train and the wallet ticket view; Fan Messaging, which owns Notifications; Design System; and Security Engineering, for partner credentials. Eight more teams, among them Trust & Safety, Catalog and the Finance platform team, were consulted but given no planned work. The plan listed every place where one team needed something from another before its own work could finish, and there were 23 of them. Figure 1.3 groups them by the team that must deliver.
+When the first quarterly plan for Verified Resale was drawn in month four, it touched 12 teams. They are the new Resale team; Inventory, which owns barcode issuance; Venue Entry, which owns the gate scanners and their revocation lists; Orders & Payments; Billing & Payouts; Partner APIs; Bot Screening; Organizer Console, for the rules console; Mobile App, for the release train and the wallet ticket view; Fan Messaging, which owns Notifications; Design System; and Security Engineering, for partner credentials. Eight more teams, among them Trust & Safety, Catalog and the Finance platform team, were consulted but given no planned work. The plan listed every place where one team needed something from another before its own work could finish, and there were 23 of them. Figure 1.4 groups them by the team that must deliver.
 
 | Team that must deliver | What Verified Resale needs from it | Count | Oldest code touched |
 |---|---|---|---|
@@ -253,7 +246,7 @@ When the first quarterly plan for Verified Resale was drawn in month four, it to
 | Design System | A Verified badge, a capped-price display and reissue status | 1 | Year 5 |
 | Security Engineering | Partner credentials with resale scopes | 1 | Year 8 |
 
-*Figure 1.3 — The 23 dependencies of Verified Resale's first plan, grouped by the team that must deliver. Of these, 10 land in code written in Encore's first two years.*
+*Figure 1.4 — The 23 dependencies of Verified Resale's first plan, grouped by the team that must deliver. Of these, 10 land in code written in Encore's first two years.*
 
 The last column was not in the original plan. An engineer on the new Resale team added it during the first planning session, and it changed the conversation. Dependencies on recent code, such as Partner APIs or Mobile App, were the ordinary business of planning: the delivering team knew its code, could estimate the work and could say when. The 10 dependencies on code from the first two years were different. Nobody could estimate them with confidence, because nobody fully understood the code they touched, and every one of them sat on the path to the month-nine milestone. That is Encore's finding, and I do not offer it as a general law. It is common enough, though, that a planner should expect it: the dependencies most likely to hold up a large change are those on code that the organization has, by its long-standing defaults, learned to leave alone.
 
@@ -295,7 +288,7 @@ The Products book made Verified Resale a promise of fairness, and fairness at En
 
 To a product manager these are commitments. To an engineer they are **invariants**: properties that must hold in every state the system can reach, whatever sequence of requests arrives and whatever fails along the way. The difference matters. A commitment is kept by people paying attention; an invariant is kept by code that makes violating it impossible, and by tests that would fail if the code ever allowed it. The fifth rule shows how much care the translation needs. Resale partners already read Encore's availability endpoints during on-sales, as the Resilience book's Section 9.5 noted, and the rule survives only because the availability they read is the same coarsened view that every caller gets, from which velocity cannot be derived. The third rule shows where enforcement must live. The organizer rule assistant can propose any rule it likes, but the typed rule set it produces cannot express a loosening, so the platform enforces the rule, and neither the partner nor the AI can break it.
 
-Chapter 3 turns the five invariants into tests that run on every build, and Chapter 8 asks how they shape Verified Resale as a marketplace. Here the point is simpler. The invariants are the part of the bet that engineering must guarantee absolutely, and every one of them passes through code in Figure 1.3's oldest rows.
+Chapter 3 turns the five invariants into tests that run on every build, and Chapter 8 asks how they shape Verified Resale as a marketplace. Here the point is simpler. The invariants are the part of the bet that engineering must guarantee absolutely, and every one of them passes through code in Figure 1.4's oldest rows.
 
 #### What could go wrong {#c1-what-could-go-wrong}
 
@@ -317,7 +310,7 @@ The fifth is a platform gap that every team patches alone. The Architecture book
 
 ### 1.4 The Levers
 
-An engineering system has many moving parts, but the practices that improve it fall into four groups, each acting on a different part of the system. I will call them **levers**: places where deliberate effort changes how fast and how safely the whole system can change software. The four are design, flow, leverage and organization, and the chapters that follow are arranged around them. Figure 1.4 lays them out.
+An engineering system has many moving parts, but the practices that improve it fall into four groups, each acting on a different part of the system. I will call them **levers**: places where deliberate effort changes how fast and how safely the whole system can change software. The four are design, flow, leverage and organization, and the chapters that follow are arranged around them. Figure 1.5 lays them out.
 
 | Lever | Chapters | What it acts on | What happens if it is pulled alone |
 |---|---|---|---|
@@ -326,7 +319,7 @@ An engineering system has many moving parts, but the practices that improve it f
 | Leverage: build platforms | 6–8 | Shared capabilities for teams, tenants and partners | A platform nobody adopts |
 | Organization: design the builders | 9–10 | Teams, leadership, planning and funding | A tidy org chart drawn over code that does not match it |
 
-*Figure 1.4 — The four levers of an engineering system, the chapters that teach each, and the way each fails when it is used without the others.*
+*Figure 1.5 — The four levers of an engineering system, the chapters that teach each, and the way each fails when it is used without the others.*
 
 #### Design: keep code changeable {#c1-lever-design}
 
@@ -390,7 +383,7 @@ This book recommends only practices with evidence behind them: practices that ar
 
 1. **Value-stream map** — Draw the path a change to the billing core takes from idea to production, with every team, tool, handoff and wait, and estimate the time at each step. Mark where work waits longest.
 2. **Engineering-system profile** — In one page, describe Northgrid's engineering system as Section 1.2 described Encore's: the codebase and its oldest parts, the path to production, the teams and their ownership metadata, and what engineers say hurts. Note which default decisions from earlier stages still shape it.
-3. **Dependency map with code age** — List the 19 dependencies of the tariff change as Figure 1.3 lists Verified Resale's, adding the age of the oldest code each one touches and its truck factor. Identify the dependencies most likely to stall the change.
+3. **Dependency map with code age** — List the 19 dependencies of the tariff change as Figure 1.4 lists Verified Resale's, adding the age of the oldest code each one touches and its truck factor. Identify the dependencies most likely to stall the change.
 4. **Invariants** — Write the rules the dynamic tariff must never break, such as an invoice that always reconciles with metered consumption, as invariants a test could check.
 5. **The first lever** — Choose which of the four levers to pull first, and say where the constraint will move once it is pulled and which lever you will need next. Address both of leadership's proposals directly, with evidence.
 
@@ -572,7 +565,11 @@ The warning has empirical support. Dag Sjøberg and colleagues had six developer
 
 In 2009, 17 years after the WyCash report, Cunningham recorded a short video explaining the debt metaphor, because, as he put it, "A lot of bloggers at least have explained the debt metaphor and confused it, I think, with the idea that you could write code poorly with the intention of doing a good job later." "I coined the debt metaphor to explain the refactoring that we were doing on the WyCash product," he said; if the program failed to align with what the team now understood about financial objects, they would keep stumbling over the disagreement, "which was like paying interest on a loan." Then he drew the line that bloggers had blurred: "I'm never in favor of writing code poorly, but I am in favor of writing code to reflect your current understanding of a problem even if that understanding is partial." The 2009 account is a faithful reading of the 1992 report, which spoke of consolidation through rewriting, but we should keep the dates apart: the coinage is from 1992, and the gloss about refactoring from 2009.
 
-Cunningham mentioned in the same video that his interest in how metaphors shape thought came from George Lakoff and Mark Johnson's *Metaphors We Live By* (1980), and that is a good lens for what happened next. A metaphor imports a whole structure of thought. "Debt" brought principal, interest and repayment, which served his purpose, and also the idea that debt is a choice one makes to buy something now, which the industry ran with until "technical debt" meant any shortcut, any old code, any design the speaker disliked. Martin Fowler tried in 2009 to sort the meanings with a quadrant, crossing reckless with prudent and deliberate with inadvertent, so that "we don't have time for design" and "now we know how we should have done it" could be told apart. In 2016 a seminar of researchers at Dagstuhl, convened by Paris Avgeriou, Philippe Kruchten, Ipek Ozkaya and Carolyn Seaman, agreed on a definition centered on design or implementation constructs that are expedient in the short term but make future change more costly or impossible.
+Cunningham mentioned in the same video that his interest in how metaphors shape thought came from George Lakoff and Mark Johnson's *Metaphors We Live By* (1980), and that is a good lens for what happened next. A metaphor imports a whole structure of thought. "Debt" brought principal, interest and repayment, which served his purpose, and also the idea that debt is a choice one makes to buy something now, which the industry ran with until "technical debt" meant any shortcut, any old code, any design the speaker disliked. Martin Fowler tried in 2009 to sort the meanings with a quadrant, crossing reckless with prudent and deliberate with inadvertent, so that "we don't have time for design" and "now we know how we should have done it" could be told apart. In 2016 a seminar of researchers at Dagstuhl, convened by Paris Avgeriou, Philippe Kruchten, Ipek Ozkaya and Carolyn Seaman, agreed on a definition centered on design or implementation constructs that are expedient in the short term but make future change more costly or impossible. Figure 2.2 lays the history out in order.
+
+{% include diagrams/fig-2-2.svg %}
+
+*Figure 2.2 — The debt metaphor from its coinage to its consensus definition. Cunningham's two statements stand 17 years apart, and the word for repayment changed between them, from "a rewrite" to "refactoring".*
 
 In this book, **technical debt** is the gap between the structure of the code and the team's current understanding of the problem, measured by what it costs each change that must cross it. That definition is closer to Cunningham's than to common usage, and it has one practical virtue: it makes debt something we can find in data. "Our code is full of debt" ends an argument, because there is nothing to say in reply. "Changes to this file take four times longer than changes elsewhere, and we plan 11 of them this year" starts a decision. The rest of this section is about measuring such debt, and the measurements begin in version control.
 
@@ -584,19 +581,13 @@ The evidence behind this is older and stronger than the vendor literature. Todd 
 
 Snow's map breaks as an analogy at one point. Every mark on his map was a death, while most commits are healthy work, and a file that changes often may simply be where the business is moving fastest. A hotspot tells us where to look, and the looking is still ours to do. Tornhill's advice is to read them as trends over time, asking whether a hotspot's complexity is growing or shrinking, and to confirm each one with the people who work in it.
 
-Encore's Developer Portal team added a hotspot report to the service registry the year before, and the Inventory and Resale teams ran it across the purchase-path repositories for the previous twelve months. Figure 2.2 shows the top five.
+Encore's Developer Portal team added a hotspot report to the service registry the year before, and the Inventory and Resale teams ran it across the purchase-path repositories for the previous twelve months. Figure 2.3 shows the top five, set by size against the number of changes.
 
-| Rank | File | Changes in 12 months | Lines | Share of changes by top author |
-|---|---|---|---|---|
-| 1 | `ticketing/barcode/BarcodeIssuer.kt` | 214 | 3,900 | 88% |
-| 2 | `orders/saga/PurchaseSaga.kt` | 187 | 2,600 | 21% |
-| 3 | `ticketing/barcode/BarcodeFormats.kt` | 131 | 1,450 | 91% |
-| 4 | `inventory/holds/HoldService.kt` | 96 | 1,700 | 34% |
-| 5 | `orders/psp/PspRouter.kt` | 88 | 1,100 | 29% |
+{% include diagrams/fig-2-3.svg %}
 
-*Figure 2.2 — Encore's hotspot run on the purchase path, one year of history. Two of the top three files belong to barcode issuance, and nearly all their changes come from one person.*
+*Figure 2.3 — Encore's hotspot run on the purchase path, one year of history. Two of the top three files belong to barcode issuance, and nearly all their changes come from one person.*
 
-That barcode issuance and the purchase saga's orchestrator sat at the top surprised nobody; they are where every new ticket type, payment rule and channel must land. The last column surprised everyone. The saga's changes were spread across many authors, while the barcode files' changes came almost entirely from one engineer, because every team that needed something from issuance had learned over the years to ask that person to make the change.
+That barcode issuance and the purchase saga's orchestrator sat at the top surprised nobody; they are where every new ticket type, payment rule and channel must land. The share of changes by each file's top author surprised everyone. The saga's changes were spread across many authors, while the barcode files' changes came almost entirely from one engineer, because every team that needed something from issuance had learned over the years to ask that person to make the change.
 
 #### Change coupling {#c2-change-coupling}
 
@@ -608,7 +599,7 @@ At Encore the analysis was run by work item across repositories, and it found th
 
 #### Knowledge maps and the truck factor {#c2-truck-factor}
 
-The last column of Figure 2.2 is a knowledge map in miniature. A **knowledge map** shows, for each part of a codebase, who has written and changed it, and it is how the truck factor that Section 1.3 defined is estimated in practice. Guilherme Avelino and colleagues, whose finding that 65% of 133 popular open-source systems had a truck factor of two or less Section 1.3 cited, computed their estimates from exactly this kind of authorship data.
+That top-author share in Figure 2.3 is a knowledge map in miniature. A **knowledge map** shows, for each part of a codebase, who has written and changed it, and it is how the truck factor that Section 1.3 defined is estimated in practice. Guilherme Avelino and colleagues, whose finding that 65% of 133 popular open-source systems had a truck factor of two or less Section 1.3 cited, computed their estimates from exactly this kind of authorship data.
 
 Ownership affects quality as well as risk. Christian Bird and colleagues found in a 2011 study of Windows that components with many minor contributors, people who made only a small share of the changes, had more defects. In 2008 Nagappan, Brendan Murphy and Victor Basili found that measures of organizational structure, such as how many engineers and how many parts of the organization touched a binary, predicted the failure-proneness of Windows Vista binaries better than churn, complexity, coverage or dependencies did. It is as close as we have to Conway's law made measurable. These results need caution, since a later study by Greiler, Herzig and Czerwonka found the link between ownership and quality in some projects and not in others, but their general shape is that both extremes cost something: ownership concentrated in one person risks continuity, and ownership scattered across many occasional contributors risks quality.
 
@@ -653,17 +644,11 @@ Marianne Bellotti, who modernized government systems with the United States Digi
 
 Feathers gives a procedure for changing code without tests, and its value lies in its order: identify the change points; find the test points, where tests can observe the change's effects; break the dependencies that keep the code out of a test harness; write the tests; and only then make the change and refactor. The order matters because the instinct of every engineer facing frightening code is to begin at step five, carefully, and the procedure exists to stop us. Feathers adds two tools for choosing test points: effect sketches, which trace what a change can affect, and pinch points, narrow places in the code through which many effects pass, where a few tests can cover a great deal.
 
-Figure 2.3 shows the procedure as the Inventory and Resale teams applied it between months four and nine.
+Figure 2.4 shows the procedure as the Inventory and Resale teams applied it between months four and nine.
 
-| Step | What it meant for barcode issuance |
-|---|---|
-| Identify change points | Issuing a ticket to a new holder; revoking the old identity; recording both in `TicketIssued` events |
-| Find test points | One pinch point: the method that every issue variant finally calls to build and persist a ticket |
-| Break dependencies | The issuer read the clock, the secret store and the event-code table directly; each became a constructor parameter |
-| Write tests | A characterization suite of 1,400 cases, most generated by replaying a year of issuance requests |
-| Change and refactor | Reissue sprouted beside the issuer; the issue variants collapsed behind it later (INV-DEBT-017) |
+{% include diagrams/fig-2-4.svg %}
 
-*Figure 2.3 — Feathers's legacy change algorithm applied to Encore's barcode issuer. Most of the effort went into the third and fourth rows; the change itself was small.*
+*Figure 2.4 — Feathers's legacy change algorithm applied to Encore's barcode issuer. Most of the effort went into the third and fourth steps, breaking dependencies and writing tests; the change itself was small.*
 
 #### Seams and characterization tests {#c2-seams-characterization}
 
@@ -693,7 +678,11 @@ Chapter 3 asks what a test is worth and how a suite grows from tests like these 
 
 With the old code characterized, the temptation is to edit it, and Feathers offers a better default: write new behavior as new, tested code, and call it from the old code with as small a change as possible. Sprout Method and Sprout Class put new behavior in a new method or class, called from one line in the old code. Wrap Method and Wrap Class put it around an existing method or class, adding something before or after the old behavior. In each case the new code is tested from birth, and the old code changes by a line or two that the characterization tests can vouch for.
 
-Reissue was sprouted as a class, the interface of Section 2.1, living beside the issuer inside Seat Inventory & Ticketing and owned by the Inventory team. Whether Resale or Inventory should own it had been argued in a request for comments (RFC) and settled in an architecture decision record (ADR), as Section 9.5 describes: Inventory owns issuance and revocation, and Resale calls it. Inside, Reissue made exactly one call into the old issuer, through the pinch point the tests already covered, and did everything new, the revocation, the new opaque identity and the event for the ledger, in tested code of its own.
+Reissue was sprouted as a class, the interface of Section 2.1, living beside the issuer inside Seat Inventory & Ticketing and owned by the Inventory team. Whether Resale or Inventory should own it had been argued in a request for comments (RFC) and settled in an architecture decision record (ADR), as Section 9.5 describes: Inventory owns issuance and revocation, and Resale calls it. Inside, Reissue made exactly one call into the old issuer, through the pinch point the tests already covered, and did everything new, the revocation, the new opaque identity and the event for the ledger, in tested code of its own. Figure 2.5 shows the arrangement.
+
+{% include diagrams/fig-2-5.svg %}
+
+*Figure 2.5 — Reissue sprouted beside the old issuer. The new code is tested from birth, and its single call into the old code passes through the pinch point the characterization suite already covers.*
 
 One line separates these techniques from a larger relative. Sprout and wrap work inside a class or a module. When a whole component must be replaced while the codebase keeps running, the pattern is branch by abstraction, which the Architecture book's Section 3.4 teaches at the scale of a system and Section 4.5 of this book applies within a codebase behind flags. The barcode format change that follows Reissue is of that larger kind.
 
@@ -743,7 +732,7 @@ Encore's barcode format change, which moves every internal caller from parsing b
 
 Large-scale changes move callers to the new way. Deprecation removes the old one, and it is the half of the work organizations most often neglect, because removing code earns little praise. Wright's chapter on deprecation treats code as a liability to be justified by what it provides, so that two ways of doing one thing cost maintenance, security patches and the confusion of every new engineer who finds both.
 
-The chapter distinguishes two kinds. Advisory deprecation marks the old way as discouraged and hopes callers will move; Google's verdict on it is "Hope is not a strategy," because callers with working code and other priorities rarely move on their own. Compulsory deprecation has a deadline and enforcement, and it works only when someone owns it, with time allotted, because the last few callers are always the hardest. Figure 2.4 sets the code-level mechanics side by side.
+The chapter distinguishes two kinds. Advisory deprecation marks the old way as discouraged and hopes callers will move; Google's verdict on it is "Hope is not a strategy," because callers with working code and other priorities rarely move on their own. Compulsory deprecation has a deadline and enforcement, and it works only when someone owns it, with time allotted, because the last few callers are always the hardest. Figure 2.6 sets the code-level mechanics side by side.
 
 | Mechanism | Advisory | Compulsory |
 |---|---|---|
@@ -753,7 +742,7 @@ The chapter distinguishes two kinds. Advisory deprecation marks the old way as d
 | Migration | Each team, when it chooses | Tooling or an LSC, with a date |
 | Owner | Often nobody | A named team, staffed for the work |
 
-*Figure 2.4 — Advisory and compulsory deprecation at the level of code. Encore uses the right-hand column for anything it intends to delete.*
+*Figure 2.6 — Advisory and compulsory deprecation at the level of code. Encore uses the right-hand column for anything it intends to delete.*
 
 Two details in the figure carry more weight than they seem to. Google shows deprecation warnings only on lines a developer is already changing, because warnings on every old use teach people to ignore all warnings. And it prevents backsliding with visibility allowlists in its build system, which list exactly which code may still depend on the deprecated target, so that the list can only shrink. Encore gets the same effect from an ArchUnit rule that fails the build for any new import of a deprecated package outside a named allowlist. When Encore deprecated the legacy barcode parser in month eight, the Inventory team owned the deprecation, the allowlist named the four remaining callers, and the build turned away a fifth in its first week. Platform-wide deprecation campaigns, with brownouts and partner timelines, are Chapter 6's subject.
 
@@ -834,7 +823,11 @@ On 4 June 1996 the first Ariane 5 lifted off from Kourou, in French Guiana, carr
 
 The mechanism was small. Software in the inertial reference system converted a 64-bit floating-point value, the horizontal bias, into a 16-bit signed integer. On Ariane 4 the value always fit. On Ariane 5, which builds horizontal velocity much faster in the early part of its trajectory, it did not, and the conversion raised an operand error. Of seven variables at risk of exactly this error, the designers had protected four and left three unprotected, the horizontal bias among them, to stay within a target of 80% maximum load on the computer. The system's specification said that on any exception the processor should shut down, because exception handling had been designed for random hardware failure, and under that assumption a shutdown hands control to the backup. The backup ran identical software on the same inputs, and it had already failed in the same way one data cycle earlier. The deepest irony is the one the board took care to record. The function that failed had no purpose after lift-off. It kept running for about 40 seconds into flight because Ariane 4 needed to be able to recover quickly from a hold late in the countdown, and the board noted that this behavior was not required for Ariane 5 at all.
 
-What makes Ariane 501 a story about testing, more than about integer overflow, is the board's account of why nobody found the fault. The inertial reference system was reused from Ariane 4, "practically the same", in the report's words, "particularly as regards the software". It had flown successfully. When the Ariane 5 requirements were written, the report says, "it was jointly agreed not to include the Ariane 5 trajectory data in the SRI requirements and specification." In 1992 the project had also decided not to put the real inertial units in the loop during the closed-loop system simulation, using simulated outputs instead. So no test anywhere in the program ever fed the reused software the trajectory it would actually fly. The suite was not careless. It was faithful, with great rigor, to a world that no longer existed. The board concluded that had such a test been performed, by the supplier or as part of the acceptance test, "the failure mechanism would have been exposed," and two of its recommendations are worth quoting because they read like a testing strategy in miniature. The second: "Prepare a test facility including as much real equipment as technically feasible", with realistic inputs and complete closed-loop testing. The tenth: "Include trajectory data in specifications and test requirements."
+What makes Ariane 501 a story about testing, more than about integer overflow, is the board's account of why nobody found the fault. The inertial reference system was reused from Ariane 4, "practically the same", in the report's words, "particularly as regards the software". It had flown successfully. When the Ariane 5 requirements were written, the report says, "it was jointly agreed not to include the Ariane 5 trajectory data in the SRI requirements and specification." In 1992 the project had also decided not to put the real inertial units in the loop during the closed-loop system simulation, using simulated outputs instead. So no test anywhere in the program ever fed the reused software the trajectory it would actually fly. The suite was not careless. It was faithful, with great rigor, to a world that no longer existed. The board concluded that had such a test been performed, by the supplier or as part of the acceptance test, "the failure mechanism would have been exposed," and two of its recommendations are worth quoting because they read like a testing strategy in miniature. The second: "Prepare a test facility including as much real equipment as technically feasible", with realistic inputs and complete closed-loop testing. The tenth: "Include trajectory data in specifications and test requirements." Figure 3.1 sets the flight that happened beside the world the tests assumed.
+
+{% include diagrams/fig-3-1.svg %}
+
+*Figure 3.1 — Ariane 501, schematic. In flight, both inertial reference systems met a trajectory their specification had left out and failed one data cycle apart; in test, simulated outputs stood in for the real units, and every test passed.*
 
 Later writers drew different lessons. Jean-Marc Jézéquel and Bertrand Meyer argued in 1997 that a stated precondition on the reused routine would have exposed the error at the moment of reuse; Bashar Nuseibeh answered in the same year that the failure belonged to the system and its process more than to any one piece of code. Both are interpretations, and both are useful. The lesson I take for this chapter is narrower. A test suite is a model of the world, and reused code arrives with the old world's model intact, its tests still passing. Encore has paid for this lesson once already. The admission-rate change behind the Vesper Hale morning was approved on the strength of a load test run against a warm seat-map cache, a test that was perfectly sound for a world the on-sale did not live in (the Resilience book, Section 2.3, and the Operations book's Chapter 6 tell that story). Barcode issuance is Encore's own inertial reference system: old, trusted, reused for a purpose its authors never imagined, and tested, where it is tested at all, against a world in which a ticket is issued once.
 
@@ -849,7 +842,7 @@ If a test is a model of the world, we need a way to judge whether a particular m
 | Fast feedback | How long until the author knows? | Real networks, sleeps, shared environments | A Seat Map test that waits 5 s for a cache to expire |
 | Maintainability | How much effort does this test cost each time it is read or changed? | 40-line setups, opaque fixtures, copied helpers | A Resale test whose arrange section builds an entire event by hand |
 
-*Figure 3.1 — The four pillars, after Khorikov. A test's worth is roughly their product, so one pillar at zero makes the test worthless.*
+*Figure 3.2 — The four pillars, after Khorikov. A test's worth is roughly their product, so one pillar at zero makes the test worthless.*
 
 The pillars trade against one another. Protection and speed pull apart, because the tests that exercise the most real code are the slowest. Resistance to refactoring is the one Khorikov refuses to trade, and his reason is worth dwelling on. A test that fails when nothing is wrong is a false alarm, and false alarms teach the people who receive them that a red build means nothing. Google's *Software Engineering at Google* (2020) arrives at the same priority by a different road. It calls such a test **brittle**, "one that fails in the face of an unrelated change to production code that does not introduce any real bugs", and it opens its unit-testing chapter with an engineer whose brittle tests broke on a harmless refactor. DORA, the DevOps Research and Assessment program, puts it more plainly: "test failures should indicate a real defect". The pillars are a reasoned framework rather than a measured result, and their strength is that three independent sources converged on the same priority. A fire alarm that goes off whenever someone makes toast is soon unplugged, and the analogy holds closely here, with one difference: a building has one alarm, while a suite has thousands, and people learn to ignore all of them from the few that cry wolf.
 
@@ -879,9 +872,13 @@ The last question about doubles is who owns them. Google's answer is that "the t
 
 #### Sorting code by what it deserves {#c3-four-quadrants}
 
-Not every line of code deserves the same testing, and Khorikov offers a sorting tool for deciding which deserves what. Plot code along two axes, its complexity or domain significance and the number of collaborators it talks to, and four quadrants appear. Domain logic and algorithms, complex and with few collaborators, deserve thorough unit tests, because that is where the bugs that matter live and where tests are cheapest. Controllers, simple but talking to many collaborators, deserve a few integration tests that check the wiring. Trivial code deserves no tests. And overcomplicated code, complex and entangled with many collaborators, deserves a refactoring before it deserves a test, because any test written against it now will be large, slow and brittle. The refactoring that moves code out of the fourth quadrant is Meszaros's **Humble Object** pattern: pull the decisions out into a plain object that is easy to test, and leave behind a thin shell that does the input and output and is too simple to get wrong.
+Not every line of code deserves the same testing, and Khorikov offers a sorting tool for deciding which deserves what. Plot code along two axes, its complexity or domain significance and the number of collaborators it talks to, and four quadrants appear (Figure 3.3). Domain logic and algorithms, complex and with few collaborators, deserve thorough unit tests, because that is where the bugs that matter live and where tests are cheapest. Controllers, simple but talking to many collaborators, deserve a few integration tests that check the wiring. Trivial code deserves no tests. And overcomplicated code, complex and entangled with many collaborators, deserves a refactoring before it deserves a test, because any test written against it now will be large, slow and brittle. The refactoring that moves code out of the fourth quadrant is Meszaros's **Humble Object** pattern: pull the decisions out into a plain object that is easy to test, and leave behind a thin shell that does the input and output and is too simple to get wrong.
 
 The quadrants are one author's heuristic, built on long practice, with no measured study behind them, and they need one condition attached. "Trivial code deserves no tests" is a statement about getters and data classes. It does not license untested glue on a path where money or seats move. The resale purchase saga is mostly wiring, and every link of that wiring is covered by an integration test, because a mistake there costs a fan a ticket. For barcode issuance, which sits squarely in the fourth quadrant, the sorting tool says what Section 2.4 says by another route: characterize first, then pull the logic out of the shell and test it where it lands.
+
+{% include diagrams/fig-3-3.svg %}
+
+*Figure 3.3 — Sorting code by what it deserves, after Khorikov. Tests are cheapest and most valuable top left; code top right earns a refactoring first, and the Humble Object moves its decisions to where a unit test can reach them.*
 
 **Recap.** A test is a model of the world, and Ariane 5 showed what happens when the model is faithful to a world that is gone. Khorikov's four pillars give us a way to judge a test, and resistance to refactoring is the one we cannot trade, because false alarms teach people to ignore the suite. Test observable behavior, treat coverage as a warning light and mutation as a question asked in review, choose tests by size as well as scope, and let the owners of a dependency own its fake.
 
@@ -899,7 +896,13 @@ The skeleton cost several weeks in which no organizer saw anything new, and it f
 
 #### Two loops {#c3-two-loops}
 
-Freeman and Pryce describe the rhythm of work after the skeleton as two nested loops. The outer loop begins with an **acceptance test**: a test of a whole feature, written from the outside in the language of the domain, which fails because the feature does not exist yet. The inner loop is Kent Beck's cycle from *Test-Driven Development: By Example* (2002): write a small failing unit test, make it pass with the simplest code that works, then refactor while the tests stay green. The engineer goes round the inner loop many times, each turn adding one small, tested piece, until the acceptance test passes and the outer loop turns once. Here is the acceptance test that drove the skeleton, essentially as the Resale team wrote it:
+Freeman and Pryce describe the rhythm of work after the skeleton as two nested loops. The outer loop begins with an **acceptance test**: a test of a whole feature, written from the outside in the language of the domain, which fails because the feature does not exist yet. The inner loop is Kent Beck's cycle from *Test-Driven Development: By Example* (2002): write a small failing unit test, make it pass with the simplest code that works, then refactor while the tests stay green. The engineer goes round the inner loop many times, each turn adding one small, tested piece, until the acceptance test passes and the outer loop turns once (Figure 3.4).
+
+{% include diagrams/fig-3-4.svg %}
+
+*Figure 3.4 — Two loops, after Freeman and Pryce. The acceptance test is the executable goal; Beck's cycle turns many times inside it, and the outer loop turns once per feature.*
+
+Here is the acceptance test that drove the skeleton, essentially as the Resale team wrote it:
 
 ```kotlin
 @Test
@@ -964,7 +967,7 @@ One property of the sandbox was designed in from the start, and it came out of a
 
 #### Simulators as products {#c3-simulators}
 
-The same reasoning applies to the vendors Encore depends on. Each outside service on the purchase and resale paths has a simulator, a fake in Google's sense, owned by the team that owns the integration and shipped with it. Each does what the vendor does on a good day and, on request, what it does on a bad one (Figure 3.2).
+The same reasoning applies to the vendors Encore depends on. Each outside service on the purchase and resale paths has a simulator, a fake in Google's sense, owned by the team that owns the integration and shipped with it. Each does what the vendor does on a good day and, on request, what it does on a bad one (Figure 3.5).
 
 | Simulator | Owning team | Failure modes on demand |
 |---|---|---|
@@ -975,7 +978,7 @@ The same reasoning applies to the vendors Encore depends on. Each outside servic
 | Bot-screening edge signals | Bot Screening | Signal unavailable; signal delayed; every session scored as high risk |
 | Partner API (for partners) | Partner APIs | Rule tightened mid-listing; slow reissue; duplicate or late webhook; listing rejected by cap |
 
-*Figure 3.2 — Encore's simulators. Each belongs to the team that owns the integration, and each can produce the vendor's bad days on demand.*
+*Figure 3.5 — Encore's simulators. Each belongs to the team that owns the integration, and each can produce the vendor's bad days on demand.*
 
 The "slow to 8 s" mode replays the first big outage in Encore's history, when the PSP slowed from 200 ms to 8 s and a retry storm, amplified by autoscaling, took the site down (the Architecture book, Chapter 4). Every team on the purchase path now has a test that sets the primary PSP simulator to that mode and checks that the breaker opens, new attempts move to the secondary provider and nothing retries in two layers. The Resilience book's game day (Section 5.5) injected a similar delay into production-like conditions; the simulator is its pre-production twin, run on every build. Resale payments run only through the primary provider's marketplace product, a documented limitation, so the secondary simulator deliberately has no split mode, and a test asserts that a resale purchase with the primary breaker open fails cleanly with an honest message to the fan, never silently routing to a provider that cannot split the money.
 
@@ -1061,7 +1064,7 @@ The interesting choice is between shared staging and an environment per change. 
 
 A **flaky test** is one that can pass and fail on the same code. Flakiness kills end-to-end suites by the mechanism of Section 3.1: each false alarm teaches people that red means nothing, until a real failure is rerun and ignored like the others. John Micco reported Google's numbers in 2016. About 1.5% of all test runs reported a flaky result, almost 16% of tests had some level of flakiness, and about 84% of the transitions from pass to fail that Google observed involved a flaky test. Google's 2020 book adds a judgment about thresholds: "as you approach 1% flakiness, the tests begin to lose value". These are two measurements made in different years by different methods, and they should be read separately.
 
-The causes are better understood than the remedies are practiced. Qingzhou Luo, Farah Hariri, Lamyaa Eloussi and Darko Marinov studied flaky tests in 51 Apache Software Foundation projects in 2014, inspecting commits that fixed them and classifying the root cause of 161. Figure 3.3 gives their three largest categories, with the design that prevents each.
+The causes are better understood than the remedies are practiced. Qingzhou Luo, Farah Hariri, Lamyaa Eloussi and Darko Marinov studied flaky tests in 51 Apache Software Foundation projects in 2014, inspecting commits that fixed them and classifying the root cause of 161. Figure 3.6 gives their three largest categories, with the design that prevents each.
 
 | Cause (Luo et al., 2014) | Share of 161 classified fixes | What it looks like | The design that prevents it |
 |---|---|---|---|
@@ -1069,7 +1072,7 @@ The causes are better understood than the remedies are practiced. Qingzhou Luo, 
 | Concurrency | 20% | Two threads race, and the test passes only for one interleaving | Control the scheduler in small tests; test concurrency deliberately, with properties |
 | Test-order dependency | 12% | A test passes alone and fails after another one leaves state behind | Each test creates its own data and cleans up; no shared mutable fixtures |
 
-*Figure 3.3 — The three largest causes of flaky tests in Luo et al.'s study, and the test design that prevents each.*
+*Figure 3.6 — The three largest causes of flaky tests in Luo et al.'s study, and the test design that prevents each.*
 
 A further finding from the same study shapes how Encore fights flakiness. Some 78% of the flaky tests were flaky from the moment they were written, so flakiness is mostly a design defect present at birth, which argues for catching it at review time more than for repairing it years later. Two disciplines prevent most of what remains. Control time and randomness: inject the clock and the random seed into the code under test, so that a test about a resale window that closes two hours before doors can set the clock instead of waiting for it. And keep large tests as hermetic as possible, because, as Google's chapter on larger tests puts it, "if a large test is nonhermetic, it is almost impossible to guarantee determinism". Encore measures flakiness per test and per journey, by rerunning failures on unchanged code. When Verified Resale began, the end-to-end suite failed spuriously on about one run in 40, far past the point where Google's book says tests lose value. How CI detects flaky tests, quarantines them and decides when to rerun them is a property of the pipeline, and Section 4.4 owns it; this section owns the reasons tests flake and the designs that keep them from doing so.
 
@@ -1081,7 +1084,7 @@ Encore's drivers are owned like any other shared code. The resale driver has two
 
 **Recap.** Keep a few end-to-end journeys, each owned by the team whose pager it would wake, and retire them when lower-level tests cover what they catch. Treat test data and environments as instruments with known ranges, and write down which question each test is asking of which environment. Flaky tests are mostly born flaky, from asynchronous waits, races and shared state, and the designs that prevent them are cheaper than the reruns that hide them. Write acceptance tests in the domain's language against a driver, so that a redesign changes one layer.
 
-**Exercise 3.4.** Measure the flake rate of your end-to-end suite for one month by rerunning every failure on unchanged code. Name the owner of the worst journey, classify its flakiness by Figure 3.3's causes, and estimate what fixing it would cost against what its reruns cost now.
+**Exercise 3.4.** Measure the flake rate of your end-to-end suite for one month by rerunning every failure on unchanged code. Name the owner of the worst journey, classify its flakiness by Figure 3.6's causes, and estimate what fixing it would cost against what its reruns cost now.
 
 ### 3.5 Evals as Product Practice
 
@@ -1117,7 +1120,7 @@ criterion_version: 3                     # v1 required a limit; v2 allowed eithe
 labelled_by: organizer-success lead
 ```
 
-The first set held 60 cases across the categories in Figure 3.4. By launch it had grown to about 250, most of the growth coming from failures found while reading outputs, each turned into a case.
+The first set held 60 cases across the categories in Figure 3.7. By launch it had grown to about 250, most of the growth coming from failures found while reading outputs, each turned into a case.
 
 | Category | Cases in the first set | What a good draft does |
 |---|---|---|
@@ -1127,7 +1130,7 @@ The first set held 60 cases across the categories in Figure 3.4. By launch it ha
 | Requests the rules cannot express | 14 | Says plainly what cannot be done, such as raising the cap or changing the fee split, and proposes nothing that loosens a rule |
 | Several rules in one request | 10 | Captures each, and lists them all in the summary |
 
-*Figure 3.4 — The rule assistant's first labeled set, by category. The categories came from the organizer-success lead's first reading of outputs, and two of them did not exist before it.*
+*Figure 3.7 — The rule assistant's first labeled set, by category. The categories came from the organizer-success lead's first reading of outputs, and two of them did not exist before it.*
 
 #### A screen for reading {#c3-review-interfaces}
 
@@ -1147,7 +1150,7 @@ Once the criteria have settled enough to automate, the eval joins the pipeline l
 
 **Deliverables:**
 
-1. **The suite's worth** — Score a random sample of 20 tests on the four pillars (Figure 3.1), and propose what to delete, rewrite or keep, with the evidence for each group. Say what to do about the coverage target.
+1. **The suite's worth** — Score a random sample of 20 tests on the four pillars (Figure 3.2), and propose what to delete, rewrite or keep, with the evidence for each group. Say what to do about the coverage target.
 2. **The integration's test strategy** — Design the adapter around the eligibility vendor, the tests at the adapter, and the simulator every other team will use, with its failure modes on demand and the suite that keeps it honest against the vendor's sandbox. Say what only production can tell you, and how you will learn it.
 3. **Properties** — Write, in prose or code, two properties for the booking core: one about overbooking a class under concurrent requests, one about reminders across time zones and daylight-saving changes, with the clock injected.
 4. **The flaky-test plan** — Describe how you will measure flakiness per test, classify the worst offenders by cause, and redesign them, with a target rate and a date. Say which part belongs to test design and which to the CI pipeline.
@@ -1208,7 +1211,11 @@ For its first decade the Linux kernel had no version-control system at all. From
 
 The arrangement ended in the spring of 2005. Andrew Tridgell, who worked on unrelated projects at the Open Source Development Labs (OSDL), Torvalds's employer at the time, wrote a client that could read BitKeeper's repository metadata, and BitMover, treating this as reverse engineering, withdrew the free license. On 6 April 2005 Torvalds told the linux-kernel mailing list, in a message titled "Kernel SCM saga..", that he would stop using BitKeeper. He was generous to its owners: "don't blame BitMover," he wrote, and of the tool: "It didn't work out, but it sure as hell made a big difference to kernel development." The message did not announce Git; its postscript pointed readers, if they must, at Monotone.
 
-He had already started. By the commonly cited chronology, work began on 3 April, and on 7 April Git committed its own source for the first time, with the message "Initial revision of "git", the information manager from hell." The first merge of several branches followed on 18 April, Git managed the 2.6.12 kernel release on 16 June, Torvalds handed maintenance to Junio Hamano on 26 July, and version 1.0 appeared on 21 December 2005. The sequence is often compressed into the legend that Git was "written in two weeks." The defensible version is more interesting: it hosted itself within days and ran a kernel release within about 10 weeks, because its author designed it around a few demanding goals and nothing else. His rule was to take CVS, the older system much of the industry still used, "as an example of what *not* to do; if in doubt, make the exact opposite decision." The goals *Pro Git* records are speed, a simple design, strong support for non-linear development with thousands of parallel branches, full distribution, and efficiency on very large projects.
+He had already started. By the commonly cited chronology, work began on 3 April, and on 7 April Git committed its own source for the first time, with the message "Initial revision of "git", the information manager from hell." The first merge of several branches followed on 18 April, Git managed the 2.6.12 kernel release on 16 June, Torvalds handed maintenance to Junio Hamano on 26 July, and version 1.0 appeared on 21 December 2005. Figure 4.1 sets the dates out. The sequence is often compressed into the legend that Git was "written in two weeks." The defensible version is more interesting: it hosted itself within days and ran a kernel release within about 10 weeks, because its author designed it around a few demanding goals and nothing else. His rule was to take CVS, the older system much of the industry still used, "as an example of what *not* to do; if in doubt, make the exact opposite decision." The goals *Pro Git* records are speed, a simple design, strong support for non-linear development with thousands of parallel branches, full distribution, and efficiency on very large projects.
+
+{% include diagrams/fig-4-1.svg %}
+
+*Figure 4.1 — Git's first year, with April drawn enlarged. Notice how little separates the break with BitKeeper from Git hosting itself, and how much longer the road ran from there to a kernel release and a 1.0.*
 
 Git did not invent cheap branching. BitKeeper had it, and so did Monotone and darcs, and Olivia Mackall (then publishing as Matt Mackall) announced Mercurial on 19 April 2005, for the same reason. What Git did was make cheap branching *fast* at the scale of the kernel. In Git, as *Pro Git* puts it, "Creating a new branch is as quick and simple as writing 41 bytes to a file (40 characters and a newline)." Commits, diffs and switches between branches happen on the engineer's own machine in a fraction of a second. When GitHub launched in 2008 and made the pull request the unit in which most of the industry proposes a change, the loop Git had made fast became the loop nearly everyone worked in. (Version control itself is much older; Marc Rochkind's SCCS came out of Bell Labs in the early 1970s, as Chapter 6 tells.)
 
@@ -1238,7 +1245,7 @@ The first is to run **local stubs or fakes**, small stand-ins that answer like t
 
 The most instructive public account of choosing among these comes from Lyft, which published a four-part series in 2021. Lyft grew from about 100 engineers to more than 1,000, and for years its developers used Onebox, a Docker-based environment that ran a full copy of the stack for each developer, later on large cloud instances. By Lyft's own account, Onebox "could not scale anymore." Lyft moved to local-first testing of a single service with its dependencies stubbed, and to isolating requests inside a shared staging environment where real neighbours were needed. It removed or converted thousands of integration tests (Section 3.4 tells that half of the story), and pull requests became, in Lyft's words, "ready to merge in minutes."
 
-The Resale team settled on a mixture, and Figure 4.1 sets out the options as Encore weighs them.
+The Resale team settled on a mixture, and Figure 4.2 sets out the options as Encore weighs them.
 
 | Option | Fidelity | Cost to the developer | Cost to the organization | Encore uses it for |
 |---|---|---|---|---|
@@ -1248,7 +1255,7 @@ The Resale team settled on a mixture, and Figure 4.1 sets out the options as Enc
 | Request-routed preview | High: real services, real wiring | Minutes to deploy changed services | Compute per preview, and routing in the mesh | Cross-service journeys, such as resale purchase and reissue |
 | Full stack per developer | Highest in principle | Tens of minutes, and a large machine | Grows with every service; Lyft's Onebox | Never |
 
-*Figure 4.1 — Ways to give a developer's code its neighbours, ordered from cheapest to most expensive. Fidelity rises down the table, and so does cost; the last row is where the cost outruns what fidelity can repay.*
+*Figure 4.2 — Ways to give a developer's code its neighbours, ordered from cheapest to most expensive. Fidelity rises down the table, and so does cost; the last row is where the cost outruns what fidelity can repay.*
 
 The file that defines the Resale team's inner loop is short, and it is worth reading because every line records a decision about what to run where.
 
@@ -1275,7 +1282,11 @@ Some questions cannot be answered from a laptop. Does a resale purchase, run thr
 
 The obvious design gives each pull request a full slice of the system. It works for a handful of services and fails for hundreds, for the reason Onebox did: the slice grows with the fleet, and so do its cost and the work of keeping its data and versions consistent. The large published accounts converge on another design. Lyft's staging overrides (2021) and Uber's SLATE (2022) deploy *only the services that changed* into a shared, continuously updated baseline, and route requests carrying a marker to the changed versions while everything else goes to the baseline. Lyft carried the marker as baggage in the request and routed on it in its Envoy mesh, keeping the offloaded deployments out of ordinary service discovery so that no untagged request could reach them. The conditions are specific: every service must propagate the request's context, the mesh must be able to route on it, and the deployed versions must be torn down on merge.
 
-Encore already pays for preview environments; the Resilience book's Section 2.5 counts them among the build-pipeline costs in the cost per ticket. What changed in year nine was their shape. Encore's services already propagate the W3C `traceparent` header (the Architecture book, Section 5.3) and its mesh can route on headers, so the Runtime team moved previews to the request-routed form: a preview deploys only the changed services into the staging cell and receives the requests that carry its key. One key can now cover changes in several repositories, which is what the resale journey needs, since its changes land in the Resale service, in `encore-core` and in Venue Entry's revocation feed. Encore keeps a full slice only for the rare journey whose test data cannot be isolated inside the shared baseline.
+Encore already pays for preview environments; the Resilience book's Section 2.5 counts them among the build-pipeline costs in the cost per ticket. What changed in year nine was their shape. Encore's services already propagate the W3C `traceparent` header (the Architecture book, Section 5.3) and its mesh can route on headers, so the Runtime team moved previews to the request-routed form: a preview deploys only the changed services into the staging cell and receives the requests that carry its key. One key can now cover changes in several repositories, which is what the resale journey needs, since its changes land in the Resale service, in `encore-core` and in Venue Entry's revocation feed. Encore keeps a full slice only for the rare journey whose test data cannot be isolated inside the shared baseline. Figure 4.3 follows one resale request through such a preview.
+
+{% include diagrams/fig-4-3.svg %}
+
+*Figure 4.3 — A request-routed preview for the resale journey. Only the three changed services are deployed; a request carrying the preview key reaches them, and falls through to the shared baseline wherever, as with Notifications, nothing changed.*
 
 #### The laptop budget {#c4-laptop-budget}
 
@@ -1283,7 +1294,7 @@ One line in the Resale team's file records a choice that is Encore's own. `lapto
 
 **Recap.** Git made the inner loop fast because its author treated speed as a design goal, and the same goal applies to every step a developer repeats many times an hour. A reproducible environment, prebuilt and owned, gets a developer to a working checkout; a deliberate mixture of stubs, fakes, shared remotes and request-routed previews gives the code its neighbours without running the fleet. Encore's ten-container rule is its own way of keeping that mixture from drifting back toward the full stack that failed at Lyft.
 
-**Exercise 4.1.** Time your own edit-to-feedback loop for a one-line change in a service you work on, from saving the file to seeing a test result you trust. Write down each step and its duration, name the slowest, and say which option in Figure 4.1 would remove it.
+**Exercise 4.1.** Time your own edit-to-feedback loop for a one-line change in a service you work on, from saving the file to seeing a test result you trust. Write down each step and its duration, name the slowest, and say which option in Figure 4.2 would remove it.
 
 ### 4.2 Repositories and Builds
 
@@ -1321,18 +1332,11 @@ A **remote cache** stores the outputs of build actions, keyed by a hash of their
 
 The best first-party account of what this buys comes from Uber's Go monorepo, described in 2022: about 500,000 files, more than 10 million Bazel targets, and about 50 changes an hour in working hours. Moving the remote cache to Buildfarm in 2021 "cut down the build time by about half," and the 95th-percentile time, which had fluctuated between 40 and more than 100 minutes, fell consistently below 40. Uber also computes, for each change, which targets it alters, in about 5 minutes; this is the dependency-graph test selection Section 4.4 returns to.
 
-Encore's version is smaller. It did not move `encore-core` to Bazel. Instead, the Developer Portal team and two engineers from Inventory spent most of months five to eight making the existing build hermetic enough to cache: pinning the toolchain, declaring the code generator's inputs, cutting the tests off from the network and splitting the modules so that the build graph reflected which code depended on which. Then they added a remote cache shared by CI and laptops, and dependency-graph test selection. Figure 4.2 shows where the 31 minutes went.
+Encore's version is smaller. It did not move `encore-core` to Bazel. Instead, the Developer Portal team and two engineers from Inventory spent most of months five to eight making the existing build hermetic enough to cache: pinning the toolchain, declaring the code generator's inputs, cutting the tests off from the network and splitting the modules so that the build graph reflected which code depended on which. Then they added a remote cache shared by CI and laptops, and dependency-graph test selection. Figure 4.4 shows where the 31 minutes went.
 
-| Step in `encore-core`'s CI | Before (minutes) | After (minutes) | What changed |
-|---|---|---|---|
-| Check out and set up | 3 | 1 | Shallow clone; toolchain and dependencies prebuilt into the runner image |
-| Compile | 9 | 3 | Remote cache; most modules unchanged by any one change |
-| Unit and component tests | 14 | 3 | Run only the tests the module graph says a change can affect |
-| Static analysis | 3 | 1 | Analyze changed modules only |
-| Package the artifact | 2 | 1 | Cached layers |
-| Total, push to verdict | 31 | 9 | |
+{% include diagrams/fig-4-4.svg %}
 
-*Figure 4.2 — Continuous integration on `encore-core` before and after months five to eight. Test selection and the remote cache account for 17 of the 22 minutes saved; neither would have been safe before the build was made hermetic.*
+*Figure 4.4 — Continuous integration on `encore-core`, step by step, before and after months five to eight, from 31 minutes to 9. Test selection and the remote cache account for 17 of the 22 minutes saved; neither would have been safe before the build was made hermetic.*
 
 The largest saving came from running fewer tests, which is safe only because the graph that decides which tests to skip can now be trusted. The 9 minutes remain above the golden path's 6 because `encore-core` is still large, and Encore expects to close the gap by moving code out of it over time, having judged that a different build system would cost more than it returned.
 
@@ -1460,7 +1464,7 @@ Verified Resale has lived this way since its first code. From month four, each p
 
 #### Kinds of flags {#c4-kinds-of-flags}
 
-Hodgson distinguishes four kinds of flags, each with its own lifetime and owner. The Resilience book's Section 4.3 gives Encore's expiry rules; Figure 4.3 adds the owners.
+Hodgson distinguishes four kinds of flags, each with its own lifetime and owner. The Resilience book's Section 4.3 gives Encore's expiry rules; Figure 4.5 adds the owners.
 
 | Kind | What it decides | Typical life (Hodgson) | Owner at Encore | Example in Verified Resale |
 |---|---|---|---|---|
@@ -1469,7 +1473,7 @@ Hodgson distinguishes four kinds of flags, each with its own lifetime and owner.
 | Operational | Whether an expensive or risky path runs under stress | Mostly short; kill switches for years | The team on call for the service | `resale-listings-intake`, which stops new listings during an incident |
 | Permission | Which users or customers get a capability | Can last "multiple years" | Moves to entitlements | Which organizers may enable resale |
 
-*Figure 4.3 — Four kinds of flags, with Hodgson's lifetimes and Encore's owners. The last row is a flag only until it becomes configuration.*
+*Figure 4.5 — Four kinds of flags, with Hodgson's lifetimes and Encore's owners. The last row is a flag only until it becomes configuration.*
 
 The last row repays a closer look. A permission flag that lives for years has become a product decision about who may use what, and it belongs in the system that makes such decisions. At Encore that is the entitlement machinery Chapter 7 describes, on which organizers' resale rules are built as per-organizer configuration, so a permission flag may exist only while a capability is being built. Experiment flags belong to the Products book's Chapter 4.
 
@@ -1582,7 +1586,11 @@ Encore is not deciding whether to adopt these tools. It adopted them years ago, 
 
 Grace Murray Hopper learned to program on the Harvard Mark I during the Second World War. In 1949 she joined the Eckert-Mauchly Computer Corporation in Philadelphia, which Remington Rand bought the following year, and there she helped program the UNIVAC I, the first large commercial electronic computer in the United States. Programming it meant writing machine instructions by hand, and much of the writing was the same routines, recopied and readdressed for every new problem. In 1951 and 1952 Hopper and her group built a program they called the A-0 compiling routine. The word "compiler" meant something narrower then than it does now. The mathematician wrote a specification that named subroutines by their call numbers in a catalogued library, together with their arguments. A-0 fetched those subroutines, adjusted their addresses so that they fit together, and produced a complete machine-code program, which was then run. In today's terms it was closer to a linking loader with a subroutine library than to a translator of formulas, and it was not alone: Alick Glennie's Autocode at Manchester and Laning and Zierler's algebraic system at MIT have competing claims to being first. A-0 was one of the earliest such systems, and it is the one that gave the word "compiler" its software meaning.
 
-Hopper described the scheme at the Association for Computing Machinery's national meeting in Pittsburgh in May 1952, in a paper called "The Education of a Computer". "The programmer may return to being a mathematician," she wrote. "He is supplied with a catalogue of subroutines." She saw, earlier than most, where the cost of computing was going: "With the computer paid for, the cost of programming and the time consumed, comes to the notice of vice-presidents and project directors." And she was candid about the price. Standardized subroutines, she noted, lose "a small amount of time … in performing duplicate data transfers which could be eliminated in a tailor-made routine". Her answer was to let the UNIVAC produce the program and then have a person remove the duplication by hand. That is the 1952 form of a practice this chapter will keep returning to: let the machine generate, then have a person refine and own the result.
+Hopper described the scheme at the Association for Computing Machinery's national meeting in Pittsburgh in May 1952, in a paper called "The Education of a Computer". "The programmer may return to being a mathematician," she wrote. "He is supplied with a catalogue of subroutines." She saw, earlier than most, where the cost of computing was going: "With the computer paid for, the cost of programming and the time consumed, comes to the notice of vice-presidents and project directors." And she was candid about the price. Standardized subroutines, she noted, lose "a small amount of time … in performing duplicate data transfers which could be eliminated in a tailor-made routine". Her answer was to let the UNIVAC produce the program and then have a person remove the duplication by hand. That is the 1952 form of a practice this chapter will keep returning to: let the machine generate, then have a person refine and own the result. Figure 5.1 sketches the arrangement.
+
+{% include diagrams/fig-5-1.svg %}
+
+*Figure 5.1 — A-0's scheme, drawn as a schematic. The mathematician names subroutines by call number; A-0 fetches them from the library and fits them together; a person removes the duplicate transfers by hand. The machine generates, and a person refines and owns.*
 
 The reception was cool. In 1987 Hopper told an interviewer, in a newsletter profile, "Nobody believed that. I had a running compiler and nobody would touch it. They told me computers could only do arithmetic." It is reported speech, recalled 35 years later, and should be read as such, but John Backus's own account of the period describes the same resistance. Writing in 1976, Backus recalled the programmers of the early 1950s as "members of a priesthood guarding skills and mysteries far too complex for ordinary mortals". To them, he wrote, "it was obviously a foolish and arrogant dream to imagine that any mechanical process could possibly perform the mysterious feats of invention required to write an efficient program." The phrase of the day for the whole enterprise was **automatic programming**: the hope that a machine could produce a working program from a description less detailed than the program itself. The Office of Naval Research held a symposium under that name in May 1954.
 
@@ -1608,7 +1616,11 @@ Three cautions belong with the number. The abstract itself says that "each exper
 
 In July 2025, METR (Model Evaluation and Threat Research) published a trial that set the rest of the evidence in a different light. Joel Becker, Nate Rush, Elizabeth Barnes and David Rein recruited 16 experienced open-source developers to work on 246 real issues in their own repositories, which averaged more than 22,000 stars and more than a million lines of code. Each issue, roughly two hours of work, was randomly assigned to be done with AI tools allowed or not; the tools were mostly Cursor Pro with Claude 3.5 and 3.7 Sonnet, and the work ran from February to June 2025. With AI allowed, tasks took 19% longer, with a confidence interval of 2% to 39% longer. Before starting, the developers expected a 24% speedup. Afterward, they believed they had been 20% faster.
 
-I spent a decade maintaining a widely used open-source library, and the setting METR chose is one I recognize: a large, mature codebase whose maintainers carry years of unwritten context about why things are the way they are, and whose quality bar is set by thousands of users who will notice any regression. There an assistant has the least to offer and the most to get wrong. METR was careful to say what its result does not show. It does not show that AI tools fail to speed up most developers, nor that no better way of using them exists. It shows that in this demanding setting, with early-2025 tools, experts were slower and did not know it. Their perception was wrong by about 40 percentage points, in the opposite direction from Peng's participants, who had underestimated their gain. Together, the two studies teach this section's most useful lesson: developers' sense of how much a tool helps them is unreliable in both directions, and no organization should decide anything on the strength of it.
+I spent a decade maintaining a widely used open-source library, and the setting METR chose is one I recognize: a large, mature codebase whose maintainers carry years of unwritten context about why things are the way they are, and whose quality bar is set by thousands of users who will notice any regression. There an assistant has the least to offer and the most to get wrong. METR was careful to say what its result does not show. It does not show that AI tools fail to speed up most developers, nor that no better way of using them exists. It shows that in this demanding setting, with early-2025 tools, experts were slower and did not know it. Their perception was wrong by about 40 percentage points, in the opposite direction from Peng's participants, who had underestimated their gain. Together, the two studies teach this section's most useful lesson: developers' sense of how much a tool helps them is unreliable in both directions, and no organization should decide anything on the strength of it. Figure 5.2 sets the two trials side by side.
+
+{% include diagrams/fig-5-2.svg %}
+
+*Figure 5.2 — What developers believed against what two randomized trials measured. Peng's participants underestimated their gain; METR's experts believed they were faster when they were slower. Sources: Peng et al. (2023); Becker et al., METR (2025).*
 
 METR has since marked the 2025 results as out of date, and its follow-up shows how hard the measurement has become. A second study, begun in August 2025 with 57 developers (10 returning and 47 new), 143 repositories and more than 800 tasks, estimated an 18% reduction in time for returning developers (confidence interval from 38% faster to 9% slower) and 4% for new ones (from 15% faster to 9% slower). Both intervals include zero. METR called the result "an unreliable signal": developers who did not wish to work without AI declined to take part, between 30% and 50% of participants withheld tasks they did not want to do unaided, and time-tracking broke down for developers running several agents at once. METR is redesigning the study, so the effect on experienced developers in mature code has not been reliably measured since 2025. A METR survey from May 2026 adds a final caution. Of 349 technical workers who responded, at a response rate of about 2%, the median reported that AI had made them 3× faster. Beside the 2025 trial's gap between belief and fact, that figure shows how far perception can run from measurement, and nothing more.
 
@@ -1622,7 +1634,7 @@ DORA's data carry their own conditions. They are self-reported, from self-select
 
 #### How to read all of it {#c5-reading-the-evidence}
 
-Figure 5.1 gathers the studies in one place, with the setting each one measured and the most important thing it cannot tell us.
+Figure 5.3 gathers the studies in one place, with the setting each one measured and the most important thing it cannot tell us.
 
 | Study | Setting and design | Main finding | What it cannot tell us |
 |---|---|---|---|
@@ -1632,7 +1644,7 @@ Figure 5.1 gathers the studies in one place, with the setting each one measured 
 | METR, 2025 | 16 expert maintainers, 246 issues in their own mature repositories, randomized | 19% slower; believed 20% faster | how later tools and practices fare (the 2026 follow-up is unreliable) |
 | DORA, 2024–2025 | thousands of survey respondents, correlational | throughput turned positive in 2025; stability negative in both years | cause and effect |
 
-*Figure 5.1 — The evidence on AI assistance and productivity. Each study is sound within its setting, and the settings differ more than the headlines do.*
+*Figure 5.3 — The evidence on AI assistance and productivity. Each study is sound within its setting, and the settings differ more than the headlines do.*
 
 Read together, the studies are less contradictory than they first appear, because they measured different situations. Gains are largest on bounded, well-specified work and on work unfamiliar to the person doing it: a fresh server in a language one half-knows, a task in a codebase one has not lived in. Gains shrink, and can reverse, where experts work in mature code under high quality bars, because there the assistant contributes least of what the expert lacks and most of what the expert must then check. Perception is unreliable in both directions, so no organization can learn the answer by asking its engineers. Team outcomes depend on the system around the tool, the tests, review, batch size and platform that must absorb a higher volume of change. And as Section 5.4 will show, the velocity gained early can be bought with complexity that slows the same team later.
 
@@ -1656,23 +1668,17 @@ Two cautions keep these numbers honest. The papers share authors and describe on
 
 Publishing offers a fair comparison. When a publisher changes its house style, a copy editor can apply the new rule across a whole backlist quickly, because the rule is explicit and each instance can be checked against the style sheet. The work goes wrong only where a sentence's meaning depended on the old form, where changing a word mechanically would change what the author said. A good copy editor flags those sentences and leaves them to the author. The comparison holds well for migrations and fails at one point: a copy editor knows when meaning is at stake and stops, while a model applies the rule with the same confidence everywhere. Somebody has to find the sentences whose meaning will change, and that somebody is the owner of the code.
 
-Encore's own migration had exactly this shape. Barcode issuance, the eight-year-old core described in Chapter 2, embeds an event-code prefix in its legacy barcode format, and over the years 60 places in Encore's code had learned to read that prefix directly; none of them asked Seat Inventory which event a ticket belonged to. Verified Resale gives every ticket an opaque `ticket_id`, and reissue makes the prefix unreliable, so all 60 call sites had to move to the new identity lookup. They sat in 11 repositories owned by seven teams. Ines, a staff engineer on the Inventory team, which the draw described in Section 5.5 had placed in the first cohort to receive background agents, sponsored the migration. Once the characterization tests described in Chapter 2 were in place, she ran it much as the Google papers describe: a background agent generated one change per call site, and a ladder of checks ran before any human owner saw a line of it. Figure 5.2 shows the ladder.
+Encore's own migration had exactly this shape. Barcode issuance, the eight-year-old core described in Chapter 2, embeds an event-code prefix in its legacy barcode format, and over the years 60 places in Encore's code had learned to read that prefix directly; none of them asked Seat Inventory which event a ticket belonged to. Verified Resale gives every ticket an opaque `ticket_id`, and reissue makes the prefix unreliable, so all 60 call sites had to move to the new identity lookup. They sat in 11 repositories owned by seven teams. Ines, a staff engineer on the Inventory team, which the draw described in Section 5.5 had placed in the first cohort to receive background agents, sponsored the migration. Once the characterization tests described in Chapter 2 were in place, she ran it much as the Google papers describe: a background agent generated one change per call site, and a ladder of checks ran before any human owner saw a line of it. Figure 5.4 shows the ladder.
 
-| Rung | What it checks | Who or what does it | What it caught at Encore |
-|---|---|---|---|
-| 1. Build and static checks | the change compiles and passes lint and fitness functions | CI (continuous integration) | 4 changes that imported the lookup client in a forbidden direction |
-| 2. Characterization and unit tests | old behavior preserved where it should be | CI, with tests the agent cannot edit | 7 changes that altered behavior at an edge |
-| 3. Sponsor's inspection | the change does what the spec says, and nothing else | Ines | 9 changes with unrelated "improvements", reverted hunk by hunk |
-| 4. Owner review, one shard per team | the change is right for this code and its context | the owning team | one shard rejected outright (Section 5.3) |
-| 5. Progressive delivery | behavior in production | canary, as for any change | nothing |
+{% include diagrams/fig-5-4.svg %}
 
-*Figure 5.2 — The validation ladder for Encore's barcode call-site migration. Each rung is cheaper than the one above it, so the cheap rungs run first and spare the expensive human ones.*
+*Figure 5.4 — The validation ladder for Encore's barcode call-site migration, with what each rung caught. Each rung is cheaper than the one after it, so the cheap machine rungs run first and spare the expensive human ones.*
 
 #### Tests and boilerplate {#c5-tests-boilerplate}
 
 Tests and boilerplate are the next obvious candidates, and the evidence is thinner: no controlled study has measured the quality of tests that assistants write. What we have is practitioner guidance, from Addy Osmani's *Beyond Vibe Coding* and from Gene Kim and Steve Yegge's *Vibe Coding*, both published in 2025, together with Airbnb's migration, which was itself a migration of tests. The guidance converges on one condition. A test has two parts: the setup that drives the code, and the **test oracle**, the part that decides whether the output is correct. Generating the setup is cheap and largely safe. Generating the oracle is where the danger lies, because a test whose oracle was inferred from the code under test will faithfully confirm whatever the code does, bugs included.
 
-So the condition for using generated tests is that a person writes or approves the oracle, and that the author of the code, human or agent, cannot quietly change it. Peng's experiment used exactly this arrangement, with tests participants could see but not edit, and Encore's barcode migration used it on rung 2 of Figure 5.2. The Resilience book's Section 4.5 explains why the second half of the condition matters, with the evidence that agents faced with tests they cannot honestly pass often edit the tests instead; we take that finding as given here. What this chapter adds is the author's habit. When an assistant drafts tests for code you are writing, read the assertions before anything else, and ask of each one whether you would have written that expectation yourself, from the specification, without looking at the code.
+So the condition for using generated tests is that a person writes or approves the oracle, and that the author of the code, human or agent, cannot quietly change it. Peng's experiment used exactly this arrangement, with tests participants could see but not edit, and Encore's barcode migration used it on rung 2 of Figure 5.4. The Resilience book's Section 4.5 explains why the second half of the condition matters, with the evidence that agents faced with tests they cannot honestly pass often edit the tests instead; we take that finding as given here. What this chapter adds is the author's habit. When an assistant drafts tests for code you are writing, read the assertions before anything else, and ask of each one whether you would have written that expectation yourself, from the specification, without looking at the code.
 
 The partner SDKs show where boilerplate generation fits in Encore's work. The client libraries in TypeScript, Python and Java are generated deterministically from the OpenAPI contract of the partner application programming interface (API), as any well-run API program does; that generation is ordinary tooling, with no model involved. What an assistant drafted were the hand-written parts around the generated core: usage examples, documentation, and small idiomatic helpers for retries with idempotency keys. Partners are promised 12 months' notice of any breaking change, so the SDKs' public surface runs through the same breaking-change differ as the API itself. In the first month the differ stopped an assistant-drafted helper that had renamed a public method to something tidier, a rename that would have broken every partner who called the old name.
 
@@ -1692,7 +1698,7 @@ Understanding unfamiliar code is a harder case to judge, and it deserves an hone
 
 **Recap.** Assistance pays best on migrations, with a human oracle on tests, and on code that is truly thrown away. It pays least on mature hotspots, cross-service invariants and ambiguous requirements, where the essential complexity sits. Explanation of unfamiliar code is useful on practitioner evidence alone, provided the explanation is checked against the code before anyone relies on it.
 
-**Exercise 5.2.** Sort your team's last month of completed work into the four categories of this section: migrations, tests and boilerplate, throwaway code, and the work where assistance does not help yet. For each item, note whether an assistant was used and whether, looking back, it paid. Compare the pattern with Figure 5.1.
+**Exercise 5.2.** Sort your team's last month of completed work into the four categories of this section: migrations, tests and boilerplate, throwaway code, and the work where assistance does not help yet. For each item, note whether an assistant was used and whether, looking back, it paid. Compare the pattern with Figure 5.3.
 
 ### 5.3 Agents in the Loop
 
@@ -1726,7 +1732,7 @@ done_when: all listed tests pass and each diff touches only the call site and im
 sponsor: ines (inventory)   owner_review: fan-messaging
 ```
 
-Every line answers a question the agent would otherwise have answered for itself. The `do_not_touch` line was added after rung 3 of Figure 5.2 found nine changes with unrelated "improvements" in the first shards; later shards had none.
+Every line answers a question the agent would otherwise have answered for itself. The `do_not_touch` line was added after rung 3 of Figure 5.4 found nine changes with unrelated "improvements" in the first shards; later shards had none.
 
 #### Scoping a task {#c5-scoping}
 
@@ -1835,7 +1841,11 @@ Reporting:  distributions across teams; no team ranked, no individual measured
 Decision:   expand, hold, or withdraw, with the evidence, at each cohort start
 ```
 
-The first answer came at month 9, when the first cohort had two quarters of use and the later cohorts served as comparison. Merged changes per engineer were up about 10% in the first cohort, with an interval wide enough to include no change. Review time per change was up by about a fifth, mostly in the teams that reviewed other teams' code. Rework rate was flat, and change failure rate showed no difference the data could detect. Static warnings in changed code rose in six of the ten teams. It was the shape Section 5.1 predicts, an amplifier whose cost lands on reviewers, and it gave leadership a usable answer: keep going, fix the review load before the third cohort, and look again in two quarters.
+The first answer came at month 9, when the first cohort had two quarters of use and the later cohorts served as comparison. Merged changes per engineer were up about 10% in the first cohort, with an interval wide enough to include no change. Review time per change was up by about a fifth, mostly in the teams that reviewed other teams' code. Rework rate was flat, and change failure rate showed no difference the data could detect. Static warnings in changed code rose in six of the ten teams. It was the shape Section 5.1 predicts, an amplifier whose cost lands on reviewers, and it gave leadership a usable answer: keep going, fix the review load before the third cohort, and look again in two quarters. Figure 5.5 lays the rollout out in time.
+
+{% include diagrams/fig-5-5.svg %}
+
+*Figure 5.5 — Encore's staggered randomized rollout of background agents. Each cohort waits as comparison, takes its baseline quarter, then has its quality lag watched for two quarters; the first answer came at month 9.*
 
 #### Skills and juniors {#c5-skills-juniors}
 
@@ -1847,7 +1857,7 @@ Encore's onboarding now holds both findings at once. Theo joined the Resale team
 
 #### The capabilities that make it pay {#c5-capabilities}
 
-DORA's AI Capabilities Model, published in September 2025, names seven capabilities associated with teams that gain from AI adoption without paying for it in other ways. It rests on survey correlations and 78 interviews, so it shows association and leaves cause unproven, and most of its list is the good engineering practice DORA has described for a decade. Figure 5.3 maps each capability to the place in this series that builds it.
+DORA's AI Capabilities Model, published in September 2025, names seven capabilities associated with teams that gain from AI adoption without paying for it in other ways. It rests on survey correlations and 78 interviews, so it shows association and leaves cause unproven, and most of its list is the good engineering practice DORA has described for a decade. Figure 5.6 maps each capability to the place in this series that builds it.
 
 | DORA AI capability | What it asks | Where it is built |
 |---|---|---|
@@ -1859,7 +1869,7 @@ DORA's AI Capabilities Model, published in September 2025, names seven capabilit
 | User-centric focus | work driven by what users need | the Products book, Chapters 1–3 |
 | Quality internal platforms | paved paths that make the right way easy | Chapter 6 |
 
-*Figure 5.3 — DORA's AI Capabilities Model, mapped to the chapters that build each capability. Most of the list is ordinary engineering capability, which is why the tools amplify what a team already is.*
+*Figure 5.6 — DORA's AI Capabilities Model, mapped to the chapters that build each capability. Most of the list is ordinary engineering capability, which is why the tools amplify what a team already is.*
 
 One entry deserves its own sentence. On user-centric focus, DORA warns that without it "AI adoption can have a negative impact on team performance". A team that builds the wrong thing faster has gained nothing from the speed, which is the Products book's whole argument.
 
@@ -1942,7 +1952,11 @@ Encore's platform group has nine teams and 40 people, about a tenth of engineeri
 
 In 1973 UNIX was still a small research system in Bell Labs' Computing Science Research Center, running on a handful of PDP-11 minicomputers. Elsewhere in Bell Labs, much larger groups of programmers wrote the business software that ran the Bell System, and that software did not run on PDP-11s at all. It ran on big batch machines. The installation that later became famous served programmers whose targets were two IBM 370/168s, two UNIVAC 1100-series systems and an XDS Sigma 5, each with its own job-control language, editors and habits. A programmer working for one of those machines wrote code on it, submitted jobs to it and waited for it, and carried around decks of punched cards in the meantime. Evan Ivie suggested, in the middle of 1973, a different arrangement: as much of the development as possible should be done on a computer dedicated to that task, and only the finished work sent to the target. Rudd Canaday, one of the designers of the original UNIX file system, led the department that built it, and the first PDP-11/45 was installed late that year. They called it the Programmer's Workbench, or PWB.
 
-The workbench was a collection of small tools aimed at the friction of a programmer's day. A Remote Job Entry subsystem sent jobs from the workbench to the target machines and brought their output back. John Mashey wrote the PWB shell, which came before the Bourne shell, and Dick Haight wrote `find`, `cpio` and `expr`. Marc Rochkind's Source Code Control System (SCCS), the first version-control system to run on UNIX, became one of its tools: Rochkind had begun SCCS in 1972 on an IBM System/370 and rewrote it in C for UNIX in 1973, and it first shipped publicly with the workbench. PWB/UNIX 1.0 was released on 1 July 1977, and much of it later flowed into the UNIX that the rest of the industry used. Ivie described the principle in *Communications of the ACM* that October, and in 1978 Ted Dolotta, Haight and Mashey described the system and how it had been run in the *Bell System Technical Journal*.
+The workbench was a collection of small tools aimed at the friction of a programmer's day. A Remote Job Entry subsystem sent jobs from the workbench to the target machines and brought their output back. John Mashey wrote the PWB shell, which came before the Bourne shell, and Dick Haight wrote `find`, `cpio` and `expr`. Marc Rochkind's Source Code Control System (SCCS), the first version-control system to run on UNIX, became one of its tools: Rochkind had begun SCCS in 1972 on an IBM System/370 and rewrote it in C for UNIX in 1973, and it first shipped publicly with the workbench. PWB/UNIX 1.0 was released on 1 July 1977, and much of it later flowed into the UNIX that the rest of the industry used. Ivie described the principle in *Communications of the ACM* that October, and in 1978 Ted Dolotta, Haight and Mashey described the system and how it had been run in the *Bell System Technical Journal*. Figure 6.1 draws the arrangement and its dates.
+
+{% include diagrams/fig-6-1.svg %}
+
+*Figure 6.1 — The Programmer's Workbench as a schematic: programmers on machines dedicated to development, small tools on top, and Remote Job Entry carrying finished work to the batch machines that had once received their card decks.*
 
 That second paper is the reason PWB belongs at the head of this chapter. Its authors set out their approach in a handful of sentences. Get users on the system quickly, work with them closely, and let their needs and problems drive the design. They "forcefully nurtured a close, continuing dialogue" with their users. They chose to follow the UNIX habit of building small, independent tools rather than large, interrelated ones, and they changed UNIX itself only "after much deliberation, and only when major gains can be made." That last rule is a limit the team placed on its own surface, which is what the Resilience book means by thinness. The users, the paper records, were at first "a bit wary of what then seemed like a radical idea." Then "as word about the system spread, demand for service grew rapidly, almost always outrunning the supply." By the end of 1977 the main installation ran seven PDP-11s for about 1,100 people, which the authors called the largest known UNIX installation in the world, and most of those users had "thrown away their decks of cards."
 
@@ -1950,7 +1964,7 @@ One phrase in the paper seems at first to argue against this chapter's title. Th
 
 #### What is already settled {#c6-already-settled}
 
-A good deal of the ground has been covered, in this book and in the others, and it saves pages to say where. Figure 6.1 is the map. Each row is an idea this chapter will use without arguing for it again, with the place where it is argued and the team at Encore that owns the corresponding machinery today.
+A good deal of the ground has been covered, in this book and in the others, and it saves pages to say where. Figure 6.2 is the map. Each row is an idea this chapter will use without arguing for it again, with the place where it is argued and the team at Encore that owns the corresponding machinery today.
 
 | Settled idea | Where it is argued | Owner at Encore |
 |---|---|---|
@@ -1964,7 +1978,7 @@ A good deal of the ground has been covered, in this book and in the others, and 
 | Large-scale changes, Hyrum's Law and the mechanics of deprecation | Section 2.5 | Every code owner |
 | The pipeline as a product | Section 4.4 | Developer Portal (pipelines and templates); Runtime (deployment) |
 
-*Figure 6.1 — What this chapter assumes, where it is argued, and who at Encore owns it.*
+*Figure 6.2 — What this chapter assumes, where it is argued, and who at Encore owns it.*
 
 What remains is the method. The Architecture book says a platform must be built as a product and must win its users; it does not, for reasons of space, show how a platform group discovers what to build, writes it down, builds it so it stays current, gets it adopted, retires what it replaces and measures the result. That is this chapter's work.
 
@@ -2012,20 +2026,11 @@ Someone has to own this work, and it is not naturally anyone's. Fournier and Now
 
 Interviews produce stories, and to compare stories the group needs a map. Section 1.1 introduced the method, value-stream mapping, which grew out of Toyota's material-and-information-flow diagrams and makes waiting visible as a quantity. It transfers to software with little change, because a change moving toward production is, like a part moving through a factory, mostly waiting.
 
-A developer journey map works best when it follows one journey at a time, such as from idea to first production deploy for a new service, and marks every handoff. Figure 6.2 is the map of the Resale team's first deploy, built from the interviews and checked against timestamps. Read the third column first.
+A developer journey map works best when it follows one journey at a time, such as from idea to first production deploy for a new service, and marks every handoff. Figure 6.3 is the map of the Resale team's first deploy, built from the interviews and checked against timestamps. Read the shaded bars first.
 
-| Step | Working days | Of which waiting | What the wait was for |
-|---|---|---|---|
-| Create repository and service from the template | 1 | 0 | — |
-| Walking-skeleton build; pipeline green | 2 | 0 | — |
-| Sandbox partner credential | 5 | 5 | Ticket to Security Engineering; certificate issued by hand |
-| Production partner credential | 4 | 4 | Second ticket, separate approval |
-| Write a webhook sender, copied from Partner APIs' | 3 | 0 | — |
-| Security review of the new sender | 6 | 6 | Review queue; questions about the signing scheme |
-| First production deploy and first webhook to Rowmate's sandbox | 2 | 0 | — |
-| **Total** | **23** | **15** | |
+{% include diagrams/fig-6-3.svg %}
 
-*Figure 6.2 — The Resale team's journey to its first production deploy. Two-thirds of the elapsed time was waiting, and all of the waiting was for two capabilities the platform did not offer.*
+*Figure 6.3 — The Resale team's journey to its first production deploy. Two-thirds of the 23 working days were waiting, nine for partner credentials and six for a security review of a sender the team should not have had to write; all of it was for two capabilities the platform did not offer.*
 
 The map changes the conversation. Before it, the Resale team's complaint was that "getting started is slow", which is true of every new service at every company and suggests no particular remedy. After it, the complaint has a shape: nine days spent waiting for credentials, and six waiting for a review of code the team should never have had to write. The fourth webhook sender is the more telling of the two. The Resale team was not careless in writing it; there was simply nowhere else to go, so it copied the nearest one and inherited that sender's quirks along with its code.
 
@@ -2076,7 +2081,7 @@ The brief's most useful line is the one about scope. Each item in it is somethin
 
 **Recap.** Interview developers about recent concrete episodes and check what they say against repositories and logs. Map one journey at a time with value stream mapping, so that waiting becomes a number, and rank frictions knowing the ranking's blind spots. Code search, dependency graphs and wiki analytics show where teams have built their own tracks. Choose the thinnest increment, build only what is particular to the business, and write each path a one-page brief before building it.
 
-**Exercise 6.2.** Map one developer journey in your organization from idea to first production deploy, using the columns of Figure 6.2 and checking each step against timestamps. Mark the three longest waits and say which of them a self-service interface could remove.
+**Exercise 6.2.** Map one developer journey in your organization from idea to first production deploy, recording for each step its working days, its waiting and what the wait was for, as Figure 6.3 does, and checking each step against timestamps. Mark the three longest waits and say which of them a self-service interface could remove.
 
 ### 6.3 Building the Platform
 
@@ -2144,16 +2149,11 @@ Encore's shared webhook delivery followed this course. It went into beta in mont
 
 A platform capability is adopted the way any innovation is, gradually and unevenly, and it helps to see adoption as a sequence of stages. The sociologist Everett Rogers, in *Diffusion of Innovations* (1962), described the decision to adopt as a process that runs from knowledge through persuasion, decision and implementation to confirmation, and his most lasting point was that people abandon innovations at every stage, including after adopting them. Encore measures each path with a funnel of four stages of its own, shaped by Rogers's process: a team is aware of the path, has tried it, has adopted it for a production service, and is still using it six months later. The funnel is Encore's own instrument, and its last stage is the one that matters, because a path that teams try and then quietly leave has failed in a way that a launch-day count would never show.
 
-Figure 6.3 shows the funnel for shared webhook delivery across the 14 services whose manifests declared `exposure: partner` by month 11.
+Figure 6.4 shows the funnel for shared webhook delivery across the 14 services whose manifests declared `exposure: partner` by month 11.
 
-| Stage | Definition at Encore | Month 9 | Month 11 |
-|---|---|---|---|
-| Aware | The owning team has seen the path's brief or newsletter entry | 14 | 14 |
-| Tried | The service has sent a webhook through it in the sandbox | 7 | 10 |
-| Adopted | The service sends its production webhooks through it | 2 | 6 |
-| Still using after six months | Adopted, and has not reintroduced its own sender | — | — |
+{% include diagrams/fig-6-4.svg %}
 
-*Figure 6.3 — The adoption funnel for shared webhook delivery. The stall between "tried" and "adopted" lasted until retries became configurable per partner.*
+*Figure 6.4 — The adoption funnel for shared webhook delivery. At month 9 seven services had tried it and two had adopted it; the stall between "tried" and "adopted" lasted until retries became configurable per partner. No count yet exists for the six-month stage.*
 
 The stall at "tried" was the most useful thing the funnel showed. Teams tried the shared delivery in their sandboxes, liked it, and did not move production traffic onto it, and interviews found out why within a week. The service retried every failed delivery on one fixed schedule, and Rowmate's endpoint rate-limited Encore's calls during large on-sales, so a fixed schedule would have hammered Rowmate at exactly the wrong moment. Partner APIs' own sender had a hand-tuned backoff for Rowmate. Moving to the shared service would have meant losing it. Once retry profiles became configurable per partner, in the manifest, the stall cleared.
 
@@ -2203,7 +2203,7 @@ Removal has one more step that is easy to forget: preventing new uses. Google's 
 
 A message sent once to 40 teams is received by a handful. People read announcements when they are relevant to the work in front of them, and for most teams, most of the time, a platform change is not. So the platform group says each thing several times, in several places, in the terms of each audience. Spotify's migration account makes the same point: after the email flood of 2017, it consolidated its communications and explained each migration's value separately to engineers, managers and leadership. The Architecture book's Section 15.5 covers the argument to leadership for funding a platform; here the audience is the engineers who must change their code.
 
-Encore's mechanisms are ordinary and kept up. Each path has a changelog. Each release gets a short demonstration at the monthly engineering forum. And the platform newsletter, sent every two weeks, reports each path's adoption funnel in the form of Figure 6.3, so that teams can see where their colleagues stand and the platform group is held publicly to the numbers it chose.
+Encore's mechanisms are ordinary and kept up. Each path has a changelog. Each release gets a short demonstration at the monthly engineering forum. And the platform newsletter, sent every two weeks, reports each path's adoption funnel in the form of Figure 6.4, so that teams can see where their colleagues stand and the platform group is held publicly to the numbers it chose.
 
 **Recap.** Adoption is a funnel with leaks at every stage, and the stage after adoption, continued use, is the one that counts; stalls are found by asking the teams stuck at them. A path wins by being the default and the cheapest route, with a priced exception path for teams that leave it, and the exception ledger feeds discovery. Order the first users for trust, run migrations as campaigns with an owner, a plan and an end date, find hidden dependents with announced brownouts, and block new uses of what is being removed.
 
@@ -2221,7 +2221,7 @@ The choice among them depends on the question. If we want to know whether the or
 
 Developers' own reports are the place to begin, for two reasons. They are quick to collect, and they see what systems cannot: no log records that an engineer spent a morning confused by a template, or gave up on a path and wrote their own. *Accelerate* devotes two chapters to the case for surveys and to psychometrics, the discipline of building questions whose answers can be trusted, and the Operations book's Section 7.4 uses Westrum's validated items in the same tradition. A survey earns trust when its items are tested, its cadence is stable and its response rate is published alongside its results, because a survey answered by a third of engineers describes a third of engineers.
 
-The harder discipline is tying each question to a decision. *Software Engineering at Google*'s chapter on measuring engineering productivity, by Ciera Jaspan, gives the method its name: Goals–Signals–Metrics (GSM). "A goal is a desired end result." "A signal is how you might know that you've achieved the end result." "A metric is proxy for a signal." The chapter adds that Google tries "to triangulate on the truth using mixed methods", setting survey answers beside logs. LinkedIn published a reusable framework built on the same method in 2023, its Developer Productivity and Happiness Framework, and it is a good starting point for anyone writing their own. Figure 6.4 shows GSM applied to Encore's partner-facing path.
+The harder discipline is tying each question to a decision. *Software Engineering at Google*'s chapter on measuring engineering productivity, by Ciera Jaspan, gives the method its name: Goals–Signals–Metrics (GSM). "A goal is a desired end result." "A signal is how you might know that you've achieved the end result." "A metric is proxy for a signal." The chapter adds that Google tries "to triangulate on the truth using mixed methods", setting survey answers beside logs. LinkedIn published a reusable framework built on the same method in 2023, its Developer Productivity and Happiness Framework, and it is a good starting point for anyone writing their own. Figure 6.5 shows GSM applied to Encore's partner-facing path.
 
 | Goal | Signal | Metric | Decision it informs |
 |---|---|---|---|
@@ -2230,7 +2230,7 @@ The harder discipline is tying each question to a decision. *Software Engineerin
 | The path stays in use | Teams do not rebuild their own senders | Funnel's six-month stage; new exceptions in the ledger | Whether the path is missing something |
 | New partner-facing services start faster | First deploys arrive sooner | Working days from repository creation to first production deploy | Whether the path delivered its brief |
 
-*Figure 6.4 — Goals–Signals–Metrics for the partner-facing path. Every metric names the decision it exists to inform.*
+*Figure 6.5 — Goals–Signals–Metrics for the partner-facing path. Every metric names the decision it exists to inform.*
 
 Encore runs a quarterly developer experience survey with ten core items that never change, so that one quarter can be compared with the next. Among them: "In the last quarter, I could get a change to production without waiting on another team." "I understand how to use the platform capabilities my service needs." "When something on the platform fails, I can tell why." Each path may add a few items of its own for a quarter or two. In the quarter after the path reached general availability, 71% of engineers answered, and that figure is printed at the top of every result.
 
@@ -2267,7 +2267,7 @@ AI assistance raises the question of whether these measures need to change. Enco
 **Deliverables:**
 
 1. **Discovery findings** — A plan for interviewing six teams about recent concrete episodes, an audit of one quarter's requests classified by kind, and a desire-path search for copied pipelines and duplicated libraries. State what each finding would change.
-2. **A journey map** — One journey, from idea to first production deploy, in the form of Figure 6.2, with each step checked against timestamps and the waits ranked.
+2. **A journey map** — One journey, from idea to first production deploy, in the form of Figure 6.3, with each step checked against timestamps and the waits ranked.
 3. **The thinnest increment** — The one or two capabilities you will build first, chosen with a stated rubric and a check on each capability's evolution stage, with a one-page path brief for each. Say what you will decline, including anything the portal's users have asked for.
 4. **One migration campaign** — A one-page plan for moving the three home-grown pipelines, or the signing library's importers, onto the platform: inventory, the work the platform does itself, support, tracking, brownouts and an end date.
 5. **The measures** — Five survey items and two system metrics with written definitions, tied to decisions by Goals–Signals–Metrics, and the adoption funnel you will report each month.
@@ -2316,7 +2316,11 @@ A software company that sells its system to other businesses soon finds that it 
 
 The best early answer came from a small company in a rented apartment on Telegraph Hill in San Francisco. On 8 March 1999, Marc Benioff, Parker Harris, Frank Dominguez and Dave Moellenhoff began work on the first version of Salesforce's customer relationship management (CRM) service, and on 7 February 2000 they launched it at an event they called "The End of Software". The slogan mocked the installed enterprise software of the day, in which every customer ran its own copy with its own customizations compiled in. Salesforce ran one shared copy for everyone, and that decision forced a second one. If thousands of businesses were to share one running system, and each wanted its own fields, its own forms and its own rules, then those differences could not live in the code, because there was only one code. They had to live in data. Over the next decade the company built this idea into a general platform, released as Force.com in 2008, and in 2009 its chief architect, Craig Weissman, with Steve Bobrowski, described the design at the ACM's SIGMOD conference. Weissman had joined in 2002, when the engineering team was still small, so the paper describes what the founders' design had grown into, and he did much to extend it.
 
-The companion whitepaper Salesforce published in 2008 states the principle with unusual clarity. "Inherently, a multitenant application must be dynamic in nature, or polymorphic, to fulfill the individual expectations of various tenants and their users." When a customer defines a custom table or lays out a form, the platform "does not create an 'actual' table in a database or compile any code. Instead, Force.com simply stores metadata that the platform's engine can use to generate the 'virtual' application components at runtime." A universal data dictionary holds every object, field, form and access rule as metadata. Tenant data sits in one very large table with hundreds of generic, variable-length columns, onto which each tenant's custom fields are mapped. Every row carries an organization identifier, the `OrgID`, which leads every index and partitions every table. Governors cap the processor time, memory and queries any one tenant's code may use in a single execution, so that no tenant can monopolize the shared engine, and deletions are soft, landing first in a recycle bin. Salesforce even reran every customer's unit tests against each new release of the platform, to learn before its customers did whether it had broken one of them. Nearly every section of this chapter descends from one of those mechanisms: the organization key on every row becomes Encore's tenant directory, the metadata becomes its configuration and entitlements, the governors become per-tenant quotas, and the recycle bin becomes the soft delete that Atlassian made universal across its own products after its outage of 2022.
+The companion whitepaper Salesforce published in 2008 states the principle with unusual clarity. "Inherently, a multitenant application must be dynamic in nature, or polymorphic, to fulfill the individual expectations of various tenants and their users." When a customer defines a custom table or lays out a form, the platform "does not create an 'actual' table in a database or compile any code. Instead, Force.com simply stores metadata that the platform's engine can use to generate the 'virtual' application components at runtime." A universal data dictionary holds every object, field, form and access rule as metadata. Tenant data sits in one very large table with hundreds of generic, variable-length columns, onto which each tenant's custom fields are mapped. Every row carries an organization identifier, the `OrgID`, which leads every index and partitions every table. Governors cap the processor time, memory and queries any one tenant's code may use in a single execution, so that no tenant can monopolize the shared engine, and deletions are soft, landing first in a recycle bin. Salesforce even reran every customer's unit tests against each new release of the platform, to learn before its customers did whether it had broken one of them. Nearly every section of this chapter descends from one of those mechanisms: the organization key on every row becomes Encore's tenant directory, the metadata becomes its configuration and entitlements, the governors become per-tenant quotas, and the recycle bin becomes the soft delete that Atlassian made universal across its own products after its outage of 2022. Figure 7.1 draws the design as the whitepaper describes it.
+
+{% include diagrams/fig-7-1.svg %}
+
+*Figure 7.1 — Force.com's multitenancy in schematic. The customizations live in the metadata, every tenant's rows share one table, and the `OrgID` that leads every index is the only thing that keeps them apart.*
 
 Encore has run a control plane since the venue chain's email in the Architecture book. About 500 self-service venues share pooled serverless cells of about 50, Professional venues run in Kubernetes cells with a database each, and one Enterprise tenant, `venue-chain-a`, has a silo of its own. Seven teams build Encore SaaS for venues, among them Tenant Onboarding, Tenant Identity and Tenant Configuration. Verified Resale now asks more of that control plane than venues ever did. It brings in resale partners, Rowmate and later Tessera, organizations with people, machines and a lifecycle of their own that are nevertheless not tenants. It gives every organizer a set of resale rules that must be edited, checked, rolled out and audited like code. And the people who run the marketplace behind the scenes need tools of their own. This chapter follows each of those demands into the control plane that has to meet it.
 
@@ -2328,18 +2332,11 @@ Touring crews have a word for the work done before a show reaches a town: the **
 
 The first step is to define the event that stops the clock, and to define it so that it cannot be gamed. **Activation** is the moment a new customer first gets the value the product promised; the term comes from the startup "pirate metrics" of the late 2000s, and Alistair Croll and Benjamin Yoskovitz's *Lean Analytics* (2013) treats it at length for SaaS. For a venue on Encore, the value is a ticket sold to a stranger. Encore therefore counts activation as the first paid order placed by someone who is not on the venue's own staff, so that the box-office manager's test purchase on the first evening does not count. Every step before that is instrumented as a tracking event, named by the convention the Products book's Section 4.2 lays down: `onboarding_storefront_provisioned`, `onboarding_payout_account_verified`, `onboarding_seat_map_completed`, `onboarding_first_event_published` and `onboarding_first_sale_recorded`. With those events in place, the funnel is a query.
 
-The funnel has to be cut by tier before anyone reads it. An Enterprise onboarding contains weeks of contract negotiation and identity setup, and those waits belong to the deal and say nothing about friction in the product, so mixing them into the self-service numbers would hide everything interesting. Figure 7.1 shows Encore's self-service venues over the four quarters before Verified Resale.
+The funnel has to be cut by tier before anyone reads it. An Enterprise onboarding contains weeks of contract negotiation and identity setup, and those waits belong to the deal and say nothing about friction in the product, so mixing them into the self-service numbers would hide everything interesting. Figure 7.2 shows Encore's self-service venues over the four quarters before Verified Resale.
 
-| Step (tracking event) | Venues reaching it | Share of sign-ups | Median time from sign-up |
-|---|---|---|---|
-| Signed up | 180 | 100% | — |
-| Storefront provisioned | 178 | 99% | 4 min |
-| Payout account verified | 161 | 89% | 1 day |
-| Seat map completed | 97 | 54% | 6 days |
-| First event published | 92 | 51% | 7 days |
-| First sale to a fan | 85 | 47% | 13 days |
+{% include diagrams/fig-7-2.svg %}
 
-*Figure 7.1 — Encore's self-service onboarding funnel over four quarters. The provisioning workflow takes minutes; the venue's own work takes days, and most of the loss happens at the seat map.*
+*Figure 7.2 — Encore's self-service onboarding funnel over four quarters, with each step's venues, share of sign-ups and median time from sign-up. The provisioning workflow takes minutes; the venue's own work takes days, and most of the loss happens at the seat map.*
 
 Two readings of the figure are worth separating. The first concerns the workflow. Provisioning, the part the Architecture book asked to happen in minutes, does: 99% of venues have a storefront within four minutes of signing up. Engineers looking only at the workflow would conclude that onboarding works. The second reading concerns the customer. Fewer than half of the venues that signed up sold a ticket, and the largest single loss, 64 venues, is at the seat map. When Tenant Onboarding cut the funnel by venue type, the cause became plain. Standing-room clubs, which need only a capacity, passed through the step in minutes; seated halls had to draw every row in the seat-map builder by hand, and many gave up. The fix was a seat-map importer that reads the floor plans and seat lists venues already hold from their previous ticketing system, and Event Setup, which owns the builder, shipped it. The general lesson is that the activation metric must belong to the customer's journey as a whole, because a workflow measured only on its own steps will report success while customers stall somewhere it cannot see.
 
@@ -2374,7 +2371,7 @@ The Operations book's curtain-up workflow (its Section 3.2) follows the same pat
 
 #### Signup and its abuse {#c7-signup-abuse}
 
-Open signup is the reason self-service is cheap, and it is also an invitation. The fraud that follows a ticketing platform's open door is the fake organizer, who publishes an event that will never happen, sells tickets to it and disappears with the money, leaving fans with the loss and the platform with chargebacks. The obvious defense, verifying every new business before it may sell anything, would destroy the activation curve of Figure 7.1, since **know-your-business (KYB)** checks, which verify that a company exists and who controls it, can take days.
+Open signup is the reason self-service is cheap, and it is also an invitation. The fraud that follows a ticketing platform's open door is the fake organizer, who publishes an event that will never happen, sells tickets to it and disappears with the money, leaving fans with the loss and the platform with chargebacks. The obvious defense, verifying every new business before it may sell anything, would destroy the activation curve of Figure 7.2, since **know-your-business (KYB)** checks, which verify that a company exists and who controls it, can take days.
 
 The published practice of marketplace payment platforms resolves the tension by separating the right to sell from the right to be paid. Stripe's Connect platform, for instance, tracks whether an account may accept charges separately from whether it may receive payouts, collects the required information "upfront or incrementally", and disables payouts when a verification deadline passes. Eventbrite tells new organizers that their first payout will be sent after their event ends. The principle is to let activation proceed while the money waits, but it comes with conditions that are easy to forget. The payment service provider (PSP) decides what must be known before the first charge, and that minimum varies by country and business type, so "no checks before the first sale" is never quite true. And holding the payout is not enough to protect fans: the funds themselves must stay where a refund can reach them, or a fake event leaves fans with nothing to be refunded from.
 
@@ -2487,7 +2484,7 @@ Every rule carries an effective date, because an organizer who tightens the wind
 
 #### Flags, entitlements and configuration {#c7-flags-entitlements-config}
 
-Three mechanisms can each switch behavior on for one customer and off for another, and that resemblance is the source of a persistent confusion. A release flag can be targeted at one organizer; so can an entitlement; so can a configuration value. Used interchangeably, they produce systems in which nobody can say why a customer sees a feature, who decided it, or whether removing the switch will break a contract. Figure 7.2 separates them by purpose, owner and lifetime.
+Three mechanisms can each switch behavior on for one customer and off for another, and that resemblance is the source of a persistent confusion. A release flag can be targeted at one organizer; so can an entitlement; so can a configuration value. Used interchangeably, they produce systems in which nobody can say why a customer sees a feature, who decided it, or whether removing the switch will break a contract. Figure 7.3 separates them by purpose, owner and lifetime.
 
 | Mechanism | Purpose | Owner | Lifetime | Encore example |
 |---|---|---|---|---|
@@ -2495,7 +2492,7 @@ Three mechanisms can each switch behavior on for one customer and off for anothe
 | Entitlement | Grant what a customer has paid for or qualifies for | Product, through the plan | As long as the plan | `verified_resale` on every organizer plan |
 | Configuration | Record how a customer has chosen to use the product | The customer, or operations | As long as the customer | An organizer's resale window for one event |
 
-*Figure 7.2 — Three switches, three owners. The confusion begins when a switch outlives its purpose and is quietly used as one of the others.*
+*Figure 7.3 — Three switches, three owners. The confusion begins when a switch outlives its purpose and is quietly used as one of the others.*
 
 Pete Hodgson's taxonomy of feature toggles (2017), which Section 4.5 uses, includes **permission toggles** as a fourth kind of flag: toggles that turn features on for particular users, such as premium customers. Hodgson notes that permission toggles can be very long-lived. Encore's rule is a refinement for a SaaS company: a permission toggle that will live longer than a release is an entitlement, and it moves into the entitlement service, where it acquires an owner, a plan and a place in billing. Knight Capital, which the Resilience book's Section 4.1 recalls, showed how dangerous a repurposed switch can be.
 
@@ -2571,17 +2568,11 @@ The first dispute in the French launch tested the console. A buyer in Lyon wrote
 
 #### A lifecycle as a state machine {#c7-lifecycle-states}
 
-The Architecture book named the stages, onboarding, tier changes, suspension and offboarding, in its Section 14.2. Building them well means making the lifecycle explicit as a **state machine**, a fixed set of states with defined transitions between them, owned by one service, with each transition published as an event that every affected service must handle. Figure 7.3 shows Encore's.
+The Architecture book named the stages, onboarding, tier changes, suspension and offboarding, in its Section 14.2. Building them well means making the lifecycle explicit as a **state machine**, a fixed set of states with defined transitions between them, owned by one service, with each transition published as an event that every affected service must handle. Figure 7.4 shows Encore's.
 
-| State | Entered by | What it means for fans | What every service must do |
-|---|---|---|---|
-| `trial` | Sign-up | No public sales yet | Allow setup and test sales only |
-| `live` | Onboarding's verify step passes | Normal sales and resale | Serve normally |
-| `suspended` | A person's decision, with reason | Valid tickets stay valid; no new sales | Stop new sales; pause resale listings; hold payouts |
-| `offboarding` | Notice of termination or switch | Future events honored or re-homed | Run export; stop new events; keep serving existing tickets |
-| `closed` | Retrieval period ends | None remain | Erase per schedule; issue deletion record |
+{% include diagrams/fig-7-4.svg %}
 
-*Figure 7.3 — Encore's tenant lifecycle. Each transition is an event, and each consumer's handling of it is tested by contract.*
+*Figure 7.4 — Encore's tenant lifecycle, with what each state means for fans and for every service. Each transition is an event, and each consumer's handling of it is tested by contract.*
 
 The directory owns the state, and the transitions are published as `TenantSuspended`, `TenantReinstated`, `TenantOffboardingStarted` and so on. A transition that a service ignores is a bug, and the platform finds it with a contract test: every service that holds tenant data or acts on a tenant's behalf registers, in the service registry, how it handles each transition, and a consumer-driven contract test of the kind Section 3.3 describes checks that it does so. When Verified Resale's services joined, the test failed on the first build: the Resale service did nothing on `TenantSuspended`, so a suspended venue's events would have kept accepting new listings. The fix took a day; in production, the same gap would have surfaced only when a fan complained.
 
@@ -2603,7 +2594,7 @@ The Salesforce incident of May 2019 shows the other side. Cutting off every orga
 
 #### Export and switching {#c7-export-switching}
 
-Every tenant will one day leave, and the law now says a good deal about how. For people, the General Data Protection Regulation (GDPR) gave a right to data portability in Article 20, covering personal data they provided where processing rests on consent or contract. For business customers of cloud and SaaS services, the EU Data Act (Regulation 2023/2854) applies from 12 September 2025, and its chapter on switching between data processing services sets clocks that a switching runbook must meet. Figure 7.4 gathers them.
+Every tenant will one day leave, and the law now says a good deal about how. For people, the General Data Protection Regulation (GDPR) gave a right to data portability in Article 20, covering personal data they provided where processing rests on consent or contract. For business customers of cloud and SaaS services, the EU Data Act (Regulation 2023/2854) applies from 12 September 2025, and its chapter on switching between data processing services sets clocks that a switching runbook must meet. Figure 7.5 gathers them.
 
 | Obligation (Data Act article) | What it requires |
 |---|---|
@@ -2616,9 +2607,9 @@ Every tenant will one day leave, and the law now says a good deal about how. For
 | Charges (Art. 29) | Reduced charges, at cost, until 12 January 2027; no switching charges from that date |
 | Interfaces (Art. 30) | Open interfaces for portability, free of charge |
 
-*Figure 7.4 — The Data Act's switching clocks, as a runbook must meet them. The charges row agrees with the Architecture book's Section 13.4.*
+*Figure 7.5 — The Data Act's switching clocks, as a runbook must meet them. The charges row agrees with the Architecture book's Section 13.4.*
 
-The practice that satisfies those clocks is a documented export format, published in advance with the exhaustive list of data categories; a self-service export through the console and an open API; and a switching runbook run as a workflow whose timers are the clocks of Figure 7.4. Encore's export for a venue tenant includes its events, seat maps, orders, tickets with their current state, resale history and audit log. Organizers, which are not tenants, get the same export by Encore's own policy.
+The practice that satisfies those clocks is a documented export format, published in advance with the exhaustive list of data categories; a self-service export through the console and an open API; and a switching runbook run as a workflow whose timers are the clocks of Figure 7.5. Encore's export for a venue tenant includes its events, seat maps, orders, tickets with their current state, resale history and audit log. Organizers, which are not tenants, get the same export by Encore's own policy.
 
 A venue's resale history and orders contain fans' personal data, for which the venue and Encore play different roles under the GDPR, depending on the field and the purpose. Encore's export format therefore declares, field by field, what personal data it carries and the basis on which it is transferred, and its design was reviewed with Encore's data protection officer before the first tenant used it.
 
@@ -2703,7 +2694,11 @@ Bank of America launched BankAmericard in California in 1958, and in 1966 it beg
 
 Dee Hock was running the card operation of the National Bank of Commerce in Seattle, one of the early licensees, when the arrangement reached its crisis. At a contentious licensee meeting in Columbus, Ohio, in 1968, he argued for restructuring and was put at the head of a committee to address the problems. In 1969 he gathered a hand-picked group of bankers at a hotel in Sausalito, California, to design a new organization, and in 1970 Bank of America gave up control of the program. The issuing banks formed **National BankAmericard Inc. (NBI)**, which the court later described as "a for-profit nonstock-membership corporation", with Hock as its first president and chief executive. The banks owned the network and made its rules together, and they went on competing for customers as fiercely as before.
 
-Late in 1971 NBI's board did something that looks small and was not. It adopted a uniform fee, set by the network and paid by the merchant's bank to the card's issuer on every transaction that cleared through NBI's system, to carry part of the issuer's costs: credit losses, the interest-free period, and the fact that cardholders paid no fee. The fee was a default. Members could bypass the network's clearing and negotiate other rates privately, but the default spared them from having to negotiate at all. In 1973 Hock pushed through VisaNet, the electronic system for authorization and clearing, and in 1976 the organization took the name Visa. Hock resigned in 1984, later told the story in *Birth of the Chaordic Age* (1999), reissued with new chapters as *One from Many* (2005), and died in 2022.
+Late in 1971 NBI's board did something that looks small and was not. It adopted a uniform fee, set by the network and paid by the merchant's bank to the card's issuer on every transaction that cleared through NBI's system, to carry part of the issuer's costs: credit losses, the interest-free period, and the fact that cardholders paid no fee. The fee was a default. Members could bypass the network's clearing and negotiate other rates privately, but the default spared them from having to negotiate at all. In 1973 Hock pushed through VisaNet, the electronic system for authorization and clearing, and in 1976 the organization took the name Visa. Hock resigned in 1984, later told the story in *Birth of the Chaordic Age* (1999), reissued with new chapters as *One from Many* (2005), and died in 2022. Figure 8.1 draws the system the banks built and the road from licensees to Visa.
+
+{% include diagrams/fig-8-1.svg %}
+
+*Figure 8.1 — The four-party system under NBI. The charge cleared through the network, and the fee ran the other way, from the merchant's bank to the issuer, at a rate the network set and any two banks could still replace by private agreement.*
 
 Three things in the story carry straight across to Verified Resale. The first is that rivals can sell through one system when the rules are shared and the network, not each member, enforces them. The court named the prize "universality of acceptance — the key element to a national payment system", and Verified Resale's prize is the same in miniature: a reissued ticket must work at every gate, whichever partner sold it. The second is that a network-set default for dividing money removes a whole class of negotiation, which is what Encore's fixed split of the buyer's fee does. The third is less comfortable. Shared rules about price attract regulators. NaBanco, a merchant processor, sued in 1979, claiming the fee was horizontal price-fixing; the district court found for Visa in 1984, and in January 1986 the Eleventh Circuit affirmed, calling the fee "an internal control mechanism" of a joint venture. Decades later the European Union (EU) capped consumer interchange at 0.2% for debit cards and 0.3% for credit cards. A rule that sets a price must be defensible in public, because sooner or later someone will ask it to defend itself.
 
@@ -2737,7 +2732,7 @@ A festival site is a fair picture of the levers. Wristbands of different colors 
 
 #### Fairness as invariants {#c8-fairness-invariants}
 
-The Products book's Chapter 2 made fairness Encore's strategy for resale, and this book's Section 1.3 restated it as five invariants that the code must keep. A **design invariant** is a property the system must keep in every state it can reach, enforced at one named place and proved by a test that runs on every change. Each part prevents a failure: "every state" rules out invariants that break during retries, "one named place" rules out enforcement smeared across services where each team assumes another is checking, and "a test on every change" rules out slow drift. Chapter 3 builds the tests, mostly as property-based tests; Figure 8.1 records where each invariant is enforced in the running system.
+The Products book's Chapter 2 made fairness Encore's strategy for resale, and this book's Section 1.3 restated it as five invariants that the code must keep. A **design invariant** is a property the system must keep in every state it can reach, enforced at one named place and proved by a test that runs on every change. Each part prevents a failure: "every state" rules out invariants that break during retries, "one named place" rules out enforcement smeared across services where each team assumes another is checking, and "a test on every change" rules out slow drift. Chapter 3 builds the tests, mostly as property-based tests; Figure 8.2 records where each invariant is enforced in the running system.
 
 | Invariant (Section 1.3) | Where the system enforces it | Owner |
 |---|---|---|
@@ -2747,7 +2742,7 @@ The Products book's Chapter 2 made fairness Encore's strategy for resale, and th
 | 4. Every resale buyer passes Bot Screening and the per-buyer limits. | Resale checkout passes through Bot Screening and the per-buyer limit check before a listing is reserved | Bot Screening, Resale |
 | 5. Partners never see sales-velocity data. | Partner responses are built from the same coarsened availability everyone receives; a contract test fails any partner-facing field tagged as velocity | Partner APIs |
 
-*Figure 8.1 — The five fairness invariants and the single place each is enforced. Other services may check again, but each invariant has one owner.*
+*Figure 8.2 — The five fairness invariants and the single place each is enforced. Other services may check again, but each invariant has one owner.*
 
 Building codes are the right comparison, and they are older than any of our methods. A city does not rely on each builder's goodwill to keep a stairwell wide enough; it writes the requirement down, names the inspection at which it is checked, and refuses occupancy until it passes. The comparison breaks in our favor. A building inspector visits a few times during construction, and a building can drift out of compliance for years between inspections. An invariant test runs on every change, so the system can never be further than one change away from proof.
 
@@ -2773,21 +2768,13 @@ An unsold listing is a broken promise: the fan is out of pocket and cannot atten
 
 #### The listing lifecycle {#c8-listing-lifecycle}
 
-Evans and Schmalensee call the design of a marketplace's rules its "interior design", and their point is that the rules are part of the product, as much as any screen. In software the rules attach most naturally to transitions. A listing is a small state machine, and each transition is the moment at which some rule is checked and some team's code runs. Modeling a lifecycle as a state machine with guarded transitions is long industry practice; its value here is that it forces the organizer's rules (Section 7.3) and the platform's rules to be checked at named moments, where they can be tested, and nowhere else.
+Evans and Schmalensee call the design of a marketplace's rules its "interior design", and their point is that the rules are part of the product, as much as any screen. In software the rules attach most naturally to transitions. A listing is a small state machine, shown in Figure 8.3, and each transition is the moment at which some rule is checked and some team's code runs. Modeling a lifecycle as a state machine with guarded transitions is long industry practice; its value here is that it forces the organizer's rules (Section 7.3) and the platform's rules to be checked at named moments, where they can be tested, and nowhere else.
 
-| From | To | Trigger | Guards checked | Owner |
-|---|---|---|---|---|
-| — | listed | Seller lists on a partner or in Encore's app | Gate provenance; per-fan listing limit; price at or below cap; resale enabled; window open; step-up sign-in after a recent credential change | Resale |
-| listed | reserved | Buyer starts checkout | Bot Screening; per-buyer limit; window open | Resale, Bot Screening |
-| reserved | listed | Payment not authorized within 5 minutes | — | Resale |
-| reserved | sold | Payment authorized with strong customer authentication | Primary payment service provider (PSP) available | Orders & Payments |
-| sold | reissued | Sale recorded | Old ticket identity voided and new one issued in one step | Inventory |
-| listed | withdrawn | Seller withdraws, organizer disables resale, a rule change makes the listing invalid, or the event is cancelled | — | Resale |
-| listed | expired | Window closes, two hours before doors | — | Resale |
+{% include diagrams/fig-8-3.svg %}
 
-*Figure 8.2 — The listing state machine. Every rule is checked on a transition; partners are told of every transition by webhook and reconcile their copies hourly.*
+*Figure 8.3 — The listing state machine. Every rule is checked on a transition; partners are told of every transition by webhook and reconcile their copies hourly.*
 
-Two details of the table deserve a closer look. The first is the window's close. Encore ends resale two hours before doors, by default, so that reissue, delivery to the buyer's phone and the update of every gate's revocation list can finish while there is still time to fix anything that goes wrong; organizers may shorten the window but cannot lengthen it. The second is the "withdrawn" row, which is where rule changes bite. When an organizer lowers a cap below the price of an existing listing, the listing is withdrawn and the seller is invited to list again at the new price. The alternative, letting old listings keep their old terms, would quietly turn a tightening rule into a loosening one for everyone who listed early, which is precisely the kind of exception that invariant 3 exists to forbid. Partners hold copies of listings, and copies drift, so every transition is published to them and they reconcile on a schedule, as the Products book's Section 9.5 designs.
+Two details of the figure deserve a closer look. The first is the window's close. Encore ends resale two hours before doors, by default, so that reissue, delivery to the buyer's phone and the update of every gate's revocation list can finish while there is still time to fix anything that goes wrong; organizers may shorten the window but cannot lengthen it. The second is the "withdrawn" transition, which is where rule changes bite. When an organizer lowers a cap below the price of an existing listing, the listing is withdrawn and the seller is invited to list again at the new price. The alternative, letting old listings keep their old terms, would quietly turn a tightening rule into a loosening one for everyone who listed early, which is precisely the kind of exception that invariant 3 exists to forbid. Partners hold copies of listings, and copies drift, so every transition is published to them and they reconcile on a schedule, as the Products book's Section 9.5 designs.
 
 #### Reissue as the trust mechanism {#c8-reissue}
 
@@ -2831,7 +2818,7 @@ Where the law caps the buyer's total, as Ireland's Sale of Tickets Act 2021 does
 
 Every marketplace attracts people who want to cheat it, and Evans and Schmalensee devote a chapter (Chapter 9 of *Matchmakers*) to the "fakesters" and "fraudsters" that every matchmaker must keep out. Encore's resale fraud falls into four kinds. Stolen cards buy resale tickets, and the real cardholder later reverses the charge. An attacker takes over a fan's account, lists the fan's ticket and changes the payout account to their own. A seller and buyer agree on a side payment off the platform to get around the cap. And a trader poses as a fan, listing far more tickets than any fan buys.
 
-The controls are standard ones, applied at the transitions of Figure 8.2. The payout five days after the event is a hold that lets most card disputes surface before any money leaves. Velocity rules, written by Trust & Safety, watch how many listings an account creates and how fast. Step-up authentication is required before listing and before any change to a payout account. Encore's first real fraud pattern after launch was a listing created within minutes of a password reset, followed by a change of payout account, and the rule written for it now requires step-up sign-in and a review by Trust & Safety whenever a listing follows a credential change within 24 hours. For traders, the law adds a duty as well as a motive. The Digital Services Act (Regulation 2022/2065) requires online marketplaces to collect and check identifying information from traders before letting them sell to consumers (Article 30), and since the Omnibus Directive marketplaces must tell consumers whether a seller is a trader. Encore admits no professional resellers at all, so its rule detects accounts that behave like traders, more than 20 tickets listed across more than four events in 12 months, and stops them listing until a person has reviewed the account.
+The controls are standard ones, applied at the transitions of Figure 8.3. The payout five days after the event is a hold that lets most card disputes surface before any money leaves. Velocity rules, written by Trust & Safety, watch how many listings an account creates and how fast. Step-up authentication is required before listing and before any change to a payout account. Encore's first real fraud pattern after launch was a listing created within minutes of a password reset, followed by a change of payout account, and the rule written for it now requires step-up sign-in and a review by Trust & Safety whenever a listing follows a credential change within 24 hours. For traders, the law adds a duty as well as a motive. The Digital Services Act (Regulation 2022/2065) requires online marketplaces to collect and check identifying information from traders before letting them sell to consumers (Article 30), and since the Omnibus Directive marketplaces must tell consumers whether a seller is a trader. Encore admits no professional resellers at all, so its rule detects accounts that behave like traders, more than 20 tickets listed across more than four events in 12 months, and stops them listing until a person has reviewed the account.
 
 Chargebacks need their own procedure. A buyer can attend a show and then tell the card issuer the ticket never arrived. A card-scheme dispute has deadlines, and a marketplace that cannot answer in time loses by default. Encore's strongest evidence is the scan at the gate, which shows that the reissued ticket was used, at which door and when. Trust & Safety assembles the evidence automatically from the ledger and the scan records, and the policy on who bears the loss is written down: a chargeback that arrives before the seller is paid reverses the sale from the held proceeds, and one that arrives after is Encore's loss unless the seller's own fraud is shown.
 
@@ -2839,7 +2826,7 @@ Reputation is the classic marketplace defense, and the best evidence for its val
 
 **Recap.** Liquidity needs measures of its own, chosen per event class, because an unsold listing breaks a promise to the seller. Rules belong on the transitions of an explicit listing lifecycle, where each is checked once and tested. Reissue, with revocation at every gate, is the mechanism that makes a resold ticket trustworthy and speculative listings impossible. Under PSD2 a marketplace that serves both sides must never hold the buyer's money, so the funds flow through a PSP's marketplace product while Encore keeps the ledger, and the fraud controls sit at the same transitions as the rules.
 
-**Exercise 8.2.** Draw your marketplace's listing state machine as a table like Figure 8.2. Mark the transition at which each rule and each fraud control applies, and name its owner. Then trace one payment from buyer to seller and write down, for every day the money is in flight, whose account it sits in. If any of those accounts is yours, take the question to counsel before you build further.
+**Exercise 8.2.** Draw your marketplace's listing state machine as Figure 8.3 draws Encore's. Mark the transition at which each rule and each fraud control applies, and name its owner. Then trace one payment from buyer to seller and write down, for every day the money is in flight, whose account it sits in. If any of those accounts is yours, take the question to counsel before you build further.
 
 ### 8.3 Partner Programs
 
@@ -2865,7 +2852,7 @@ Tessera's failed first run shows what certification is really testing. Tessera's
 
 #### What partners may and may not do {#c8-may-and-may-not}
 
-The contract states the policy, and the gateway enforces whatever part of it can be enforced by machine. The principle at Encore is that every "may not" has an enforcement next to it, either automatic at the gateway or detectable in audit. Figure 8.3 is the list as it stands at the month-18 review.
+The contract states the policy, and the gateway enforces whatever part of it can be enforced by machine. The principle at Encore is that every "may not" has an enforcement next to it, either automatic at the gateway or detectable in audit. Figure 8.4 is the list as it stands at the month-18 review.
 
 | Partners may | Partners may not | Enforcement |
 |---|---|---|
@@ -2875,7 +2862,7 @@ The contract states the policy, and the gateway enforces whatever part of it can
 | Use buyers' personal data to deliver the purchase and support it | Use resale buyers' data for unrelated marketing without the buyer's consent | Contract; data-protection review at certification |
 | Use organizer and artist branding within the organizer's rules | Imply an endorsement the organizer has not given | Contract; organizer complaint route |
 
-*Figure 8.3 — Encore's "may and may not" list for resale partners. Breaches of policy move up a ladder of warning, throttle, suspension and termination.*
+*Figure 8.4 — Encore's "may and may not" list for resale partners. Breaches of policy move up a ladder of warning, throttle, suspension and termination.*
 
 Breaches move up an enforcement ladder: a written warning, then throttling, then suspension, and termination last. The ladder is published in the agreement, and the partner manager decides each step with Partner APIs. Encore has used the second rung once. In the third month after launch a partner's listing traffic for one event exceeded its event-scoped limit during a major on-sale, and it was throttled to its quota until the sale ended; the cause was a retry loop in its synchronization job. Credential hygiene belongs to the Resilience book's Section 7.2, and the partner terms, including the 12 months' notice, to the Products book's Section 9.4.
 
@@ -2893,7 +2880,7 @@ Parity clauses are the other trap. A wide parity clause, one that requires a sel
 
 **Recap.** A partner program is the business wrapper around an API product: agreements, tiers, enablement, review, support and change communication. Onboarding is a workflow on shared rails, with sandbox credentials at once and production credentials after certification, and certification should test behavior when rules change. Every "may not" needs an enforcement beside it and a published ladder above it, commission should be earned only when the sale holds, and partners who compete need walls between them, with no parity clauses that would need defending.
 
-**Exercise 8.3.** Write your partner program's "may and may not" list as a table like Figure 8.3. For each "may not", name the enforcement: a scope, a limit, a test, an audit or a contract clause. Mark every "may not" whose only enforcement is a contract clause, and decide whether you can move it to the gateway.
+**Exercise 8.3.** Write your partner program's "may and may not" list as a table like Figure 8.4. For each "may not", name the enforcement: a scope, a limit, a test, an audit or a contract clause. Mark every "may not" whose only enforcement is a contract clause, and decide whether you can move it to the gateway.
 
 ### 8.4 InnerSource
 
@@ -2932,7 +2919,7 @@ The cases Cooper and Stol collected point to one conclusion, which is their synt
 
 #### Encore's resale rules engine {#c8-rules-engine}
 
-The resale rules engine is the typed library that evaluates every organizer and platform rule at the transitions of Figure 8.2. The Resale team hosts it, and five guest teams contribute rule types from their own domains: Orders & Payments, Inventory, Trust & Safety, Pricing & Presales and Festivals. Festivals is writing a cap kind for multi-day passes split into day tickets, where face value must be computed from the pass price, so that festival passes, deferred at launch, can join; Pricing & Presales contributed the rules for tickets bought in presales; Trust & Safety contributes the listing-velocity rules. Each team knows its own domain far better than the Resale team could, and each would otherwise have waited a quarter in Resale's backlog for a change it could write in a week.
+The resale rules engine is the typed library that evaluates every organizer and platform rule at the transitions of Figure 8.3. The Resale team hosts it, and five guest teams contribute rule types from their own domains: Orders & Payments, Inventory, Trust & Safety, Pricing & Presales and Festivals. Festivals is writing a cap kind for multi-day passes split into day tickets, where face value must be computed from the pass price, so that festival passes, deferred at launch, can join; Pricing & Presales contributed the rules for tickets bought in presales; Trust & Safety contributes the listing-velocity rules. Each team knows its own domain far better than the Resale team could, and each would otherwise have waited a quarter in Resale's backlog for a change it could write in a week.
 
 The fairness invariant tests are the gate every contribution must pass, and the guide forbids changing them in the same pull request as a rule. Guests are trusted to change the rules because no rule they write can break an invariant without a test failing, and the invariant tests change only through the host's own review. The typed schema has a second benefit: the organizer rule assistant, the one AI feature in Verified Resale, can express only rules the schema allows, so whatever it drafts is bounded by the same tests.
 
@@ -2966,25 +2953,15 @@ Encore's choice is showback only. The Resilience book's Section 2.5 already allo
 
 #### Unit economics of the business platform {#c8-unit-economics}
 
-**Contribution margin per resold ticket** is the revenue Encore keeps from one resale minus the costs that resale itself causes. The Products book's Chapter 5 sets the price; this subsection asks what the price leaves. Figure 8.4 works the example on a €60 ticket, sold once through a partner and once in Encore's own app. The PSP fee, fraud loss and support cost are Encore's averages at the month-18 review.
+**Contribution margin per resold ticket** is the revenue Encore keeps from one resale minus the costs that resale itself causes. The Products book's Chapter 5 sets the price; this subsection asks what the price leaves. Figure 8.5 works the example on a €60 ticket, sold once through a partner and once in Encore's own app. The PSP fee, fraud loss and support cost are Encore's averages at the month-18 review.
 
-| Line (per resold €60 ticket) | Through a partner | In Encore's app |
-|---|---|---|
-| Buyer's service fee (10%) | €6.00 | €6.00 |
-| Partner commission (4 points) | −€2.40 | — |
-| Organizer share (3 points) | −€1.80 | −€1.80 |
-| Encore's retained fee | €1.80 | €4.20 |
-| PSP fees on the €66 payment | −€0.85 | −€0.85 |
-| Variable platform cost | −€0.12 | −€0.12 |
-| Fraud losses (average) | −€0.15 | −€0.15 |
-| Support (2% of resales disputed, at €15 each) | −€0.30 | −€0.30 |
-| **Contribution margin** | **€0.38** | **€2.78** |
+{% include diagrams/fig-8-5.svg %}
 
-*Figure 8.4 — Contribution margin per resold ticket. The partner channel runs on a margin of 38 cents, and each additional point of dispute rate costs 15 of them.*
+*Figure 8.5 — Contribution margin per resold ticket. The partner channel runs on a margin of 38 cents, and each additional point of dispute rate costs 15 of them.*
 
 On the partner channel, which carries most resales, the margin is 38 cents, and it is far more sensitive to disputes than to the fee. Each additional percentage point of resales that end in a dispute costs €0.15, so a dispute rate of about 4.5% would wipe the margin out entirely, while raising Encore's share of the fee by half a point would add only €0.30. Encore learned from this that the cost of handling one dispute, about €15 of an agent's time, decides its margin more than the fee level does, and it has spent its effort there: automatic assembly of gate-scan evidence, a self-service dispute flow, and the tracking of dispute rates per partner described in Section 8.3.
 
-The other column carries a temptation, and the margin of €2.78 in Encore's own app makes it plain. Encore earns seven times as much when a buyer purchases in its app, and a business optimizing its margin would steer buyers there. The rule from Section 8.3, every channel receiving the same listings in the same order, is what stops it, and the table is the reason the rule had to be written down before anyone was tempted.
+The other column carries a temptation, and the margin of €2.78 in Encore's own app makes it plain. Encore earns seven times as much when a buyer purchases in its app, and a business optimizing its margin would steer buyers there. The rule from Section 8.3, every channel receiving the same listings in the same order, is what stops it, and the figure is the reason the rule had to be written down before anyone was tempted.
 
 #### When to stop building {#c8-stop-building}
 
@@ -3000,7 +2977,7 @@ A platform's **take rate** is the share of the value of each transaction that th
 
 **Recap.** Encore funds its internal platform centrally as a long-lived product and funds its business platform in tranches against a margin, and it judges each by the test that fits it. It shows teams their costs without billing them, because chargeback's overhead and its pull away from the paved road outweigh its benefits at Encore's scale. Contribution margin per resold ticket shows that disputes, more than the fee, decide whether resale pays its way. A stop-doing list retires what has become commodity, and one quarterly page reports both platforms by time to value.
 
-**Exercise 8.5.** Compute the contribution margin per transaction for one marketplace or platform feature you know, line by line as in Figure 8.4. Name the cost you are least sure of, and work out how much it would have to move to make the margin zero. If that movement is small, find out who owns the cost.
+**Exercise 8.5.** Compute the contribution margin per transaction for one marketplace or platform feature you know, line by line as in Figure 8.5. Name the cost you are least sure of, and work out how much it would have to move to make the margin zero. If that movement is small, find out who owns the cost.
 
 ### Kata: Gear Between Rivals
 
@@ -3009,7 +2986,7 @@ A platform's **take rate** is the share of the value of each transaction that th
 **Deliverables:**
 
 1. **Core interaction and invariants** — Write the core interaction in one sentence, naming participants, unit of value and filter, and map each phrase to a component and owner. Then write the invariants that keep the market fair to small houses and large ones, and name the single place each is enforced.
-2. **The rental state machine** — Draw the lifecycle of a sub-rental, from listing through booking, handover, return and inspection to settlement, as a table like Figure 8.2. Mark the transition at which each rule, each fraud control and each damage claim applies.
+2. **The rental state machine** — Draw the lifecycle of a sub-rental, from listing through booking, handover, return and inspection to settlement, as a diagram like Figure 8.3. Mark the transition at which each rule, each fraud control and each damage claim applies.
 3. **Money and deposits** — Trace the buyer's payment, the deposit and the fee from the booking house to the owning house. Decide who holds the deposit while the gear is out, and justify the decision against the possession-or-control rule of Section 8.2. Say what happens to the deposit when a damage claim is disputed.
 4. **The partner program** — Write the "may and may not" list for the three partner apps, with an enforcement for every "may not", and the certification tests that prove a partner handles a rule change and a cancelled booking correctly.
 5. **Contribution margin** — Compute the contribution margin per sub-rental, line by line, including payment fees and the cost of handling a damage claim. Name the cost you are least sure of and the movement in it that would make the margin zero.
@@ -3065,9 +3042,13 @@ Encore reached 400 engineers in its seventh year and has stayed at about that si
 
 In 1977 Digital Equipment Corporation released the VAX, a 32-bit machine, and Data General's 16-bit Eclipse line began to lose sales. Data General's founder, Edson de Castro, moved the company's lead development group to North Carolina to build an ambitious new 32-bit design, the Fountainhead Project. Tom West, who ran the Eclipse group in Westborough, was among the senior engineers who stayed behind, and in 1978 he proposed something smaller: a 32-bit extension of the Eclipse, compatible with the software customers already ran, offered as insurance in case North Carolina failed. De Castro gave tacit approval, West promised the machine in a year, and it was code-named Eagle.
 
-West and his deputy, Carl Alsing, recruited about two dozen engineers, most of them straight out of college. The "Microkids", led by Alsing, wrote the microcode; the "Hardy Boys", led by Ed Rasala, built the hardware; Steve Wallach was the architect. West's word for the commitment he asked of them was "signing up", and in Kidder's account it meant agreeing to do whatever the machine required, including a great deal of overtime, for no extra pay. West called the reward "pinball": win one game and you get to play another, so the prize for building this machine was the chance to build the next. The team worked in near isolation, shielded from the company's politics by a leader who kept the schedule always in front of them.
+West and his deputy, Carl Alsing, recruited about two dozen engineers, most of them straight out of college. The "Microkids", led by Alsing, wrote the microcode; the "Hardy Boys", led by Ed Rasala, built the hardware; Steve Wallach was the architect. West's word for the commitment he asked of them was "signing up", and in Kidder's account it meant agreeing to do whatever the machine required, including a great deal of overtime, for no extra pay. West called the reward "pinball": win one game and you get to play another, so the prize for building this machine was the chance to build the next. The team worked in near isolation, shielded from the company's politics by a leader who kept the schedule always in front of them. Figure 9.1 draws the project and its team as a schematic.
 
 The machine was late, as ambitious machines are, but it shipped. Fountainhead was cancelled, and Eagle was announced in April 1980 as the Eclipse MV/8000; by Evan Ratliff's account in *Wired* 20 years later, it kept Data General in the minicomputer business for several years. What happened to the team concerns us more. A new vice president of engineering regarded the group as having defied the company, the group was broken up, and West was sent to Data General's office in Japan before a single MV/8000 had been sold. By the time Kidder's book appeared in July 1981, many of the engineers had left or were leaving, some to found companies and some simply burned out. Ken Holberger, one of the Hardy Boys, told Ratliff the team had been like gunfighters brought into town to solve a problem; they solved it, and "then the town had to figure out what to do with them afterward. Which was mostly to get rid of them."
+
+{% include diagrams/fig-9-1.svg %}
+
+*Figure 9.1 — The Eagle at Data General, drawn as a schematic. The machine shipped and the North Carolina project was cancelled, yet soon after the launch the team that built it was broken up.*
 
 Burnout is part of the story, but the departures were caused at least as much by the organization's inability to recognize and absorb what the team had done. A small, isolated group can do remarkable work; Heidi Helfand would later call this the *isolation pattern* of reteaming, and Data General used it long before it had a name. An organization that relies on isolation, overtime and one protective leader has no way to keep the people afterward, fold their knowledge back into the company, or do the thing again. Tom West was a substitute for a design. This chapter is about designing an organization in which the next machine does not depend on another Tom West.
 
@@ -3099,11 +3080,15 @@ Encore's version of the lag was visible in its numbers. At the end of year six i
 
 The tool that makes this lag visible before it becomes a crisis comes from outside software. Jay Forrester founded system dynamics at MIT in the late 1950s, and Donella Meadows's *Thinking in Systems* (2008) is its most readable introduction. A **stock** is a quantity that accumulates over time, such as the number of engineers still ramping up; a **flow** is a rate that fills or drains a stock, such as hires per month. Stocks change only through their flows, and flows are limited by things we can name. Tarek Abdel-Hamid and Stuart Madnick applied the method to software projects in *Software Project Dynamics* (1991). We borrow the method for a narrow purpose: checking a growth plan against the organization's capacity to absorb it before anyone approves the plan.
 
-Larson's "Introduction to systems thinking" (2018) uses the frame mainly for developer velocity, with stocks of open pull requests and ready commits, and briefly for trained managers; the hiring model we need is closer to his hypergrowth essay. Drawn for people, it is simple. Hires enter a stock of engineers who are ramping; ramping engineers flow into the productive stock at a rate limited by onboarding capacity, which is the time of experienced people; and productive engineers leave through attrition or move into management. Each arrow has a limit, and a growth target has to be checked against all of them.
+Larson's "Introduction to systems thinking" (2018) uses the frame mainly for developer velocity, with stocks of open pull requests and ready commits, and briefly for trained managers; the hiring model we need is closer to his hypergrowth essay. Drawn for people, it is simple. Hires enter a stock of engineers who are ramping; ramping engineers flow into the productive stock at a rate limited by onboarding capacity, which is the time of experienced people; and productive engineers leave through attrition or move into management. Each arrow has a limit, and a growth target has to be checked against all of them. Figure 9.2 draws it.
+
+{% include diagrams/fig-9-2.svg %}
+
+*Figure 9.2 — People as stocks and flows. The valve between ramping and productive is opened only by experienced people's time, and the productive stock feeds back into it, so a slow year weakens the next one.*
 
 Anyone who has worked the doors of a large concert venue knows this shape. However many fans are queuing outside, the hall fills only as fast as the doors and stewards allow, and a promoter who sells more tickets than the doors can admit before showtime has sold a longer queue. The ramping stock is the queue, and experienced engineers are the stewards. The analogy breaks in a way that makes the organizational case worse: fans who get through the doors simply watch the show, while newcomers who get through onboarding become the stewards for the next cohort, so a slow door one year produces poorly trained stewards the next.
 
-In year nine, prompted by the developer survey of Section 1.2, in which one engineer in five named new engineers taking about a quarter to make a meaningful change among their top three complaints, Encore redrew its years of hypergrowth this way. Figure 9.1 shows the result.
+In year nine, prompted by the developer survey of Section 1.2, in which one engineer in five named new engineers taking about a quarter to make a meaningful change among their top three complaints, Encore redrew its years of hypergrowth this way. Figure 9.3 shows the result.
 
 | Year | Engineers at year end | Hired | Left | Joined within the year, at year end | Median days to a new engineer's tenth merged change |
 |---|---|---|---|---|---|
@@ -3113,7 +3098,7 @@ In year nine, prompted by the developer survey of Section 1.2, in which one engi
 | 7 | 400 | 185 | 35 | 178 | 74 |
 | 8 (to month 0 of year 9) | about 400 | 40 | 38 | 38 | 71 |
 
-*Figure 9.1 — Encore's people as stocks and flows. The ramping stock grew faster than the engineers available to teach it, and the time to a tenth change, a proxy for ramp-up, nearly doubled and never came back down.*
+*Figure 9.3 — Encore's people as stocks and flows. The ramping stock grew faster than the engineers available to teach it, and the time to a tenth change, a proxy for ramp-up, nearly doubled and never came back down.*
 
 The table told a story the retrospectives had missed. For two years teams had blamed slow delivery on "culture": on newcomers who did not care about quality, or a loss of the founding spirit. The stock-and-flow view named the constraint. Onboarding depended on a buddy from the same team, and a buddy could usefully take one newcomer at a time. In year six there were fewer engineers with a year's tenure than newcomers, so buddies were doubled up, borrowed from other teams or skipped. The time to a tenth change rose from about five weeks to about 10 and stayed there after hiring slowed, because those who had ramped slowly became the next cohort's buddies. It was a flow limited by a stock, and Section 9.4 applies the flow solutions.
 
@@ -3146,7 +3131,7 @@ The vocabulary for team design is shared across this series. Matthew Skelton and
 | Shared domains | 14 | stream-aligned | On-Sale, Inventory, Orders & Payments, Fan Messaging |
 | Platform group | 9 teams, 40 people | platform | Reliability, Runtime, Developer Portal, AI Platform |
 
-*Figure 9.2 — Encore's team map at about 400 engineers. Forty stream-aligned teams average nine engineers each; enabling work is carried as a second duty by two teams instead of by standing enabling teams.*
+*Figure 9.4 — Encore's team map at about 400 engineers. Forty stream-aligned teams average nine engineers each; enabling work is carried as a second duty by two teams instead of by standing enabling teams.*
 
 Two features of the map depart from the textbook. Encore has only one team that behaves as a complicated-subsystem team, Forecasting, whose demand models need specialist statistical knowledge and reach Organizer Insights through an interface. Seat allocation and bot scoring are hard too, but they are the core of their stream-aligned teams' work, and separating the specialists from the stream would add a hand-off to every change; a complicated-subsystem team earns its place only when the specialism is deep and the interface narrow. And Encore has no standing enabling team. Design System coaches other teams on accessibility and AI Platform helps teams adopt its gateway and eval tooling, each as time-boxed engagements that end when the other team can work alone. Marty Cagan and Chris Jones's *Empowered* (2020) gives a product-side reading of the same map, distinguishing experience teams, whose customers are end users, from platform teams, whose customers are other teams.
 
@@ -3197,7 +3182,11 @@ The isolation pattern is the Eagle's pattern, which is a reason for care. Encore
 
 #### The four states of a team {#c9-four-states}
 
-Asking every team for "more velocity" treats different problems as one. Larson's "Staying on the path to high performing teams" (2018) describes four states, each with its own fix. A team **falling behind** has more work arriving than it can finish: "hire more people until the team moves into treading water." A team **treading water** keeps up but cannot reduce its backlog: "add process to consolidate the team's efforts to finish more things and reduce concurrent work", which is to say, limit work in progress. A team **repaying debt** can at last pay down its accumulated problems: "add time." A team **innovating** can take on new work: "maintain enough slack in your team's schedule that the team can build quality into their work."
+Asking every team for "more velocity" treats different problems as one. Larson's "Staying on the path to high performing teams" (2018) describes four states, each with its own fix. A team **falling behind** has more work arriving than it can finish: "hire more people until the team moves into treading water." A team **treading water** keeps up but cannot reduce its backlog: "add process to consolidate the team's efforts to finish more things and reduce concurrent work", which is to say, limit work in progress. A team **repaying debt** can at last pay down its accumulated problems: "add time." A team **innovating** can take on new work: "maintain enough slack in your team's schedule that the team can build quality into their work." Figure 9.5 draws the four as a staircase.
+
+{% include diagrams/fig-9-5.svg %}
+
+*Figure 9.5 — The four states of a team, after Larson. Each state has its own fix, and the fix for one state is the wrong medicine for another.*
 
 The model is a heuristic whose value is that it makes a manager diagnose before prescribing. At month four, Partner APIs was falling behind, which is why it shed webhook delivery; Inventory was repaying debt on the barcode core and needed protected time for characterization tests (Chapter 2); and the new Resale team was, by design, innovating. Section 10.2 shows how Encore's quarterly planning uses the four states.
 
@@ -3245,7 +3234,7 @@ When roles are left implicit, their overlap is decided by whoever pushes hardest
 
 The tool is the **responsibility chart**: a table listing recurring decisions down one side and roles across the top, marking for each decision who decides, who is consulted and who is informed. RACI (responsible, accountable, consulted, informed) is the best-known variant; whatever the letters, each decision has exactly one person who decides.
 
-Theatre solved this long ago. In a running show every cue is called by one person, the stage manager, from a prompt book that lists each cue and who executes it, because two people acting on the same cue a second apart is how scenery falls on actors. The responsibility chart is a team's prompt book. The comparison fails in one place: a prompt book is fixed in rehearsal, while a product team meets new kinds of decision as the product changes, so its chart must be reopened when they appear. Figure 9.3 shows the Resale team's charter.
+Theatre solved this long ago. In a running show every cue is called by one person, the stage manager, from a prompt book that lists each cue and who executes it, because two people acting on the same cue a second apart is how scenery falls on actors. The responsibility chart is a team's prompt book. The comparison fails in one place: a prompt book is fixed in rehearsal, while a product team meets new kinds of decision as the product changes, so its chart must be reopened when they appear. Figure 9.6 shows the Resale team's charter.
 
 | Decision | Product manager | Designer | Tech lead | Engineering manager | Staff engineer |
 |---|---|---|---|---|---|
@@ -3257,7 +3246,7 @@ Theatre solved this long ago. In a running show every cue is called by one perso
 | Cross-team technical decisions | consulted | — | consulted | informed | decides, by RFC |
 | Hiring, growth and performance | consulted | consulted | consulted | decides | consulted |
 
-*Figure 9.3 — The Resale team's responsibility chart. Each decision has one owner, except the launch call, which the Products book's Section 10.4 makes a joint decision of the trio and the staff engineer against criteria written months earlier; any one of the four can stop a launch alone.*
+*Figure 9.6 — The Resale team's responsibility chart. Each decision has one owner, except the launch call, which the Products book's Section 10.4 makes a joint decision of the trio and the staff engineer against criteria written months earlier; any one of the four can stop a launch alone.*
 
 The chart did its most useful work before it was finished. Drafting it, the Resale trio found that the product manager and the tech lead each believed they owned launch scope, and settled it on paper in an hour.
 
@@ -3317,16 +3306,11 @@ Medicine has the oldest worked example of designed onboarding. A teaching hospit
 
 Encore's measure has a public precedent. In 2021 Spotify reported that the time for a new engineer to make their tenth pull request fell from over 60 days during a hiring boom to 20 after its developer portal, Backstage, was in place. The figures are self-reported, in a post promoting Backstage, but the metric is sound because it captures sustained contribution. Encore measures time to first and to tenth merged change, per cohort.
 
-In year nine Encore gave onboarding an owner, Hana, the platform group's product manager, with the Developer Portal team building its tooling. The curriculum covers the system map, an on-sale explained by someone who has worked one, and the golden path. The buddy is assigned before the start date and never doubled up. The first task is chosen in advance and sized to merge in week one, the onboarding test Section 4.1 sets for the inner loop, made possible by Chapter 6's golden path. Figure 9.4 shows the cohorts.
+In year nine Encore gave onboarding an owner, Hana, the platform group's product manager, with the Developer Portal team building its tooling. The curriculum covers the system map, an on-sale explained by someone who has worked one, and the golden path. The buddy is assigned before the start date and never doubled up. The first task is chosen in advance and sized to merge in week one, the onboarding test Section 4.1 sets for the inner loop, made possible by Chapter 6's golden path. Figure 9.7 shows the cohorts.
 
-| Cohort (year nine) | New engineers | Median days to first merged change | Median days to tenth merged change | What changed |
-|---|---|---|---|---|
-| Months 0–2 | 9 | 11 | 71 | baseline |
-| Months 3–5 | 12 | 6 | 48 | owner, buddy assigned before day one, first task chosen in advance |
-| Months 6–8 | 10 | 4 | 33 | golden-path environment on day one; curriculum |
-| Months 9–11 | 9 | 3 | 27 | onboarding feedback survey at day 30 fed back into the curriculum |
+{% include diagrams/fig-9-7.svg %}
 
-*Figure 9.4 — Encore's onboarding cohorts in year nine. The first change moved into week one once the environment was ready on day one; the tenth change, which depends on people more than tools, fell more slowly.*
+*Figure 9.7 — Encore's onboarding cohorts in year nine: median days to a new engineer's first and tenth merged change, with what changed for each cohort. The first change moved into week one once the environment was ready on day one; the tenth change, which depends on people more than tools, fell more slowly.*
 
 The two columns moved at different speeds. Tools fixed the first change, which mostly needs a working environment and a good task. The tenth depends on knowing whom to ask, how the team reviews and where the system's surprises lie, and it improved only as buddies and curriculum did.
 
@@ -3473,7 +3457,11 @@ Encore needs them now. At month 4 of the Verified Resale bet, in the late spring
 
 #### Polaris and the network on the wall {#c10-polaris}
 
-Late in 1955 the US Navy created a Special Projects Office to build a ballistic missile that could be launched from a submarine, and appointed Rear Admiral William F. Raborn to direct it. The office was set up deliberately outside the Navy's Bureaus of Ordnance and Aeronautics, whose rivalry might otherwise have strangled the programme. Its original target was an interim capability around 1963. Then, in October 1957, the Soviet Union launched Sputnik, and the schedule was compressed to 1960. On 20 July 1960 USS *George Washington* made the first Polaris launch from a submerged submarine, and the commander's message to President Eisenhower read, "Polaris — from out of the deep to target. Perfect." The submarine left on the Navy's first deterrent patrol that November, roughly three years ahead of the original plan by the Navy's own account.
+Late in 1955 the US Navy created a Special Projects Office to build a ballistic missile that could be launched from a submarine, and appointed Rear Admiral William F. Raborn to direct it. The office was set up deliberately outside the Navy's Bureaus of Ordnance and Aeronautics, whose rivalry might otherwise have strangled the programme. Its original target was an interim capability around 1963. Then, in October 1957, the Soviet Union launched Sputnik, and the schedule was compressed to 1960. On 20 July 1960 USS *George Washington* made the first Polaris launch from a submerged submarine, and the commander's message to President Eisenhower read, "Polaris — from out of the deep to target. Perfect." The submarine left on the Navy's first deterrent patrol that November, roughly three years ahead of the original plan by the Navy's own account. Figure 10.1 sets the dates against the plan they overtook.
+
+{% include diagrams/fig-10-1.svg %}
+
+*Figure 10.1 — Polaris from the Special Projects Office's creation to the first deterrent patrol, drawn as a schematic timeline. The date held because the scope gave way: the A-1 went to sea with less range and a smaller warhead than first wanted.*
 
 The technique the programme made famous was described in 1959 in *Operations Research* by D. G. Malcolm, J. H. Roseboom and C. E. Clark of Booz, Allen & Hamilton, with W. Fazar of the Special Projects Office. PERT drew a research and development programme as a network of events joined by activities, and it asked the engineers responsible for each activity to estimate its duration "in probability terms": an optimistic time, a most likely time and a pessimistic time, combined into an expected time weighted four to one toward the most likely. The longest chain through the network, the critical path, set the date. Anyone who has watched a touring crew load into an arena has seen the same idea at work. The rigging must be flown before the lighting can hang from it, the lighting must be focused before the sound check, and the sound check must finish before the doors open, so the stage manager watches the one chain of tasks that leaves no slack and lets the others float. That was PERT's lasting gift: it made dependencies visible, and it treated a duration as a range.
 
@@ -3501,9 +3489,9 @@ Encore wrote its model for Verified Resale on one page. The steady part of the c
 | Self-service venue onboarding in hours | 12 | 10 | 1.2 | Standard |
 | Organizer Insights reporting rebuild | 9 | 20 | 0.45 | Intangible |
 
-*Figure 10.1 — Encore's cross-team initiatives at month 4, ranked by cost of delay divided by duration. The portfolio holds five; the lowest-ranked initiative waited.*
+*Figure 10.2 — Encore's cross-team initiatives at month 4, ranked by cost of delay divided by duration. The portfolio holds five; the lowest-ranked initiative waited.*
 
-Verified Resale did not come first in Figure 10.1, because its duration was long. CD3 rewards short jobs, so the cheapest way to raise a long initiative's priority is to make it shorter, and every week cut from the build raised the bet's ranking against everything else. That is one reason the cuts described in Section 10.3 were made early.
+Verified Resale did not come first in Figure 10.2, because its duration was long. CD3 rewards short jobs, so the cheapest way to raise a long initiative's priority is to make it shorter, and every week cut from the build raised the bet's ranking against everything else. That is one reason the cuts described in Section 10.3 were made early.
 
 #### Queues are invisible inventory {#c10-queues}
 
@@ -3531,7 +3519,7 @@ Air traffic control offers a useful model. When weather cuts an airport's landin
 
 WIP limits help when the work is visible, so that the limit is seen to bind, and when someone acts on the queues the limit exposes; a limit quietly exceeded teaches people that limits are decoration. The strongest published case near Encore's scale is Siemens Health Services, an organization of about 50 teams, reported by Daniel Vacanti and Bennet Vallet in 2014. After a WIP policy was applied across all teams in September 2012, story cycle time stabilized at about 41 days, and its 85th percentile fell from 71 days to 43. Before the policy, cycle times had grown release after release, the signature of a system Little's law calls unstable.
 
-Encore limits WIP at two levels. Each team sets its own limits on its board. Across teams, Encore caps company-wide cross-team initiatives, those needing planned work from three or more teams, at five. The rule is Encore's own, dating from the months after Vesper Hale, when the post-incident work ran alongside four other initiatives and every one of them slipped. Verified Resale displaced the rebuild of Organizer Insights' reporting, the lowest item in Figure 10.1, which waited two quarters. The decision was uncomfortable for the team that had planned the rebuild, and the published ranking, with its assumptions on view, made it bearable.
+Encore limits WIP at two levels. Each team sets its own limits on its board. Across teams, Encore caps company-wide cross-team initiatives, those needing planned work from three or more teams, at five. The rule is Encore's own, dating from the months after Vesper Hale, when the post-incident work ran alongside four other initiatives and every one of them slipped. Verified Resale displaced the rebuild of Organizer Insights' reporting, the lowest item in Figure 10.2, which waited two quarters. The decision was uncomfortable for the team that had planned the rebuild, and the published ranking, with its assumptions on view, made it bearable.
 
 #### Cadence and decentralized control {#c10-cadence}
 
@@ -3640,16 +3628,11 @@ for p in (50, 85, 95):
     print(f"{p}%: {runs[len(runs) * p // 100 - 1]} weeks")
 ```
 
-The growth range is the line that matters most. Without it, the simulation said 11 weeks at the 85th percentile, in comfortable agreement with the team's points-based plan. With growth drawn from Encore's past launches, it said 17 weeks, which from the start of June meant the last week of September. Encore committed to the start of October knowing the margin was thin.
+The growth range is the line that matters most. Without it, the simulation said 11 weeks at the 85th percentile, in comfortable agreement with the team's points-based plan. With growth drawn from Encore's past launches, it said 17 weeks, which from the start of June meant the last week of September. Figure 10.3 sets these forecasts side by side. Encore committed to the start of October knowing the margin was thin.
 
-| Forecast of the partner-API milestone | Input | 50% | 85% |
-|---|---|---|---|
-| Points converted to a date | 410 points ÷ 37 points a week | 11 weeks | — |
-| Monte Carlo, fixed backlog | 80 items, last 12 weeks' throughput | 10 weeks | 11 weeks |
-| Monte Carlo, with backlog growth | 80 items, grown by 30–65% | 15 weeks | 17 weeks |
-| Week-8 re-run, before the cut | Remaining items after discovered work | — | 3 weeks past the commitment |
+{% include diagrams/fig-10-3.svg %}
 
-*Figure 10.2 — Four forecasts of the same milestone. The first two agree with each other and with the team's hopes; the third includes the work nobody has found yet.*
+*Figure 10.3 — Four forecasts of the same milestone, in weeks from the start of June. The first two agree with each other and with the team's hopes; the third includes the work nobody has found yet, and the fourth, the week-8 re-run, crossed the commitment before the cut brought it back.*
 
 The weekly re-runs earned their keep in week 8. Early integration sessions with Rowmate's engineers had turned up partner-specific retry behaviour for webhooks, the backlog had grown faster than its range, and the 85% date moved three weeks past October. Nobody had to announce a slip, because the forecast announced it at the operating review two months before the date. The Partner APIs team moved bulk listing import and two reporting endpoints out of the sandbox milestone and adopted the platform's new shared webhook delivery in place of the retries it had been building. The next re-run put the 85% date back in late September, and the sandbox opened to Rowmate on 29 September.
 
@@ -3687,16 +3670,11 @@ Encore made the change in its fourth year, at about 70 engineers, during the spl
 
 #### Capacity allocation {#c10-capacity-allocation}
 
-Once funding follows teams, the question becomes what share of capacity goes to each kind of work. **Capacity allocation** is that decision: dividing engineering capacity among value streams and among kinds of work such as new product, maintenance, platform and debt. It is the second of Larson's phases and the most consequential, because it decides what the roadmaps may contain. Kersten's flow distribution, the share of finished work that was features, defects, risks and debt, shows whether the allocation was honoured. There is no empirically correct split; the percentages are management choices, stated with reasons and revisited when the reasons change. Figure 10.3 shows Encore's for year nine.
+Once funding follows teams, the question becomes what share of capacity goes to each kind of work. **Capacity allocation** is that decision: dividing engineering capacity among value streams and among kinds of work such as new product, maintenance, platform and debt. It is the second of Larson's phases and the most consequential, because it decides what the roadmaps may contain. Kersten's flow distribution, the share of finished work that was features, defects, risks and debt, shows whether the allocation was honoured. There is no empirically correct split; the percentages are management choices, stated with reasons and revisited when the reasons change. Figure 10.4 shows Encore's for year nine.
 
-| Kind of work | Share | What it covers | How it is set |
-|---|---|---|---|
-| New product and features | 56% | Bets, roadmap features, new markets | The residual after the lines below |
-| Keeping the lights on | 20% | Unplanned work, on-call, upgrades, support escalations | Measured: each team's trailing two-quarter share |
-| Debt and risk | 14% | Chosen by teams against their own scorecards and incidents | Floor of one-tenth per team, protected |
-| Platform group | 10% | Nine teams, 40 people | Funded centrally before allocation |
+{% include diagrams/fig-10-4.svg %}
 
-*Figure 10.3 — Encore's capacity allocation for year nine. Only the first line is negotiated each quarter; the second is measured and the third is protected.*
+*Figure 10.4 — Encore's capacity allocation for year nine. Only the first line is negotiated each quarter; the second is measured, the third is protected, and the platform line is top-sliced before allocation.*
 
 The structure matters more than the numbers. Keeping the lights on is measured, so nobody can win capacity by understating it. Debt and risk work has a floor per team that leadership does not raid for a deadline. Only new product work is negotiated, and that is where Verified Resale's capacity came from: its planned work in 11 teams besides Resale was funded from their product share, which in four of them meant deferring roadmap features by a quarter.
 
@@ -3706,7 +3684,7 @@ The Inventory team tested the rule, because its debt work was the barcode core, 
 
 Two costs hide easily in a budget: keeping existing systems running, which unmeasured appears as a vague drag on every roadmap, and the platform, whose cost tends to be invisible or resented. Section 8.5 covers showback and unit economics, and the Architecture book's Section 15.5 the business case for a platform; this subsection covers only how both enter the budget.
 
-Encore makes both explicit lines. Keeping the lights on is the measured 20% in Figure 10.3, and a rising share is an early warning of accumulated debt or a fragile dependency. The platform group is funded centrally, without chargeback, for the reasons given there. What this subsection adds is how the central budget appears in the plan. It is top-sliced before allocation, the 10% line of Figure 10.3, and each value stream's plan shows its share of that line as a **platform tax**: the portion of engineering capacity spent by the platform group on that stream's behalf, shown in the stream's plan though no team pays it from its own budget. The tax makes the paved road's cost visible to the people who use it, and showback, which reports each team's actual consumption, lets them see what they get for it. Neither becomes a bill a team must defend. The tax is reviewed yearly against the platform's adoption and its measured effect on delivery.
+Encore makes both explicit lines. Keeping the lights on is the measured 20% in Figure 10.4, and a rising share is an early warning of accumulated debt or a fragile dependency. The platform group is funded centrally, without chargeback, for the reasons given there. What this subsection adds is how the central budget appears in the plan. It is top-sliced before allocation, the 10% line of Figure 10.4, and each value stream's plan shows its share of that line as a **platform tax**: the portion of engineering capacity spent by the platform group on that stream's behalf, shown in the stream's plan though no team pays it from its own budget. The tax makes the paved road's cost visible to the people who use it, and showback, which reports each team's actual consumption, lets them see what they get for it. Neither becomes a bill a team must defend. The tax is reviewed yearly against the platform's adoption and its measured effect on delivery.
 
 #### Funding a bet in tranches {#c10-tranches}
 
@@ -3793,7 +3771,7 @@ The list exists because measures accumulate by default. A dashboard that can com
 
 #### Measuring for the teams and for the board {#c10-for-the-board}
 
-Larson, in the *Primer*'s chapter on measuring engineering organizations, distinguishes measures that help leaders steer from those stakeholders need, and argues for introducing them in sequence, starting with those that help the people doing the work. That practitioner judgment matches Encore's scorecard rule: each team sees its own measures in full, leadership sees trends and distributions, and nobody sees a ranking. The board needs a short account of whether engineering is delivering what the company needs, at what cost and risk, with enough detail to know where to ask questions. Figure 10.4 shows Encore's one page.
+Larson, in the *Primer*'s chapter on measuring engineering organizations, distinguishes measures that help leaders steer from those stakeholders need, and argues for introducing them in sequence, starting with those that help the people doing the work. That practitioner judgment matches Encore's scorecard rule: each team sees its own measures in full, leadership sees trends and distributions, and nobody sees a ranking. The board needs a short account of whether engineering is delivering what the company needs, at what cost and risk, with enough detail to know where to ask questions. Figure 10.5 shows Encore's one page.
 
 | Board page section | What it shows | Source |
 |---|---|---|
@@ -3802,7 +3780,7 @@ Larson, in the *Primer*'s chapter on measuring engineering organizations, distin
 | Allocation | Planned against actual flow distribution; keeping-the-lights-on trend | Work tracker |
 | Risk | Commitments at risk; top three systemic constraints and what is being done | Leadership review |
 
-*Figure 10.4 — Encore's quarterly delivery page for the board. It reports distributions, bets and constraints, and names no team.*
+*Figure 10.5 — Encore's quarterly delivery page for the board. It reports distributions, bets and constraints, and names no team.*
 
 When the page was introduced, Encore's directors asked for one ranking teams by delivery. The head of engineering declined and offered instead to bring the owner of any worrying number to the next meeting. Over the following year the directors asked for that twice, and both times the explanation was a constraint the team had already found.
 
@@ -3904,22 +3882,9 @@ Section 9.5 printed the opening of RFC-0412, the request for comments that asked
 
 Chapter 1 showed the 23 dependencies of the first quarterly plan, drawn in month 4 and grouped by the team that had to deliver, with a column, added by a Resale engineer, recording the age of the oldest code each one touched. Over the next five months, during building, the plan cut them to 14. Section 10.2 gave the rule: remove a dependency by moving the work, contract it where the interface is stable, and coordinate only what is left. Figure 11.2 shows where the nine went, and every one of them went by moving work.
 
-| Team that must deliver | Month 4 | Month 9 | How the difference went |
-|---|---|---|---|
-| Inventory | 3 | 2 | Proof of a Gate purchase built by Resale from existing `TicketIssued` events instead of a new call |
-| Venue Entry | 3 | 2 | The revocation feed folded into Inventory's reissue change as `TicketRevoked`, which Venue Entry's list builder consumes |
-| Orders & Payments | 2 | 2 | — |
-| Bot Screening | 2 | 1 | Per-buyer limits written by Resale in the rules engine, reviewed by Bot Screening |
-| Billing & Payouts | 3 | 3 | — |
-| Partner APIs | 3 | 1 | Webhook delivery moved to the platform; listing endpoints written by Resale |
-| Organizer Console | 1 | 1 | — |
-| Mobile App | 2 | 1 | The Resale module in the fan app taken over by Resale; the release train and version floor remain |
-| Fan Messaging | 2 | 1 | The two messages written by Resale on Fan Messaging's templates; pass replacement remains, as a contract |
-| Design System | 1 | 0 | Badge and capped-price field contributed by Resale through the contribution path |
-| Security Engineering | 1 | 0 | Partner credentials became self-service on the platform's partner-facing path |
-| **Total** | **23** | **14** | Taken over by Resale 6 · moved to the platform 2 · folded into a change already planned 1 |
+{% include diagrams/fig-11-2.svg %}
 
-*Figure 11.2 — Verified Resale's dependencies at the first quarterly plan and at month 9. Three ways of moving work account for all nine cuts, and none of them was a decision to skip the work.*
+*Figure 11.2 — Verified Resale's dependencies at the first quarterly plan and at month 9, one square for each, by the team that had to deliver. Three ways of moving work account for all nine cuts (six taken over by Resale, two moved to the platform, one folded into a change already planned), and none of them was a decision to skip the work; VR-01, inside the barcode core, was among the 14 that stayed.*
 
 Each of the three moves is a general one. A requesting team doing the work itself, in its own code or in another team's code under that team's review, is the commonest, and inside another team's code it is InnerSource at the scale of a single pull request (Section 8.4); it works only where the owner has written down how it accepts contributions, and it is easiest where the requester can build on an event the owner already publishes, as Resale did with `TicketIssued`, provided the event's schema is registered and its consumers hold message contracts (Section 3.3). The platform taking over a capability removes the dependency for every later team as well as this one, which is why Chapter 6 treats the partner-facing path as an investment. And folding a request into a change the owner was making anyway removes a coordination point without adding work. Of the 14 that remained, eight were contracts consumed through documented interfaces and six needed real coordination; the hardest of the six, reissue inside the barcode core, is the subject of Section 11.4.
 
@@ -3953,7 +3918,11 @@ Of 31 surprises in eight-year-old code, three were bugs and 19 were load-bearing
 
 Thomas, closing his lecture, relays an observation of Peter Neumann's that states the root cause better than any account of two-digit fields: "systematic use of concepts such as abstraction, encapsulation, information hiding, and object-orientation could have allowed the construction of efficient programs in which the representation of dates could be changed easily when needed." That is David Parnas's 1972 criterion for decomposing systems into modules, hide each decision likely to change behind an interface, which the Architecture book takes up in its Section 1.3. Y2K was expensive because the representation of a date had no seam around it. Changing it meant finding and changing every program that read it. A **seam**, in Feathers's sense, is a place where behavior can be altered without editing the code at that place; seen against Y2K, it is information hiding added late, at the cost of finding everyone who had been reading what should have been hidden.
 
-The barcode core's seam was the identity. Before the change every caller computed a ticket's identity or parsed it from the barcode; after it, every caller asked one interface. Two tidyings of the kind Beck describes in *Tidy First?* came before the seam could be cut: the identity computation, repeated inside the issuer's 19 public variants, was moved into the pinch point Section 2.4 found, the one method every variant finally calls, and the module that held both formatting and persistence was split in two, so that the format could change without touching the code that wrote to the ledger. Neither changed behavior, and together they made the seam a small change.
+The barcode core's seam was the identity. Before the change every caller computed a ticket's identity or parsed it from the barcode; after it, every caller asked one interface. Two tidyings of the kind Beck describes in *Tidy First?* came before the seam could be cut: the identity computation, repeated inside the issuer's 19 public variants, was moved into the pinch point Section 2.4 found, the one method every variant finally calls, and the module that held both formatting and persistence was split in two, so that the format could change without touching the code that wrote to the ledger. Neither changed behavior, and together they made the seam a small change. Figure 11.3 shows the identity before and after it.
+
+{% include diagrams/fig-11-3.svg %}
+
+*Figure 11.3 — The barcode core's identity before and after the seam. Before, every reader, including code outside Encore's repositories, reached the representation itself; after, each asks one interface, and the representation behind it can change.*
 
 Characterization tests describe the past, and the team wanted evidence from real traffic before it trusted the new path with every ticket's identity. The best public precedent is GitHub's: in December 2015 Vicent Martí described how GitHub replaced the merge implementation behind its merge button, which had shelled out to Git, with one built on libgit2. Its Scientist library ran the old and new implementations side by side on real requests, always returned the old result, and logged every mismatch. The experiment began at 1% of requests and found, among other things, two bugs in Git itself; in one, 768 conflicts were reported as none, because a shell keeps only the low eight bits of an exit code. The new code ran at 100% for 24 hours with no mismatches before the old code was removed. Encore ran the same pattern on identity, as Section 4.5 describes. For three weeks in month 8, every issuance computed the identity both ways, the derived identity and the new opaque one with its lookup, served the old result and logged any case where the lookup disagreed with what the old derivation implied. There were two mismatches, both for tickets issued while an event was being rescheduled, and both were cases the characterization suite had pinned for the old code without anyone asking how the new code should treat them. A parallel run of this kind is a characterization test run against the present, and it finds exactly the cases that a replay of the past has not yet seen.
 
@@ -4006,7 +3975,11 @@ Encore paid one debt and took another, and wrote both down. The debt paid was IN
   decided: month 6, Year 9
 ```
 
-The trigger is a date computed from data, the latest event for which an old-format ticket was sold, and it is written where the owners will see it every quarter. That is all the Y2K record asks of a temporary fix. It does not ask that the fix be avoided, only that its expiry be written down by someone who will still be there when it arrives, which is why the entry names teams.
+The trigger is a date computed from data, the latest event for which an old-format ticket was sold, and it is written where the owners will see it every quarter. That is all the Y2K record asks of a temporary fix. It does not ask that the fix be avoided, only that its expiry be written down by someone who will still be there when it arrives, which is why the entry names teams. Figure 11.4 sets the two pivot years side by side.
+
+{% include diagrams/fig-11-4.svg %}
+
+*Figure 11.4 — Two pivot years. Windowing read two-digit years through a pivot, and Encore accepts old-format tickets until a dated trigger; both are temporary fixes with a built-in trigger, and the trigger fires whether or not anyone kept a record of it.*
 
 **Recap.** Reading the characterization suite found 31 unspecified behaviors, of which 19 were load-bearing and three were bugs, so most of the work of changing old code lay in learning what it did. The seam was information hiding added late, as Y2K's root cause suggests, and a parallel run in production checked it against the present. Knowledge of the core spread to four people by pairing, an ensemble week and a guide kept like a prompt book. The format campaign moved 56 of 60 call sites in six weeks and the rest in seven months, under a written definition of done; the old format stays, as debt with a dated trigger.
 
@@ -4016,13 +3989,13 @@ The trigger is a date computed from data, the latest event for which an old-form
 
 #### Twenty-three days to the first deploy {#c11-first-deploy}
 
-The Resale service was created from the golden-path template on the day the team formed, and in the sense that matters to the template it existed from that day: a repository, a pipeline, a registry entry and a scorecard. Its first production deploy that served real traffic came 23 working days later, and Section 6.2 mapped why in its Figure 6.2. Fifteen of the 23 were waits: nine for partner credentials, which could then be issued only through two tickets to Security Engineering, and six for a security review of a webhook sender that the team should never have had to write. Neither wait was anyone's failure. The platform had no road for either need, so the team took the only roads there were. The platform group built the two missing roads as the partner-facing path, and the second partner-facing service to start after shared webhook delivery reached general availability, the Festivals team's festival feed, reached its first production deploy in four working days (Section 6.5). The Resale service was born on the golden path and still waited three weeks, because the path ended before its needs did, and the cost of those weeks was paid once.
+The Resale service was created from the golden-path template on the day the team formed, and in the sense that matters to the template it existed from that day: a repository, a pipeline, a registry entry and a scorecard. Its first production deploy that served real traffic came 23 working days later, and Section 6.2 mapped why in its Figure 6.3. Fifteen of the 23 were waits: nine for partner credentials, which could then be issued only through two tickets to Security Engineering, and six for a security review of a webhook sender that the team should never have had to write. Neither wait was anyone's failure. The platform had no road for either need, so the team took the only roads there were. The platform group built the two missing roads as the partner-facing path, and the second partner-facing service to start after shared webhook delivery reached general availability, the Festivals team's festival feed, reached its first production deploy in four working days (Section 6.5). The Resale service was born on the golden path and still waited three weeks, because the path ended before its needs did, and the cost of those weeks was paid once.
 
 Once deployed, the service grew as Section 3.2 described, from a walking skeleton that ran one test fan's resale from a stub of Rowmate's integration through Resale, Orders & Payments and Inventory to a revocation list on one venue's scanners and a new ticket in the app. The skeleton ran end to end in month 9, as planned, with none of the plan's slack left: it went almost entirely on the step that crossed into the barcode core, where the entry point had to be written behind characterization tests that did not yet cover reissue. That is the skeleton doing its job: it forced the hardest cross-team question, how a reissue enters the barcode core, into month 5, when it was cheap to answer.
 
 #### Contracts, simulators and the invariants {#c11-contracts-invariants}
 
-Chapter 3 taught the testing of Verified Resale; this subsection gives the counts. By launch the contract broker held 26 consumer contracts against the services on the resale path, nine of them message contracts on events; the Inventory team's reissue endpoint alone had three consumers within a month of existing, and the broker showed all of them on every pull request Inventory opened. One of the simulators of Figure 3.2 caught the most expensive bug of the build. In the PSP simulator's fee-split mode, a split rejected by the provider left the resale saga waiting for a confirmation that would never come, holding the buyer's payment authorization and the seller's listing for the full hold window. No end-to-end test would have found it, because the real provider's sandbox never rejects a split. The fix was a compensating step in the saga, and the simulator mode stayed in the suite.
+Chapter 3 taught the testing of Verified Resale; this subsection gives the counts. By launch the contract broker held 26 consumer contracts against the services on the resale path, nine of them message contracts on events; the Inventory team's reissue endpoint alone had three consumers within a month of existing, and the broker showed all of them on every pull request Inventory opened. One of the simulators of Figure 3.5 caught the most expensive bug of the build. In the PSP simulator's fee-split mode, a split rejected by the provider left the resale saga waiting for a confirmation that would never come, holding the buyer's payment authorization and the seller's listing for the full hold window. No end-to-end test would have found it, because the real provider's sandbox never rejects a split. The fix was a compensating step in the saga, and the simulator mode stayed in the suite.
 
 Section 1.3 called the five fairness invariants an engineering contract, and Section 3.3 promised that they would run as property tests on every build. Here they are, in the file the Resale team hosts and every contributing team's build runs:
 
@@ -4083,7 +4056,7 @@ The lesson the teams drew was about the chart. A dependency's age is the earlies
 
 #### The first resold ticket, through the code {#c11-first-ticket}
 
-The first resold ticket was a Lyon fan's: a seat at a sold-out Saturday concert promoted by one of the design-partner organizers, with a face value of €80. The Products book's Section 10.4 follows it through the product, as the fans and the partner experienced it. Figure 11.3 follows it through the code, naming at each step the service and operation involved, the team that owns it, and the test that would fail if that step broke.
+The first resold ticket was a Lyon fan's: a seat at a sold-out Saturday concert promoted by one of the design-partner organizers, with a face value of €80. The Products book's Section 10.4 follows it through the product, as the fans and the partner experienced it. Figure 11.5 follows it through the code, naming at each step the service and operation involved, the team that owns it, and the test that would fail if that step broke.
 
 | Step | When | Code path | Owner | Test that protects it |
 |---|---|---|---|---|
@@ -4098,7 +4071,7 @@ The first resold ticket was a Lyon fan's: a seat at a sold-out Saturday concert 
 | 9 | Thursday | `ResaleCompleted` metered: €3.20, €2.40, €2.40; ledger reconciles | Billing & Payouts | Message contract on `ResaleCompleted`; daily reconciliation |
 | 10 | Saturday evening | Buyer's rotating code validated at the gate, offline if need be | Venue Entry | The resale end-to-end journey; the reissue drill |
 
-*Figure 11.3 — The first resold ticket, through the code. Ten steps, nine owning teams, and a test for every step; the seller's €80, paid five days later by Billing & Payouts, is covered by the money property of step 4.*
+*Figure 11.5 — The first resold ticket, through the code. Ten steps, nine owning teams, and a test for every step; the seller's €80, paid five days later by Billing & Payouts, is covered by the money property of step 4.*
 
 Read down the last column and a pattern appears that no single chapter could show. Seven of the ten tests run inside Encore's own repositories on every build. Three are different. Rowmate's certification suite runs in a partner's code; the hourly synthetic resale runs in production; and the reissue drill ran on real devices at real gates. Those three are the only tests on the route that reach code Encore does not build or environments it does not control, and the drill was the only one of all ten that could have found the turnstile firmware. A test strategy for a change like this one is mostly a matter of pushing tests down to where they are cheap, as Chapter 3 teaches, and then deliberately keeping the few that reach outward, because the parts of the route nobody owns in a repository are where a change's surprises live.
 
@@ -4120,7 +4093,7 @@ The Products book's Section 10.5 records the review of the bet at month 18, abou
 
 #### The codebase a year later {#c11-codebase-later}
 
-Meir Lehman's second law of software evolution, which Chapter 1 quoted, holds that a program's complexity increases as it is changed "unless work is done to maintain or reduce it." The month-24 review is, among other things, a test of that clause, and Figure 11.4 sets out the result for the barcode core and the new code beside it.
+Meir Lehman's second law of software evolution, which Chapter 1 quoted, holds that a program's complexity increases as it is changed "unless work is done to maintain or reduce it." The month-24 review is, among other things, a test of that clause, and Figure 11.6 sets out the result for the barcode core and the new code beside it.
 
 | Measure | Month 4 | Month 12 (launch) | Month 24 |
 |---|---|---|---|
@@ -4133,7 +4106,7 @@ Meir Lehman's second law of software evolution, which Chapter 1 quoted, holds th
 | Verified Resale release flags | — | 17 | 2, kept as kill switches |
 | Top hotspot in resale code | — | Resale purchase saga | Rules engine |
 
-*Figure 11.4 — The codebase at month 24, measured by the same instruments as at month 4. The core grew during the change and shrank after it; the hotspot moved into the new code.*
+*Figure 11.6 — The codebase at month 24, measured by the same instruments as at month 4. The core grew during the change and shrank after it; the hotspot moved into the new code.*
 
 The core's line count tells Lehman's story in two movements. It grew by about 1,300 lines during the change, as Reissue was sprouted beside the issuer and the seams were cut, and it fell by about 4,700 after launch, when the 19 variants collapsed into one and the old check-digit path was deleted. Both movements were planned, and the second happened only because it had been funded. The median time for a change to the core fell from eleven days to two, the same as the rest of Seat Inventory & Ticketing, the most useful single measure of a repaired legacy core. Lena still works on it. She reviewed fewer than one in five of its changes in the last quarter before the review, where at month 4 she had reviewed all of them.
 
@@ -4143,7 +4116,7 @@ The new code is where Lehman's law reasserts itself. The hottest file in the res
 
 What the platform absorbed from this change is easy to state, since Chapter 6 tells how. Partner credentials became self-service, webhook delivery became a platform capability with one implementation instead of three, and both were packaged as the partner-facing path. By month 24 three more partner-facing services had been created on it, and their median time to first production deploy was five working days, against the Resale team's 23. Section 6.5 cautioned that one service is not a trend; three is the beginning of one. The rules engine is the change's other contribution to shared code, an InnerSource project with six contributing teams, Resale as host with Orders & Payments, Inventory, Trust & Safety, Pricing & Presales and Festivals, which is how festival passes reached it.
 
-The quarterly developer survey of Section 1.2, its ten core items unchanged and still answered by about two thirds of engineers, gave the review its other comparison. "Building plumbing the platform should provide, such as partner webhooks" had been one of the six commonest answers in Figure 1.2, named by 24%, and by month 24 it had dropped out of the six. Waiting for CI on the shared repository had not. Test selection and a remote cache had brought the build of `encore-core` down from 31 minutes to nine, as Section 4.2 describes, but engineers who worked in the oldest repository still ranked its feedback time among their pains, and the review said plainly that the change had made the barcode core easier to change without making its repository faster to build.
+The quarterly developer survey of Section 1.2, its ten core items unchanged and still answered by about two thirds of engineers, gave the review its other comparison. "Building plumbing the platform should provide, such as partner webhooks" had been one of the six commonest answers in Figure 1.3, named by 24%, and by month 24 it had dropped out of the six. Waiting for CI on the shared repository had not. Test selection and a remote cache had brought the build of `encore-core` down from 31 minutes to nine, as Section 4.2 describes, but engineers who worked in the oldest repository still ranked its feedback time among their pains, and the review said plainly that the change had made the barcode core easier to change without making its repository faster to build.
 
 #### The teams a year later {#c11-teams-later}
 

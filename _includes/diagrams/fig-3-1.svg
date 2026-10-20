@@ -1,0 +1,82 @@
+<div class="dg-figure" data-fig="fig-3-1" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 504" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-3-1-title fig-3-1-desc">
+<title id="fig-3-1-title">Ariane 501: the flight and the test</title>
+<desc id="fig-3-1-desc">A schematic after the inquiry board&#x27;s report, in two rows. The top row is the flight of 4 June 1996. The Ariane 5 trajectory, which builds horizontal velocity much faster than Ariane 4&#x27;s, feeds two inertial reference systems running identical software on the same inputs. Converting the horizontal bias from a 64-bit float to a 16-bit signed integer raised an operand error; the backup unit failed first and the active unit, SRI 2, one data cycle (72 ms) later, at about 36.7 seconds after main-engine ignition, so there was nothing to switch to. The active unit&#x27;s diagnostic bit pattern reached the on-board computer, which read it as flight data and commanded full nozzle deflection; the launcher broke up and was destroyed near 4 km. The bottom row is the testing. The SRI specification left out the Ariane 5 trajectory by joint agreement; in 1992 the project decided to use simulated SRI outputs instead of the real units in closed-loop system simulation; so every test passed, faithful to a world that was gone. The board&#x27;s recommendations 2 and 10 ask for as much real equipment as technically feasible and for trajectory data in specifications and test requirements.</desc>
+<defs><marker id="fig-3-1-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-3-1-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-3-1-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="16" y="52" width="832" height="196" rx="8"/><rect class="dg-mask" x="28" y="46" width="212" height="12" rx="2"/><text class="dg-eyebrow" x="134" y="55">IN FLIGHT · 4 JUNE 1996 · H0 + 36.7 S</text>
+<rect class="dg-zone" x="16" y="288" width="832" height="128" rx="8"/><rect class="dg-mask" x="28" y="282" width="212" height="12" rx="2"/><text class="dg-eyebrow" x="134" y="291">IN TEST · THE WORLD THE SUITE ASSUMED</text>
+<path class="dg-a dg-a-muted" d="M 184,100 L 232,100" marker-end="url(#fig-3-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 184,172 L 232,172" marker-end="url(#fig-3-1-m-muted)"/>
+<path class="dg-a dg-a-muted dg-dash" d="M 416,100 L 542,100 Q 550,100 550,108 L 550,144" marker-end="url(#fig-3-1-m-muted)"/>
+<path class="dg-a dg-a-accent" d="M 416,172 L 468,172" marker-end="url(#fig-3-1-m-accent)"/>
+<path class="dg-a dg-a-muted" d="M 632,172 L 688,172" marker-end="url(#fig-3-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 184,336 L 232,336" marker-end="url(#fig-3-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 416,336 L 468,336" marker-end="url(#fig-3-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 632,336 L 688,336" marker-end="url(#fig-3-1-m-muted)"/>
+<rect class="dg-mask" x="423" y="80" width="120" height="12" rx="2"/><text class="dg-label" x="483" y="89">NOTHING TO SWITCH TO</text>
+<rect class="dg-mask" x="32" y="72" width="152" height="128" rx="6"/>
+<rect class="dg-n dg-n-input" x="32" y="72" width="152" height="128" rx="6"/>
+<text class="dg-name" x="108" y="138">Ariane 5 trajectory</text>
+<text class="dg-sub" x="108" y="153">fast horizontal velocity</text>
+<rect class="dg-mask" x="232" y="72" width="184" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="232" y="72" width="184" height="56" rx="6"/>
+<text class="dg-name" x="324" y="102">Backup SRI</text>
+<text class="dg-sub" x="324" y="117">fails first: operand error</text>
+<rect class="dg-mask" x="232" y="144" width="184" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="232" y="144" width="184" height="56" rx="6"/>
+<text class="dg-name" x="324" y="174">Active SRI (SRI 2)</text>
+<text class="dg-sub" x="324" y="189">fails one cycle (72 ms) later</text>
+<rect class="dg-mask" x="468" y="144" width="164" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="468" y="144" width="164" height="56" rx="6"/>
+<text class="dg-name" x="550" y="174">On-board computer</text>
+<text class="dg-sub" x="550" y="189">reads it as flight data</text>
+<rect class="dg-mask" x="688" y="144" width="144" height="56" rx="6"/>
+<rect class="dg-n dg-n-focal" x="688" y="144" width="144" height="56" rx="6"/>
+<text class="dg-name" x="760" y="174">Full deflection</text>
+<text class="dg-sub" x="760" y="189">nozzles; break-up</text>
+<rect class="dg-mask" x="32" y="308" width="152" height="56" rx="6"/>
+<rect class="dg-n dg-n-input" x="32" y="308" width="152" height="56" rx="6"/>
+<text class="dg-name" x="108" y="338">SRI specification</text>
+<text class="dg-sub" x="108" y="353">no Ariane 5 trajectory</text>
+<rect class="dg-mask" x="232" y="308" width="184" height="56" rx="6"/>
+<rect class="dg-n dg-n-optional" x="232" y="308" width="184" height="56" rx="6" stroke-dasharray="4,3"/>
+<text class="dg-name" x="324" y="338">Simulated SRI outputs</text>
+<text class="dg-sub" x="324" y="353">real SRIs left out, 1992</text>
+<rect class="dg-mask" x="468" y="308" width="164" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="468" y="308" width="164" height="56" rx="6"/>
+<text class="dg-name" x="550" y="338">System simulation</text>
+<text class="dg-sub" x="550" y="353">closed loop</text>
+<rect class="dg-mask" x="688" y="308" width="144" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="688" y="308" width="144" height="56" rx="6"/>
+<text class="dg-name" x="760" y="338">Every test passes</text>
+<text class="dg-sub" x="760" y="353">a world that is gone</text>
+<text class="dg-eyebrow" x="24" y="28" style="text-anchor:start">ARIANE 501 · SCHEMATIC, AFTER THE INQUIRY BOARD'S REPORT</text>
+<text class="dg-note" x="232" y="220" text-anchor="start">same software, same inputs:</text>
+<text class="dg-note" x="232" y="234" text-anchor="start">BH, 64-bit float → 16-bit int</text>
+<text class="dg-note" x="468" y="220" text-anchor="start">diagnostic bit pattern</text>
+<text class="dg-note" x="468" y="234" text-anchor="start">from the failed unit</text>
+<text class="dg-note" x="688" y="220" text-anchor="start">destroyed near 4 km</text>
+<text class="dg-note" x="688" y="234" text-anchor="start">about H0 + 39 s</text>
+<text class="dg-note" x="32" y="220" text-anchor="start">never fed to the SRI</text>
+<text class="dg-note" x="32" y="234" text-anchor="start">software in any test</text>
+<text class="dg-note" x="32" y="384" text-anchor="start">left out by joint</text>
+<text class="dg-note" x="32" y="398" text-anchor="start">agreement</text>
+<text class="dg-note" x="232" y="384" text-anchor="start">SRI reused from Ariane 4,</text>
+<text class="dg-note" x="232" y="398" text-anchor="start">“practically the same”</text>
+<text class="dg-note" x="468" y="384" text-anchor="start">no test fed the SRI the</text>
+<text class="dg-note" x="468" y="398" text-anchor="start">trajectory it would fly</text>
+<text class="dg-note" x="688" y="384" text-anchor="start">faithful, with rigor,</text>
+<text class="dg-note" x="688" y="398" text-anchor="start">to Ariane 4&#x27;s world</text>
+<text class="dg-note" x="24" y="444" text-anchor="start">Board, recommendation 2: as much real equipment as technically feasible, closed loop.  Recommendation 10: trajectory data in specs and tests.</text>
+<line class="dg-rule" x1="24" y1="464" x2="840" y2="464"/>
+<rect class="dg-n dg-n-input" x="24" y="475" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="483">The world fed in</text>
+<rect class="dg-n dg-n-backend" x="163" y="475" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="185" y="483">Real equipment</text>
+<rect class="dg-n dg-n-optional" x="291" y="475" width="16" height="10" rx="2" stroke-dasharray="4,3"/>
+<text class="dg-legend" x="313" y="483">Stand-in</text>
+<rect class="dg-n dg-n-focal" x="385" y="475" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="407" y="483">The failure</text>
+<line class="dg-a dg-a-accent" x1="496" y1="480" x2="520" y2="480" marker-end="url(#fig-3-1-m-accent)"/>
+<text class="dg-legend" x="528" y="483">Diagnostic bits, read as flight data</text>
+</svg></div></div>

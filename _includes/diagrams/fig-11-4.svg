@@ -1,0 +1,78 @@
+<div class="dg-figure" data-fig="fig-11-4" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-11-4-title fig-11-4-desc">
+<title id="fig-11-4-title">Two pivot years</title>
+<desc id="fig-11-4-desc">Schematic in two parts. Top, Y2K windowing in the example Martyn Thomas gives: a year stored as two digits, 00 to 99, is read through a pivot at 20. Stored years 00 to 19 are read as 2000 to 2019, and 20 to 99 as 1920 to 1999, so the stored order and the century order no longer match. Cheaper than expanding to four digits and simpler to test, it was not a permanent solution: the pivot year is its built-in trigger. Bottom, Encore&#x27;s pivot year on a month scale from 0 to 30. The partner API accepts old-format references from the notice in month 2 until month 14, twelve months&#x27; notice. INV-DEBT-031 is entered in the debt register in month 6. From launch in month 12, old-format tickets (identity derived from order and seat) are still accepted, so every gate validator and the issuer carry two paths; the engineering review at month 24 finds the debt still open, as planned. The trigger is the day after the last event holding an old-format ticket, month 29, when both old paths and their replay tests are deleted in one change.</desc>
+<defs><marker id="fig-11-4-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-11-4-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-11-4-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="24" y="40" width="816" height="152" rx="8"/><rect class="dg-mask" x="36" y="34" width="248" height="12" rx="2"/><text class="dg-eyebrow" x="160" y="43">Y2K WINDOWING · THOMAS&#x27;S EXAMPLE · SCHEMATIC</text>
+<rect class="dg-zone" x="24" y="224" width="816" height="196" rx="8"/><rect class="dg-mask" x="36" y="218" width="244" height="12" rx="2"/><text class="dg-eyebrow" x="158" y="227">ENCORE&#x27;S PIVOT YEAR · INV-DEBT-031 · MONTHS</text>
+<line class="dg-axis" x1="160" y1="380" x2="800" y2="380"/>
+<line class="dg-axis" x1="160" y1="380" x2="160" y2="384"/>
+<text class="dg-tick" x="160" y="396" text-anchor="middle">0</text>
+<line class="dg-axis" x1="204" y1="380" x2="204" y2="384"/>
+<text class="dg-tick" x="204" y="396" text-anchor="middle">2</text>
+<line class="dg-axis" x1="244" y1="380" x2="244" y2="384"/>
+<text class="dg-tick" x="244" y="396" text-anchor="middle">4</text>
+<line class="dg-axis" x1="288" y1="380" x2="288" y2="384"/>
+<text class="dg-tick" x="288" y="396" text-anchor="middle">6</text>
+<line class="dg-axis" x1="332" y1="380" x2="332" y2="384"/>
+<text class="dg-tick" x="332" y="396" text-anchor="middle">8</text>
+<line class="dg-axis" x1="372" y1="380" x2="372" y2="384"/>
+<text class="dg-tick" x="372" y="396" text-anchor="middle">10</text>
+<line class="dg-axis" x1="416" y1="380" x2="416" y2="384"/>
+<text class="dg-tick" x="416" y="396" text-anchor="middle">12</text>
+<line class="dg-axis" x1="460" y1="380" x2="460" y2="384"/>
+<text class="dg-tick" x="460" y="396" text-anchor="middle">14</text>
+<line class="dg-axis" x1="500" y1="380" x2="500" y2="384"/>
+<text class="dg-tick" x="500" y="396" text-anchor="middle">16</text>
+<line class="dg-axis" x1="544" y1="380" x2="544" y2="384"/>
+<text class="dg-tick" x="544" y="396" text-anchor="middle">18</text>
+<line class="dg-axis" x1="588" y1="380" x2="588" y2="384"/>
+<text class="dg-tick" x="588" y="396" text-anchor="middle">20</text>
+<line class="dg-axis" x1="628" y1="380" x2="628" y2="384"/>
+<text class="dg-tick" x="628" y="396" text-anchor="middle">22</text>
+<line class="dg-axis" x1="672" y1="380" x2="672" y2="384"/>
+<text class="dg-tick" x="672" y="396" text-anchor="middle">24</text>
+<line class="dg-axis" x1="716" y1="380" x2="716" y2="384"/>
+<text class="dg-tick" x="716" y="396" text-anchor="middle">26</text>
+<line class="dg-axis" x1="756" y1="380" x2="756" y2="384"/>
+<text class="dg-tick" x="756" y="396" text-anchor="middle">28</text>
+<line class="dg-axis" x1="800" y1="380" x2="800" y2="384"/>
+<text class="dg-tick" x="800" y="396" text-anchor="middle">30</text>
+<line class="dg-ill-soft" x1="288" y1="336" x2="288" y2="380"/>
+<line class="dg-ill-soft" x1="416" y1="336" x2="416" y2="380"/>
+<line class="dg-ill-soft" x1="672" y1="336" x2="672" y2="380"/>
+<rect class="dg-mask" x="260" y="48" width="56" height="12" rx="2"/><text class="dg-label dg-l-accent" x="288" y="57">PIVOT 20</text>
+<rect class="dg-mask" x="250" y="364" width="76" height="12" rx="2"/><text class="dg-label" x="288" y="373">DEBT ENTERED</text>
+<rect class="dg-mask" x="394" y="364" width="44" height="12" rx="2"/><text class="dg-label" x="416" y="373">LAUNCH</text>
+<rect class="dg-mask" x="650" y="364" width="44" height="12" rx="2"/><text class="dg-label" x="672" y="373">REVIEW</text>
+<rect class="dg-mask" x="674" y="352" width="108" height="12" rx="2"/><text class="dg-label dg-l-accent" x="728" y="361">TRIGGER · MONTH 29</text>
+<rect class="dg-n dg-n-input" x="160" y="80" width="128" height="28" rx="4"/>
+<rect class="dg-n dg-n-backend" x="288" y="80" width="512" height="28" rx="4"/>
+<rect class="dg-n dg-n-backend" x="160" y="144" width="512" height="28" rx="4"/>
+<rect class="dg-n dg-n-input" x="672" y="144" width="128" height="28" rx="4"/>
+<line class="dg-ill-accent" x1="288" y1="68" x2="288" y2="120"/>
+<rect class="dg-mask" x="204" y="256" width="256" height="28" rx="6"/>
+<rect class="dg-n dg-n-input" x="204" y="256" width="256" height="28" rx="6"/>
+<text class="dg-name" x="332" y="274">12 months&#x27; notice</text>
+<rect class="dg-mask" x="416" y="300" width="364" height="28" rx="6"/>
+<rect class="dg-n dg-n-input" x="416" y="300" width="364" height="28" rx="6"/>
+<text class="dg-name" x="598" y="318">Old-format tickets still accepted</text>
+<circle class="dg-dot dg-dot-ink" cx="288" cy="380" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="416" cy="380" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="672" cy="380" r="3.5"/>
+<line class="dg-ill-accent" x1="780" y1="288" x2="780" y2="380"/>
+<text class="dg-label" x="40" y="92" style="text-anchor:start">STORED</text>
+<text class="dg-note" x="40" y="104" style="text-anchor:start">two digits</text>
+<text class="dg-label" x="40" y="156" style="text-anchor:start">READ AS</text>
+<text class="dg-note" x="40" y="168" style="text-anchor:start">through the pivot</text>
+<text class="dg-name" x="224" y="98" style="text-anchor:middle">00 – 19</text>
+<text class="dg-name" x="544" y="98" style="text-anchor:middle">20 – 99</text>
+<text class="dg-name" x="416" y="162" style="text-anchor:middle">1920 – 1999</text>
+<text class="dg-name" x="736" y="162" style="text-anchor:middle">2000 – 2019</text>
+<text class="dg-note" x="800" y="132" style="text-anchor:end">not a permanent solution: the pivot year is the trigger</text>
+<text class="dg-name" x="40" y="268" style="text-anchor:start">Partner API</text>
+<text class="dg-note" x="40" y="280" text-anchor="start">old format accepted</text>
+<text class="dg-name" x="40" y="312" style="text-anchor:start">Gates + issuer</text>
+<text class="dg-note" x="40" y="324" text-anchor="start">two paths, old and new</text>
+
+</svg></div></div>

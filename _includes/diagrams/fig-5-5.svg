@@ -1,0 +1,73 @@
+<div class="dg-figure" data-fig="fig-5-5" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-5-5-title fig-5-5-desc">
+<title id="fig-5-5-title">A staggered randomized rollout</title>
+<desc id="fig-5-5-desc">A timeline in months from month 0 of year 9 to month 18, with one row for each of four cohorts of ten stream-aligned teams, drawn in random order. Cohort 1, which includes Inventory, receives background agents at month 3; cohort 2, which the Resale team joined when it formed at month 4, at month 6; cohort 3 at month 9; cohort 4 at month 12. Before its start each cohort is waiting and serves as comparison for the cohorts already using agents; the quarter just before its start is its baseline. Quality lag indicators are tracked for two quarters past each start, and the decision to expand, hold or withdraw is taken at each cohort start. A vertical line at month 9 marks the first answer, when cohort 1 had two quarters of use: merged changes per engineer up about 10% with an interval that includes no change, review time per change up about a fifth, rework rate flat, no detectable difference in change failure rate, and static warnings in changed code up in six of the ten teams.</desc>
+<defs><marker id="fig-5-5-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-5-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-5-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="192" y1="248" x2="840" y2="248"/>
+<line class="dg-axis" x1="192" y1="248" x2="192" y2="56"/>
+<line class="dg-axis" x1="192.0" y1="248" x2="192.0" y2="252"/>
+<text class="dg-tick" x="192.0" y="264" text-anchor="middle">M0</text>
+<line class="dg-axis" x1="300.0" y1="248" x2="300.0" y2="252"/>
+<text class="dg-tick" x="300.0" y="264" text-anchor="middle">M3</text>
+<line class="dg-axis" x1="408.0" y1="248" x2="408.0" y2="252"/>
+<text class="dg-tick" x="408.0" y="264" text-anchor="middle">M6</text>
+<line class="dg-axis" x1="516.0" y1="248" x2="516.0" y2="252"/>
+<text class="dg-tick" x="516.0" y="264" text-anchor="middle">M9</text>
+<line class="dg-axis" x1="624.0" y1="248" x2="624.0" y2="252"/>
+<text class="dg-tick" x="624.0" y="264" text-anchor="middle">M12</text>
+<line class="dg-axis" x1="732.0" y1="248" x2="732.0" y2="252"/>
+<text class="dg-tick" x="732.0" y="264" text-anchor="middle">M15</text>
+<line class="dg-axis" x1="840.0" y1="248" x2="840.0" y2="252"/>
+<text class="dg-tick" x="840.0" y="264" text-anchor="middle">M18</text>
+<text class="dg-axis-label" x="840" y="280" text-anchor="end">MONTH, FROM MONTH 0 OF YEAR 9</text>
+<line class="dg-series dg-s-accent" x1="516.0" y1="56" x2="516.0" y2="248"/>
+<rect class="dg-n dg-n-input" x="192" y="66" width="108" height="28" rx="4"/>
+<rect class="dg-n dg-n-backend" x="300" y="66" width="540" height="28" rx="4"/>
+<rect class="dg-area dg-ar-soft" x="300" y="66" width="216" height="28"/>
+<rect class="dg-n dg-n-optional" x="192" y="110" width="108" height="28" rx="4" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-input" x="300" y="110" width="108" height="28" rx="4"/>
+<rect class="dg-n dg-n-backend" x="408" y="110" width="432" height="28" rx="4"/>
+<rect class="dg-area dg-ar-soft" x="408" y="110" width="216" height="28"/>
+<rect class="dg-n dg-n-optional" x="192" y="154" width="216" height="28" rx="4" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-input" x="408" y="154" width="108" height="28" rx="4"/>
+<rect class="dg-n dg-n-backend" x="516" y="154" width="324" height="28" rx="4"/>
+<rect class="dg-area dg-ar-soft" x="516" y="154" width="216" height="28"/>
+<rect class="dg-n dg-n-optional" x="192" y="198" width="324" height="28" rx="4" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-input" x="516" y="198" width="108" height="28" rx="4"/>
+<rect class="dg-n dg-n-backend" x="624" y="198" width="216" height="28" rx="4"/>
+<rect class="dg-area dg-ar-soft" x="624" y="198" width="216" height="28"/>
+<rect class="dg-mask" x="464" y="32" width="104" height="12" rx="2"/><text class="dg-label dg-l-accent" x="516" y="41">M9 · FIRST ANSWER</text>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">40 TEAMS · 4 COHORTS OF 10 · ORDER DRAWN BY CHANCE · ONE QUARTER APART</text>
+<text class="dg-sub" x="246" y="83">baseline</text>
+<text class="dg-sub" x="408" y="83">agents · lag watched</text>
+<text class="dg-sub" x="678" y="83">agents</text>
+<text class="dg-name" x="24" y="79" style="text-anchor:start">Cohort 1</text>
+<text class="dg-note" x="24" y="92" text-anchor="start">incl. Inventory</text>
+<text class="dg-sub" x="246" y="127">waiting</text>
+<text class="dg-sub" x="354" y="127">baseline</text>
+<text class="dg-sub" x="516" y="127">agents · lag watched</text>
+<text class="dg-sub" x="732" y="127">agents</text>
+<text class="dg-name" x="24" y="123" style="text-anchor:start">Cohort 2</text>
+<text class="dg-note" x="24" y="136" text-anchor="start">incl. Resale (from M4)</text>
+<text class="dg-sub" x="300" y="171">waiting</text>
+<text class="dg-sub" x="462" y="171">baseline</text>
+<text class="dg-sub" x="624" y="171">agents · lag watched</text>
+<text class="dg-sub" x="786" y="171">agents</text>
+<text class="dg-name" x="24" y="167" style="text-anchor:start">Cohort 3</text>
+<text class="dg-note" x="24" y="180" text-anchor="start">10 teams</text>
+<text class="dg-sub" x="354" y="215">waiting</text>
+<text class="dg-sub" x="570" y="215">baseline</text>
+<text class="dg-sub" x="732" y="215">agents · lag watched</text>
+<text class="dg-name" x="24" y="211" style="text-anchor:start">Cohort 4</text>
+<text class="dg-note" x="24" y="224" text-anchor="start">10 teams</text>
+<text class="dg-note" x="24" y="296" text-anchor="start">First answer at month 9, cohort 1 after two quarters, later cohorts as comparison:</text>
+<text class="dg-note" x="24" y="312" text-anchor="start">merged changes per engineer ≈ +10% (interval includes no change) · review time per change ≈ +1/5</text>
+<text class="dg-note" x="24" y="328" text-anchor="start">rework rate flat · change failure rate: no detectable difference · warnings up in 6 of 10 teams</text>
+<line class="dg-rule" x1="24" y1="360" x2="840" y2="360"/>
+<rect class="dg-n dg-n-optional" x="24" y="371" width="16" height="10" rx="2" stroke-dasharray="4,3"/>
+<text class="dg-legend" x="46" y="379">Waiting: the comparison group</text>
+<rect class="dg-n dg-n-input" x="236" y="371" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="258" y="379">Baseline quarter</text>
+<rect class="dg-n dg-n-backend" x="375" y="371" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="397" y="379">Using background agents</text>
+</svg></div></div>

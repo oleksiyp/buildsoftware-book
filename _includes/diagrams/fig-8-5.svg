@@ -1,0 +1,107 @@
+<div class="dg-figure" data-fig="fig-8-5" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 472" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-8-5-title fig-8-5-desc">
+<title id="fig-8-5-title">Contribution margin per resold ticket</title>
+<desc id="fig-8-5-desc">Two waterfalls for one resold €60 ticket, through a partner and in Encore&#x27;s own app, using Encore&#x27;s averages at the month-18 review. Through a partner: the buyer&#x27;s 10% service fee is €6.00; the partner&#x27;s 4 points, €2.40, and the organizer&#x27;s 3 points, €1.80, are paid out, leaving Encore&#x27;s retained fee of €1.80; then PSP fees on the €66 payment, €0.85, variable platform cost, €0.12, average fraud losses, €0.15, and support, €0.30 (2% of resales disputed at €15 each), leave a contribution margin of €0.38. In Encore&#x27;s app there is no partner commission, so Encore retains €4.20 and, after the same costs, keeps a margin of €2.78, about seven times as much. Each additional point of dispute rate costs €0.15, so a dispute rate of about 4.5% would wipe out the partner-channel margin.</desc>
+<defs><marker id="fig-8-5-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-8-5-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-8-5-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="256" y1="64" x2="256" y2="352"/>
+<text class="dg-tick" x="256" y="366" text-anchor="middle">€0</text>
+<line class="dg-grid" x1="292" y1="64" x2="292" y2="352"/>
+<text class="dg-tick" x="292" y="366" text-anchor="middle">€1</text>
+<line class="dg-grid" x1="328" y1="64" x2="328" y2="352"/>
+<text class="dg-tick" x="328" y="366" text-anchor="middle">€2</text>
+<line class="dg-grid" x1="364" y1="64" x2="364" y2="352"/>
+<text class="dg-tick" x="364" y="366" text-anchor="middle">€3</text>
+<line class="dg-grid" x1="400" y1="64" x2="400" y2="352"/>
+<text class="dg-tick" x="400" y="366" text-anchor="middle">€4</text>
+<line class="dg-grid" x1="436" y1="64" x2="436" y2="352"/>
+<text class="dg-tick" x="436" y="366" text-anchor="middle">€5</text>
+<line class="dg-grid" x1="472" y1="64" x2="472" y2="352"/>
+<text class="dg-tick" x="472" y="366" text-anchor="middle">€6</text>
+<line class="dg-grid" x1="472.0" y1="88" x2="472.0" y2="104" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="385.6" y1="120" x2="385.6" y2="136" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="320.8" y1="152" x2="320.8" y2="168" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="320.8" y1="184" x2="320.8" y2="200" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="290.2" y1="216" x2="290.2" y2="232" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="285.9" y1="248" x2="285.9" y2="264" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="280.5" y1="280" x2="280.5" y2="296" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="269.7" y1="312" x2="269.7" y2="328" stroke-dasharray="2 2"/>
+<line class="dg-axis" x1="560" y1="64" x2="560" y2="352"/>
+<text class="dg-tick" x="560" y="366" text-anchor="middle">€0</text>
+<line class="dg-grid" x1="596" y1="64" x2="596" y2="352"/>
+<text class="dg-tick" x="596" y="366" text-anchor="middle">€1</text>
+<line class="dg-grid" x1="632" y1="64" x2="632" y2="352"/>
+<text class="dg-tick" x="632" y="366" text-anchor="middle">€2</text>
+<line class="dg-grid" x1="668" y1="64" x2="668" y2="352"/>
+<text class="dg-tick" x="668" y="366" text-anchor="middle">€3</text>
+<line class="dg-grid" x1="704" y1="64" x2="704" y2="352"/>
+<text class="dg-tick" x="704" y="366" text-anchor="middle">€4</text>
+<line class="dg-grid" x1="740" y1="64" x2="740" y2="352"/>
+<text class="dg-tick" x="740" y="366" text-anchor="middle">€5</text>
+<line class="dg-grid" x1="776" y1="64" x2="776" y2="352"/>
+<text class="dg-tick" x="776" y="366" text-anchor="middle">€6</text>
+<line class="dg-grid" x1="776.0" y1="120" x2="776.0" y2="136" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="711.2" y1="152" x2="711.2" y2="168" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="711.2" y1="184" x2="711.2" y2="200" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="680.6" y1="216" x2="680.6" y2="232" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="676.3" y1="248" x2="676.3" y2="264" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="670.9" y1="280" x2="670.9" y2="296" stroke-dasharray="2 2"/>
+<line class="dg-grid" x1="660.1" y1="312" x2="660.1" y2="328" stroke-dasharray="2 2"/>
+<rect class="dg-n dg-n-backend" x="256.0" y="72" width="216.0" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="385.6" y="104" width="86.4" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="320.8" y="136" width="64.8" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-backend" x="256.0" y="168" width="64.8" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="290.2" y="200" width="30.6" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="285.9" y="232" width="4.3" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="280.5" y="264" width="5.4" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="269.7" y="296" width="10.8" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-ill-fill-accent" x="256.0" y="328" width="13.7" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="560.0" y="72" width="216.0" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="711.2" y="136" width="64.8" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-backend" x="560.0" y="168" width="151.2" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="680.6" y="200" width="30.6" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="676.3" y="232" width="4.3" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="670.9" y="264" width="5.4" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-n dg-n-optional" x="660.1" y="296" width="10.8" height="16" rx="2" stroke-dasharray="4,3"/>
+<rect class="dg-ill-fill-accent" x="560.0" y="328" width="100.1" height="16" rx="2"/>
+<text class="dg-note" x="24" y="40" text-anchor="start">PER RESOLD €60 TICKET · ENCORE&#x27;S AVERAGES AT THE MONTH-18 REVIEW</text>
+<text class="dg-note" x="364" y="60" text-anchor="middle">THROUGH A PARTNER</text>
+<text class="dg-note" x="668" y="60" text-anchor="middle">IN ENCORE&#x27;S APP</text>
+<text class="dg-label" x="478.0" y="84" style="text-anchor:start">+€6.00</text>
+<text class="dg-label" x="478.0" y="116" style="text-anchor:start">−€2.40</text>
+<text class="dg-label" x="391.6" y="148" style="text-anchor:start">−€1.80</text>
+<text class="dg-label" x="326.8" y="180" style="text-anchor:start">€1.80</text>
+<text class="dg-label" x="326.8" y="212" style="text-anchor:start">−€0.85</text>
+<text class="dg-label" x="296.2" y="244" style="text-anchor:start">−€0.12</text>
+<text class="dg-label" x="291.9" y="276" style="text-anchor:start">−€0.15</text>
+<text class="dg-label" x="286.5" y="308" style="text-anchor:start">−€0.30</text>
+<text class="dg-label dg-l-accent" x="275.7" y="340" style="text-anchor:start">€0.38</text>
+<text class="dg-label" x="782.0" y="84" style="text-anchor:start">+€6.00</text>
+<text class="dg-note" x="568" y="116" text-anchor="start">NONE: ENCORE KEEPS THE 4 POINTS</text>
+<text class="dg-label" x="782.0" y="148" style="text-anchor:start">−€1.80</text>
+<text class="dg-label" x="717.2" y="180" style="text-anchor:start">€4.20</text>
+<text class="dg-label" x="717.2" y="212" style="text-anchor:start">−€0.85</text>
+<text class="dg-label" x="686.6" y="244" style="text-anchor:start">−€0.12</text>
+<text class="dg-label" x="682.3" y="276" style="text-anchor:start">−€0.15</text>
+<text class="dg-label" x="676.9" y="308" style="text-anchor:start">−€0.30</text>
+<text class="dg-label dg-l-accent" x="666.1" y="340" style="text-anchor:start">€2.78</text>
+<text class="dg-note" x="24" y="84" text-anchor="start">BUYER&#x27;S SERVICE FEE (10%)</text>
+<text class="dg-note" x="24" y="116" text-anchor="start">PARTNER COMMISSION (4 POINTS)</text>
+<text class="dg-note" x="24" y="148" text-anchor="start">ORGANIZER SHARE (3 POINTS)</text>
+<text class="dg-name" x="24" y="180" style="text-anchor:start;font-size:11px">Encore&#x27;s retained fee</text>
+<text class="dg-note" x="24" y="212" text-anchor="start">PSP FEES ON THE €66 PAYMENT</text>
+<text class="dg-note" x="24" y="244" text-anchor="start">VARIABLE PLATFORM COST</text>
+<text class="dg-note" x="24" y="276" text-anchor="start">FRAUD LOSSES (AVERAGE)</text>
+<text class="dg-note" x="24" y="308" text-anchor="start">SUPPORT: 2% DISPUTED × €15</text>
+<text class="dg-name" x="24" y="340" style="text-anchor:start;font-size:11px">Contribution margin</text>
+<text class="dg-note" x="256" y="392" text-anchor="start">EACH +1 POINT OF DISPUTE RATE COSTS €0.15;</text>
+<text class="dg-note" x="256" y="406" text-anchor="start">AT ABOUT 4.5% DISPUTES THE MARGIN IS GONE</text>
+<text class="dg-note" x="560" y="392" text-anchor="start">SEVEN TIMES THE PARTNER-CHANNEL MARGIN;</text>
+<text class="dg-note" x="560" y="406" text-anchor="start">EVERY CHANNEL GETS THE SAME LISTINGS IN ORDER</text>
+<line class="dg-rule" x1="24" y1="432" x2="840" y2="432"/>
+<rect class="dg-n dg-n-backend" x="24" y="443" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="451">Fee and Encore&#x27;s subtotal</text>
+<rect class="dg-n dg-n-optional" x="214" y="443" width="16" height="10" rx="2" stroke-dasharray="4,3"/>
+<text class="dg-legend" x="236" y="451">Share paid out or cost</text>
+<rect class="dg-n dg-n-focal" x="387" y="443" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="409" y="451">Contribution margin</text>
+</svg></div></div>

@@ -1,0 +1,58 @@
+<div class="dg-figure" data-fig="fig-10-4" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 316" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-10-4-title fig-10-4-desc">
+<title id="fig-10-4-title">Encore&#x27;s capacity allocation</title>
+<desc id="fig-10-4-desc">One bar of Encore&#x27;s engineering capacity in year nine, about 400 engineers, divided in four. New product and features, 56%: bets, roadmap features and new markets; set as the residual after the other lines, and the only line negotiated each quarter. Keeping the lights on, 20%: unplanned work, on-call, upgrades and support escalations; measured as each team&#x27;s trailing two-quarter share. Debt and risk, 14%: chosen by teams against their own scorecards and incidents; a floor of one-tenth per team, protected. Platform group, 10%: nine teams, 40 people; funded centrally before allocation and shown to each value stream as a platform tax.</desc>
+<defs><marker id="fig-10-4-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-10-4-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-10-4-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<path class="dg-a dg-a-muted" d="M 252,104 L 252,112 Q 252,120 244,120 L 40,120 Q 32,120 32,128 L 32,144"/>
+<path class="dg-a dg-a-muted" d="M 562,104 L 562,112 Q 562,120 554,120 L 252,120 Q 244,120 244,128 L 244,144"/>
+<path class="dg-a dg-a-muted" d="M 700,104 L 700,112 Q 700,120 692,120 L 464,120 Q 456,120 456,128 L 456,144"/>
+<path class="dg-a dg-a-muted" d="M 798,104 L 798,112 Q 798,120 790,120 L 676,120 Q 668,120 668,128 L 668,144"/>
+<rect class="dg-mask" x="24" y="56" width="456" height="48" rx="6"/>
+<rect class="dg-n dg-n-focal" x="24" y="56" width="456" height="48" rx="6"/>
+<text class="dg-name" x="252" y="82">New product and features</text>
+<text class="dg-sub" x="252" y="97">56%</text>
+<rect class="dg-mask" x="480" y="56" width="164" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="480" y="56" width="164" height="48" rx="6"/>
+<text class="dg-name" x="562" y="82">Keeping the lights on</text>
+<text class="dg-sub" x="562" y="97">20%</text>
+<rect class="dg-mask" x="644" y="56" width="112" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="644" y="56" width="112" height="48" rx="6"/>
+<text class="dg-name" x="700" y="82">Debt and risk</text>
+<text class="dg-sub" x="700" y="97">14%</text>
+<rect class="dg-mask" x="756" y="56" width="84" height="48" rx="6"/>
+<rect class="dg-n dg-n-store" x="756" y="56" width="84" height="48" rx="6"/>
+<text class="dg-name" x="798" y="82">Platform</text>
+<text class="dg-sub" x="798" y="97">10%</text>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">ENCORE · YEAR NINE · ABOUT 400 ENGINEERS · SHARE OF CAPACITY</text>
+<text class="dg-label" x="40" y="156" style="text-anchor:start">NEGOTIATED EACH QUARTER</text>
+<text class="dg-name" x="40" y="176" style="text-anchor:start">New product and features · 56%</text>
+<text class="dg-note" x="40" y="196" text-anchor="start">bets, roadmap features,</text>
+<text class="dg-note" x="40" y="211" text-anchor="start">new markets</text>
+<text class="dg-note" x="40" y="226" text-anchor="start">the residual after the</text>
+<text class="dg-note" x="40" y="241" text-anchor="start">other three lines</text>
+<text class="dg-label" x="252" y="156" style="text-anchor:start">MEASURED</text>
+<text class="dg-name" x="252" y="176" style="text-anchor:start">Keeping the lights on · 20%</text>
+<text class="dg-note" x="252" y="196" text-anchor="start">unplanned work, on-call,</text>
+<text class="dg-note" x="252" y="211" text-anchor="start">upgrades, escalations</text>
+<text class="dg-note" x="252" y="226" text-anchor="start">each team&#x27;s trailing</text>
+<text class="dg-note" x="252" y="241" text-anchor="start">two-quarter share</text>
+<text class="dg-label" x="464" y="156" style="text-anchor:start">PROTECTED</text>
+<text class="dg-name" x="464" y="176" style="text-anchor:start">Debt and risk · 14%</text>
+<text class="dg-note" x="464" y="196" text-anchor="start">chosen by teams against</text>
+<text class="dg-note" x="464" y="211" text-anchor="start">scorecards and incidents</text>
+<text class="dg-note" x="464" y="226" text-anchor="start">floor of one-tenth per</text>
+<text class="dg-note" x="464" y="241" text-anchor="start">team; not raided</text>
+<text class="dg-label" x="676" y="156" style="text-anchor:start">TOP-SLICED</text>
+<text class="dg-name" x="676" y="176" style="text-anchor:start">Platform group · 10%</text>
+<text class="dg-note" x="676" y="196" text-anchor="start">platform group: nine</text>
+<text class="dg-note" x="676" y="211" text-anchor="start">teams, 40 people</text>
+<text class="dg-note" x="676" y="226" text-anchor="start">funded centrally; shown</text>
+<text class="dg-note" x="676" y="241" text-anchor="start">as a platform tax</text>
+<line class="dg-rule" x1="24" y1="276" x2="840" y2="276"/>
+<rect class="dg-n dg-n-focal" x="24" y="287" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="295">Negotiated each quarter</text>
+<rect class="dg-n dg-n-backend" x="202" y="287" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="224" y="295">Measured or protected</text>
+<rect class="dg-n dg-n-store" x="369" y="287" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="391" y="295">Top-sliced before allocation</text>
+</svg></div></div>

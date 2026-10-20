@@ -1,0 +1,93 @@
+<div class="dg-figure" data-fig="fig-1-1" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-1-1-title fig-1-1-desc">
+<title id="fig-1-1-title">Garmisch, 1968</title>
+<desc id="fig-1-1-desc">Schematic, top: people from three constituencies, the users of computers, their manufacturers and the universities, more than 50 from 11 countries, came to the NATO conference at Garmisch, 7 to 11 October 1968, chaired by Friedrich L. Bauer. It worked in three groups, on the design, the production and the service of software. Rapporteurs&#x27; notes and tape recordings became the report, written in Munich by Peter Naur and Brian Randell and published in January 1969. Bottom, a timeline to scale: late 1967, the NATO Science Committee&#x27;s study group recommends the conference; April 1968, Conway&#x27;s &#x27;How Do Committees Invent?&#x27; appears in Datamation; 7 to 11 October 1968, Garmisch; January 1969, the report; 27 to 31 October 1969, the second conference near Rome, after which the series was not continued; 1972, Dijkstra&#x27;s Turing lecture &#x27;The Humble Programmer&#x27; calls Garmisch the turning point and makes &#x27;software crisis&#x27; canonical.</desc>
+<defs><marker id="fig-1-1-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-1-1-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-1-1-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="200" y="56" width="360" height="148" rx="8"/><rect class="dg-mask" x="212" y="50" width="248" height="12" rx="2"/><text class="dg-eyebrow" x="336" y="59">GARMISCH · 7–11 OCT 1968 · CHAIR F. L. BAUER</text>
+<line class="dg-axis" x1="64" y1="380" x2="816" y2="380"/>
+<line class="dg-axis" x1="132" y1="376" x2="132" y2="384"/>
+<line class="dg-axis" x1="268" y1="376" x2="268" y2="384"/>
+<line class="dg-axis" x1="404" y1="376" x2="404" y2="384"/>
+<line class="dg-axis" x1="544" y1="376" x2="544" y2="384"/>
+<line class="dg-axis" x1="680" y1="376" x2="680" y2="384"/>
+<line class="dg-ill-soft" x1="120" y1="380" x2="120" y2="304"/>
+<line class="dg-ill-soft" x1="172" y1="380" x2="172" y2="400"/>
+<line class="dg-ill-soft" x1="236" y1="380" x2="236" y2="360"/>
+<line class="dg-ill-soft" x1="276" y1="380" x2="276" y2="400"/>
+<line class="dg-ill-soft" x1="380" y1="380" x2="380" y2="304"/>
+<line class="dg-ill-soft" x1="760" y1="380" x2="760" y2="400"/>
+<path class="dg-a dg-a-muted" d="M 168,84 L 200,84" marker-end="url(#fig-1-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 168,136 L 200,136" marker-end="url(#fig-1-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 168,188 L 200,188" marker-end="url(#fig-1-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 560,112 L 704,112" marker-end="url(#fig-1-1-m-muted)"/>
+<rect class="dg-mask" x="586" y="92" width="92" height="12" rx="2"/><text class="dg-label" x="632" y="101">NOTES AND TAPES</text>
+<rect class="dg-mask" x="24" y="64" width="144" height="40" rx="6"/>
+<rect class="dg-n dg-n-input" x="24" y="64" width="144" height="40" rx="6"/>
+<text class="dg-name" x="96" y="88">Computer users</text>
+<rect class="dg-mask" x="24" y="116" width="144" height="40" rx="6"/>
+<rect class="dg-n dg-n-input" x="24" y="116" width="144" height="40" rx="6"/>
+<text class="dg-name" x="96" y="140">Manufacturers</text>
+<rect class="dg-mask" x="24" y="168" width="144" height="40" rx="6"/>
+<rect class="dg-n dg-n-input" x="24" y="168" width="144" height="40" rx="6"/>
+<text class="dg-name" x="96" y="192">Universities</text>
+<rect class="dg-mask" x="216" y="84" width="104" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="216" y="84" width="104" height="56" rx="6"/>
+<text class="dg-name" x="268" y="114">Design</text>
+<text class="dg-sub" x="268" y="129">working group</text>
+<rect class="dg-mask" x="328" y="84" width="104" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="328" y="84" width="104" height="56" rx="6"/>
+<text class="dg-name" x="380" y="114">Production</text>
+<text class="dg-sub" x="380" y="129">working group</text>
+<rect class="dg-mask" x="440" y="84" width="104" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="440" y="84" width="104" height="56" rx="6"/>
+<text class="dg-name" x="492" y="114">Service</text>
+<text class="dg-sub" x="492" y="129">working group</text>
+<rect class="dg-mask" x="704" y="84" width="136" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="704" y="84" width="136" height="56" rx="6"/>
+<text class="dg-name" x="772" y="114">The report</text>
+<text class="dg-sub" x="772" y="129">Naur &amp; Randell</text>
+<circle class="dg-dot dg-dot-ink" cx="120" cy="380" r="4"/>
+<circle class="dg-dot dg-dot-ink" cx="172" cy="380" r="4"/>
+<circle class="dg-dot dg-dot-accent" cx="236" cy="380" r="5"/>
+<circle class="dg-dot dg-dot-ink" cx="276" cy="380" r="4"/>
+<circle class="dg-dot dg-dot-ink" cx="380" cy="380" r="4"/>
+<circle class="dg-dot dg-dot-ink" cx="760" cy="380" r="4"/>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">THE WORKING CONFERENCE · SCHEMATIC</text>
+<text class="dg-note" x="380" y="168" text-anchor="middle">more than 50 people · 11 countries</text>
+<text class="dg-note" x="380" y="184" text-anchor="middle">Dijkstra, Perlis, Naur, McIlroy, Randell</text>
+<text class="dg-note" x="772" y="160" text-anchor="middle">written in Munich</text>
+<text class="dg-note" x="772" y="174" text-anchor="middle">published Jan 1969</text>
+<text class="dg-eyebrow" x="24" y="244" style="text-anchor:start">BEFORE AND AFTER · TIMELINE TO SCALE</text>
+<text class="dg-tick" x="132" y="396" text-anchor="middle">1968</text>
+<text class="dg-tick" x="265" y="396" text-anchor="end">1969</text>
+<text class="dg-tick" x="404" y="396" text-anchor="middle">1970</text>
+<text class="dg-tick" x="544" y="396" text-anchor="middle">1971</text>
+<text class="dg-tick" x="680" y="396" text-anchor="middle">1972</text>
+<text class="dg-label" x="126" y="276" style="text-anchor:start">LATE 1967</text>
+<text class="dg-note" x="126" y="290" text-anchor="start">NATO study group</text>
+<text class="dg-note" x="126" y="302" text-anchor="start">recommends a conference</text>
+<text class="dg-label" x="166" y="416" style="text-anchor:end">APR 1968</text>
+<text class="dg-note" x="166" y="430" text-anchor="end">Conway, &#x27;How Do</text>
+<text class="dg-note" x="166" y="442" text-anchor="end">Committees Invent?&#x27;</text>
+<text class="dg-label dg-l-accent" x="242" y="332" style="text-anchor:start">7–11 OCT 1968</text>
+<text class="dg-note" x="242" y="346" text-anchor="start">Garmisch: &#x27;software</text>
+<text class="dg-note" x="242" y="358" text-anchor="start">engineering&#x27; named</text>
+<text class="dg-label" x="282" y="416" style="text-anchor:start">JAN 1969</text>
+<text class="dg-note" x="282" y="430" text-anchor="start">the report</text>
+<text class="dg-note" x="282" y="442" text-anchor="start">is published</text>
+<text class="dg-label" x="386" y="276" style="text-anchor:start">27–31 OCT 1969</text>
+<text class="dg-note" x="386" y="290" text-anchor="start">near Rome: &#x27;a lack of</text>
+<text class="dg-note" x="386" y="302" text-anchor="start">communication&#x27;; series ends</text>
+<text class="dg-label" x="754" y="416" style="text-anchor:end">1972</text>
+<text class="dg-note" x="754" y="430" text-anchor="end">Dijkstra, &#x27;The Humble Programmer&#x27;:</text>
+<text class="dg-note" x="754" y="442" text-anchor="end">&#x27;software crisis&#x27; made canonical</text>
+<line class="dg-rule" x1="24" y1="460" x2="840" y2="460"/>
+<rect class="dg-n dg-n-input" x="24" y="471" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="479">Who came</text>
+<rect class="dg-n dg-n-backend" x="118" y="471" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="140" y="479">Working group or output</text>
+<line class="dg-a dg-a-muted" x1="296" y1="476" x2="320" y2="476" marker-end="url(#fig-1-1-m-muted)"/>
+<text class="dg-legend" x="328" y="479">Flow of material</text>
+<circle class="dg-start" cx="451" cy="476" r="5"/>
+<text class="dg-legend" x="461" y="479">Event; vermilion: Garmisch</text>
+</svg></div></div>

@@ -1,0 +1,52 @@
+<div class="dg-figure" data-fig="fig-2-3" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 384" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-2-3-title fig-2-3-desc">
+<title id="fig-2-3-title">Hotspots on the purchase path</title>
+<desc id="fig-2-3-desc">A scatter chart of Encore&#x27;s top five hotspots on the purchase path over twelve months, with size in lines across and number of changes up. 1: ticketing/barcode/BarcodeIssuer.kt, 214 changes, 3,900 lines, 88% of changes by its top author. 2: orders/saga/PurchaseSaga.kt, 187 changes, 2,600 lines, 21%. 3: ticketing/barcode/BarcodeFormats.kt, 131 changes, 1,450 lines, 91%. 4: inventory/holds/HoldService.kt, 96 changes, 1,700 lines, 34%. 5: orders/psp/PspRouter.kt, 88 changes, 1,100 lines, 29%. The two barcode files are highlighted: nearly all their changes come from one person, while the saga&#x27;s are spread across many authors.</desc>
+<defs><marker id="fig-2-3-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-2-3-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-2-3-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-grid" x1="88" y1="288.0" x2="808" y2="288.0"/>
+<line class="dg-grid" x1="88" y1="240.0" x2="808" y2="240.0"/>
+<line class="dg-grid" x1="88" y1="192.0" x2="808" y2="192.0"/>
+<line class="dg-grid" x1="88" y1="144.0" x2="808" y2="144.0"/>
+<line class="dg-grid" x1="88" y1="96.0" x2="808" y2="96.0"/>
+<line class="dg-grid" x1="88" y1="48.0" x2="808" y2="48.0"/>
+<line class="dg-axis" x1="88" y1="288" x2="808" y2="288"/>
+<line class="dg-axis" x1="88" y1="288" x2="88" y2="48"/>
+<line class="dg-axis" x1="88.0" y1="288" x2="88.0" y2="292"/>
+<text class="dg-tick" x="88.0" y="304" text-anchor="middle">0</text>
+<line class="dg-axis" x1="268.0" y1="288" x2="268.0" y2="292"/>
+<text class="dg-tick" x="268.0" y="304" text-anchor="middle">1,000</text>
+<line class="dg-axis" x1="448.0" y1="288" x2="448.0" y2="292"/>
+<text class="dg-tick" x="448.0" y="304" text-anchor="middle">2,000</text>
+<line class="dg-axis" x1="628.0" y1="288" x2="628.0" y2="292"/>
+<text class="dg-tick" x="628.0" y="304" text-anchor="middle">3,000</text>
+<line class="dg-axis" x1="808.0" y1="288" x2="808.0" y2="292"/>
+<text class="dg-tick" x="808.0" y="304" text-anchor="middle">4,000</text>
+<text class="dg-tick" x="80" y="291.0" text-anchor="end">0</text>
+<text class="dg-tick" x="80" y="243.0" text-anchor="end">50</text>
+<text class="dg-tick" x="80" y="195.0" text-anchor="end">100</text>
+<text class="dg-tick" x="80" y="147.0" text-anchor="end">150</text>
+<text class="dg-tick" x="80" y="99.0" text-anchor="end">200</text>
+<text class="dg-tick" x="80" y="51.0" text-anchor="end">250</text>
+<text class="dg-axis-label" x="808" y="320" text-anchor="end">SIZE (LINES)</text>
+<text class="dg-axis-label" x="88" y="38" text-anchor="start">CHANGES IN 12 MONTHS</text>
+<rect class="dg-mask" x="544.0" y="71.6" width="216" height="12" rx="2"/><text class="dg-label" x="652.0" y="80.6">1 · ticketing/barcode/BarcodeIssuer.kt</text>
+<rect class="dg-mask" x="544.0" y="84.6" width="236" height="12" rx="2"/><text class="dg-label" x="662.0" y="93.6">214 CHANGES · 3,900 LINES · TOP AUTHOR 88%</text>
+<rect class="dg-mask" x="310.0" y="97.5" width="180" height="12" rx="2"/><text class="dg-label" x="400.0" y="106.5">2 · orders/saga/PurchaseSaga.kt</text>
+<rect class="dg-mask" x="310.0" y="110.5" width="236" height="12" rx="2"/><text class="dg-label" x="428.0" y="119.5">187 CHANGES · 2,600 LINES · TOP AUTHOR 21%</text>
+<rect class="dg-mask" x="103.0" y="151.2" width="220" height="12" rx="2"/><text class="dg-label" x="213.0" y="160.2">3 · ticketing/barcode/BarcodeFormats.kt</text>
+<rect class="dg-mask" x="103.0" y="164.2" width="236" height="12" rx="2"/><text class="dg-label" x="221.0" y="173.2">131 CHANGES · 1,450 LINES · TOP AUTHOR 91%</text>
+<rect class="dg-mask" x="404.0" y="184.8" width="196" height="12" rx="2"/><text class="dg-label" x="502.0" y="193.8">4 · inventory/holds/HoldService.kt</text>
+<rect class="dg-mask" x="404.0" y="197.8" width="232" height="12" rx="2"/><text class="dg-label" x="520.0" y="206.8">96 CHANGES · 1,700 LINES · TOP AUTHOR 34%</text>
+<rect class="dg-mask" x="296.0" y="214.5" width="156" height="12" rx="2"/><text class="dg-label" x="374.0" y="223.5">5 · orders/psp/PspRouter.kt</text>
+<rect class="dg-mask" x="296.0" y="227.5" width="232" height="12" rx="2"/><text class="dg-label" x="412.0" y="236.5">88 CHANGES · 1,100 LINES · TOP AUTHOR 29%</text>
+<circle class="dg-dot dg-dot-accent" cx="790.0" cy="82.6" r="5"/>
+<circle class="dg-dot dg-dot-ink" cx="556.0" cy="108.5" r="4"/>
+<circle class="dg-dot dg-dot-accent" cx="349.0" cy="162.2" r="5"/>
+<circle class="dg-dot dg-dot-ink" cx="394.0" cy="195.8" r="4"/>
+<circle class="dg-dot dg-dot-ink" cx="286.0" cy="203.5" r="4"/>
+<line class="dg-rule" x1="24" y1="344" x2="840" y2="344"/>
+<rect class="dg-n dg-n-focal" x="24" y="355" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="363">Barcode issuance: 88% and 91% of changes by one person</text>
+<rect class="dg-n dg-n-backend" x="376" y="355" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="398" y="363">Other purchase-path file</text>
+</svg></div></div>

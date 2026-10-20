@@ -1,0 +1,52 @@
+<div class="dg-figure" data-fig="fig-9-5" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-9-5-title fig-9-5-desc">
+<title id="fig-9-5-title">The four states of a team</title>
+<desc id="fig-9-5-desc">Four states drawn as a rising staircase, after Will Larson. A team falling behind has more work arriving than it can finish; the fix is to hire more people until it is treading water. A team treading water keeps up but cannot reduce its backlog; the fix is to add process to consolidate its efforts and reduce concurrent work, that is, limit work in progress. A team repaying debt can at last pay down its accumulated problems; the fix is to add time. A team innovating can take on new work; the fix is to keep enough slack in the schedule to build quality in. At Encore&#x27;s month four, Partner APIs was falling behind and shed webhook delivery; Inventory was repaying debt on the barcode core and needed protected time for characterization tests; the new Resale team was innovating by design. No team is named as treading water.</desc>
+<defs><marker id="fig-9-5-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-9-5-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-9-5-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<path class="dg-a dg-a-muted" d="M 184,260 L 200,260 Q 208,260 208,252 L 208,212 Q 208,204 216,204 L 236,204" marker-end="url(#fig-9-5-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 396,204 L 412,204 Q 420,204 420,196 L 420,156 Q 420,148 428,148 L 448,148" marker-end="url(#fig-9-5-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 608,148 L 624,148 Q 632,148 632,140 L 632,100 Q 632,92 640,92 L 660,92" marker-end="url(#fig-9-5-m-muted)"/>
+<rect class="dg-mask" x="24" y="232" width="160" height="56" rx="8"/>
+<rect class="dg-n dg-n-backend" x="24" y="232" width="160" height="56" rx="8"/>
+<text class="dg-name" x="104" y="258">Falling behind</text>
+<text class="dg-sub" x="104" y="272">more arrives than ends</text>
+<rect class="dg-mask" x="236" y="176" width="160" height="56" rx="8"/>
+<rect class="dg-n dg-n-backend" x="236" y="176" width="160" height="56" rx="8"/>
+<text class="dg-name" x="316" y="202">Treading water</text>
+<text class="dg-sub" x="316" y="216">keeps up, backlog stays</text>
+<rect class="dg-mask" x="448" y="120" width="160" height="56" rx="8"/>
+<rect class="dg-n dg-n-backend" x="448" y="120" width="160" height="56" rx="8"/>
+<text class="dg-name" x="528" y="146">Repaying debt</text>
+<text class="dg-sub" x="528" y="160">can pay down problems</text>
+<rect class="dg-mask" x="660" y="64" width="160" height="56" rx="8"/>
+<rect class="dg-n dg-n-focal" x="660" y="64" width="160" height="56" rx="8"/>
+<text class="dg-name" x="740" y="90">Innovating</text>
+<text class="dg-sub" x="740" y="104">can take on new work</text>
+<text class="dg-eyebrow" x="24" y="32" style="text-anchor:start">DIAGNOSE THE STATE, THEN APPLY ITS FIX · AFTER LARSON (2018)</text>
+<line class="dg-rule" x1="24" y1="312" x2="840" y2="312"/>
+<text class="dg-eyebrow" x="24" y="332" style="text-anchor:start">FIX · HIRE</text>
+<text class="dg-note" x="24" y="352" text-anchor="start">“Hire more people until the</text>
+<text class="dg-note" x="24" y="366" text-anchor="start">team moves into treading</text>
+<text class="dg-note" x="24" y="380" text-anchor="start">water.”</text>
+<text class="dg-note" x="24" y="408" text-anchor="start">Encore, month 4: Partner APIs</text>
+<text class="dg-eyebrow" x="236" y="332" style="text-anchor:start">FIX · LIMIT WORK IN PROGRESS</text>
+<text class="dg-note" x="236" y="352" text-anchor="start">“Add process to consolidate</text>
+<text class="dg-note" x="236" y="366" text-anchor="start">the team’s efforts… and</text>
+<text class="dg-note" x="236" y="380" text-anchor="start">reduce concurrent work.”</text>
+<text class="dg-note" x="236" y="408" text-anchor="start">Encore, month 4: none named</text>
+<text class="dg-eyebrow" x="448" y="332" style="text-anchor:start">FIX · ADD TIME</text>
+<text class="dg-note" x="448" y="352" text-anchor="start">“Add time.”</text>
+<text class="dg-note" x="448" y="408" text-anchor="start">Encore, month 4: Inventory</text>
+<text class="dg-eyebrow" x="660" y="332" style="text-anchor:start">FIX · KEEP SLACK</text>
+<text class="dg-note" x="660" y="352" text-anchor="start">“Maintain enough slack in your</text>
+<text class="dg-note" x="660" y="366" text-anchor="start">team’s schedule… to build</text>
+<text class="dg-note" x="660" y="380" text-anchor="start">quality into their work.”</text>
+<text class="dg-note" x="660" y="408" text-anchor="start">Encore, month 4: Resale</text>
+<line class="dg-rule" x1="24" y1="420" x2="840" y2="420"/>
+<rect class="dg-n dg-n-backend" x="24" y="431" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="439">State a team can be in</text>
+<rect class="dg-n dg-n-focal" x="197" y="431" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="219" y="439">Where a team can take on new work</text>
+<line class="dg-a dg-a-muted" x1="431" y1="436" x2="455" y2="436" marker-end="url(#fig-9-5-m-muted)"/>
+<text class="dg-legend" x="463" y="439">Its fix moves the team up a step</text>
+</svg></div></div>

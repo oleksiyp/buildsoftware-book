@@ -1,0 +1,101 @@
+<div class="dg-figure" data-fig="fig-7-1" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 556" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-7-1-title fig-7-1-desc">
+<title id="fig-7-1-title">Tenants that differ only in data</title>
+<desc id="fig-7-1-desc">A schematic of Salesforce&#x27;s Force.com multitenant design as its 2008 whitepaper and the 2009 SIGMOD paper describe it, not a drawing of any real screen or table. At the top left, the universal data dictionary holds every tenant&#x27;s objects, fields, forms, workflows and access rules as metadata. One shared runtime engine reads that metadata and generates each tenant&#x27;s &#x27;virtual&#x27; application at runtime, so no real table is created and no code is compiled per tenant; governors cap the processor time, memory and queries any one tenant&#x27;s code may use in a single execution. Below, all tenant data sits in one shared table: an OrgID column, then hundreds of generic variable-length flex columns, Value0 to Value500, onto which each tenant&#x27;s custom fields are mapped, so Org A&#x27;s first custom field and Org B&#x27;s first custom field share the column Value0. An IsDeleted flag makes deletes soft, sending rows to a recycle bin. Indexes are kept in separate pivot tables, MT_Indexes, copied synchronously. The OrgID, highlighted, leads every index and partitions every table, and every query the engine runs is filtered by it. The organization names and field placements in the table are illustrative.</desc>
+<defs><marker id="fig-7-1-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-7-1-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-7-1-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="24" y="64" width="248" height="196" rx="8"/><rect class="dg-mask" x="36" y="58" width="204" height="12" rx="2"/><text class="dg-eyebrow" x="138" y="67">METADATA · UNIVERSAL DATA DICTIONARY</text>
+<rect class="dg-zone" x="24" y="300" width="816" height="200" rx="8"/><rect class="dg-mask" x="36" y="294" width="228" height="12" rx="2"/><text class="dg-eyebrow" x="150" y="303">DATA · ONE SHARED TABLE FOR EVERY TENANT</text>
+<path class="dg-a dg-a-muted" d="M 272,164 L 332,164" marker-end="url(#fig-7-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 532,148 L 552,148 Q 560,148 560,140 L 560,128 Q 560,120 568,120 L 592,120" marker-end="url(#fig-7-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 532,180 L 552,180 Q 560,180 560,188 L 560,196 Q 560,204 568,204 L 592,204" marker-end="url(#fig-7-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 432,200 L 432,340" marker-end="url(#fig-7-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 624,376 L 680,376" marker-end="url(#fig-7-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 624,424 L 680,424" marker-end="url(#fig-7-1-m-muted)"/>
+<rect class="dg-mask" x="286" y="144" width="32" height="12" rx="2"/><text class="dg-label" x="302" y="153">READ</text>
+<rect class="dg-mask" x="440" y="264" width="168" height="12" rx="2"/><text class="dg-label" x="524" y="273">EVERY QUERY FILTERED BY ORGID</text>
+<rect class="dg-mask" x="44" y="80" width="208" height="28" rx="6"/>
+<rect class="dg-n dg-n-backend" x="44" y="80" width="208" height="28" rx="6"/>
+<text class="dg-name" x="148" y="98">Objects</text>
+<rect class="dg-mask" x="44" y="116" width="208" height="28" rx="6"/>
+<rect class="dg-n dg-n-backend" x="44" y="116" width="208" height="28" rx="6"/>
+<text class="dg-name" x="148" y="134">Fields</text>
+<rect class="dg-mask" x="44" y="152" width="208" height="28" rx="6"/>
+<rect class="dg-n dg-n-backend" x="44" y="152" width="208" height="28" rx="6"/>
+<text class="dg-name" x="148" y="170">Forms</text>
+<rect class="dg-mask" x="44" y="188" width="208" height="28" rx="6"/>
+<rect class="dg-n dg-n-backend" x="44" y="188" width="208" height="28" rx="6"/>
+<text class="dg-name" x="148" y="206">Workflows</text>
+<rect class="dg-mask" x="44" y="224" width="208" height="28" rx="6"/>
+<rect class="dg-n dg-n-backend" x="44" y="224" width="208" height="28" rx="6"/>
+<text class="dg-name" x="148" y="242">Access rules</text>
+<rect class="dg-mask" x="332" y="128" width="200" height="72" rx="6"/>
+<rect class="dg-n dg-n-focal" x="332" y="128" width="200" height="72" rx="6"/>
+<text class="dg-name" x="432" y="166">Runtime engine</text>
+<text class="dg-sub" x="432" y="181">one shared copy of the code</text>
+<rect class="dg-mask" x="592" y="92" width="248" height="56" rx="6"/>
+<rect class="dg-n dg-n-input" x="592" y="92" width="248" height="56" rx="6"/>
+<text class="dg-name" x="716" y="122">Org A&#x27;s application</text>
+<text class="dg-sub" x="716" y="137">virtual, generated at runtime</text>
+<rect class="dg-mask" x="592" y="176" width="248" height="56" rx="6"/>
+<rect class="dg-n dg-n-input" x="592" y="176" width="248" height="56" rx="6"/>
+<text class="dg-name" x="716" y="206">Org B&#x27;s application</text>
+<text class="dg-sub" x="716" y="221">virtual, generated at runtime</text>
+<rect class="dg-ill-fill" x="48" y="340" width="576" height="24"/>
+<rect class="dg-ill-soft" x="48" y="364" width="576" height="24"/>
+<rect class="dg-ill-soft" x="48" y="388" width="576" height="24"/>
+<rect class="dg-ill-soft" x="48" y="412" width="576" height="24"/>
+<rect class="dg-ill-soft" x="48" y="436" width="576" height="24"/>
+<line class="dg-ill-soft" x1="136" y1="340" x2="136" y2="460"/>
+<line class="dg-ill-soft" x1="224" y1="340" x2="224" y2="460"/>
+<line class="dg-ill-soft" x1="312" y1="340" x2="312" y2="460"/>
+<line class="dg-ill-soft" x1="400" y1="340" x2="400" y2="460"/>
+<line class="dg-ill-soft" x1="448" y1="340" x2="448" y2="460"/>
+<line class="dg-ill-soft" x1="536" y1="340" x2="536" y2="460"/>
+<text class="dg-sub" x="92" y="356" style="font-weight:600">OrgID</text>
+<text class="dg-sub" x="180" y="356" style="font-weight:600">Value0</text>
+<text class="dg-sub" x="268" y="356" style="font-weight:600">Value1</text>
+<text class="dg-sub" x="356" y="356" style="font-weight:600">Value2</text>
+<text class="dg-sub" x="424" y="356" style="font-weight:600">…</text>
+<text class="dg-sub" x="492" y="356" style="font-weight:600">Value500</text>
+<text class="dg-sub" x="580" y="356" style="font-weight:600">IsDeleted</text>
+<text class="dg-sub" x="92" y="380">Org A</text>
+<text class="dg-sub" x="180" y="380">A · field 1</text>
+<text class="dg-sub" x="268" y="380">A · field 2</text>
+<text class="dg-sub" x="580" y="380">0</text>
+<text class="dg-sub" x="92" y="404">Org A</text>
+<text class="dg-sub" x="180" y="404">A · field 1</text>
+<text class="dg-sub" x="268" y="404">A · field 2</text>
+<text class="dg-sub" x="580" y="404">0</text>
+<text class="dg-sub" x="92" y="428">Org B</text>
+<text class="dg-sub" x="180" y="428">B · field 1</text>
+<text class="dg-sub" x="580" y="428">1</text>
+<text class="dg-sub" x="92" y="452">Org C</text>
+<text class="dg-sub" x="180" y="452">C · field 1</text>
+<text class="dg-sub" x="268" y="452">C · field 2</text>
+<text class="dg-sub" x="356" y="452">C · field 3</text>
+<text class="dg-sub" x="580" y="452">0</text>
+<rect class="dg-ill-fill-accent" x="48" y="340" width="88" height="120" rx="2"/>
+<rect class="dg-mask" x="680" y="344" width="144" height="48" rx="6"/>
+<rect class="dg-n dg-n-store" x="680" y="344" width="144" height="48" rx="6"/>
+<text class="dg-name" x="752" y="370">MT_Indexes</text>
+<text class="dg-sub" x="752" y="385">pivot tables, synced</text>
+<rect class="dg-mask" x="680" y="400" width="144" height="48" rx="6"/>
+<rect class="dg-n dg-n-store" x="680" y="400" width="144" height="48" rx="6"/>
+<text class="dg-name" x="752" y="426">Recycle bin</text>
+<text class="dg-sub" x="752" y="441">soft deletes</text>
+<text class="dg-eyebrow" x="24" y="32" style="text-anchor:start">FORCE.COM AS PUBLISHED IN 2008 · SCHEMATIC</text>
+<text class="dg-note" x="716" y="252" text-anchor="middle">no real table created,</text>
+<text class="dg-note" x="716" y="266" text-anchor="middle">no code compiled per tenant</text>
+<text class="dg-note" x="424" y="236" text-anchor="end">GOVERNORS: CPU, MEMORY,</text>
+<text class="dg-note" x="424" y="250" text-anchor="end">QUERIES PER EXECUTION</text>
+<text class="dg-note" x="48" y="480" text-anchor="start">OrgID leads every index and partitions every table · Value0 … Value500: variable-length flex columns</text>
+<line class="dg-rule" x1="24" y1="516" x2="840" y2="516"/>
+<rect class="dg-n dg-n-backend" x="24" y="527" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="535">Metadata</text>
+<rect class="dg-n dg-n-focal" x="118" y="527" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="140" y="535">Shared engine; the tenant key</text>
+<rect class="dg-n dg-n-input" x="330" y="527" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="352" y="535">A tenant&#x27;s virtual application</text>
+<rect class="dg-n dg-n-store" x="548" y="527" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="570" y="535">Supporting store</text>
+</svg></div></div>

@@ -1,0 +1,71 @@
+<div class="dg-figure" data-fig="fig-1-2" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 476" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-1-2-title fig-1-2-desc">
+<title id="fig-1-2-title">Encore at three sizes</title>
+<desc id="fig-1-2-desc">Three stages from left to right, each with its people, code, path to production and the decision made by default. Year 1: 9 engineers in one team; one modular monolith in one repository; a pipeline one founder wrote and a few deploys a week; default: everyone reads everything, so nothing needs an owner. Year 4: 70 engineers in nine teams; seven services split from the monolith, whose repository was kept as the shared repository; a pipeline per service and about 20 deploys a day; default: code that did not move with a service stays where it is, owned by whoever last touched it. Year 7: 400 engineers in 40 teams and a platform group; services in the shared repository and in their own, web and mobile frontends on one design system; golden path, trunk-based development and canaries, about 180 deploys a working day; default: code that works is left alone. A bar under each stage shows headcount on one scale. The defaults, outlined in vermilion, were never written down at the time.</desc>
+<defs><marker id="fig-1-2-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-1-2-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-1-2-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-ill-fill" x="56" y="120" width="4" height="8" rx="1"/>
+<rect class="dg-ill-fill" x="340" y="120" width="36" height="8" rx="1"/>
+<rect class="dg-ill-fill" x="624" y="120" width="216" height="8" rx="1"/>
+<path class="dg-ill-fill-accent" d="M 30,324 h 236 a 6 6 0 0 1 6 6 v 72 a 6 6 0 0 1 -6 6 h -236 a 6 6 0 0 1 -6 -6 v -72 a 6 6 0 0 1 6 -6 z M 314,324 h 236 a 6 6 0 0 1 6 6 v 72 a 6 6 0 0 1 -6 6 h -236 a 6 6 0 0 1 -6 -6 v -72 a 6 6 0 0 1 6 -6 z M 598,324 h 236 a 6 6 0 0 1 6 6 v 72 a 6 6 0 0 1 -6 6 h -236 a 6 6 0 0 1 -6 -6 v -72 a 6 6 0 0 1 6 -6 z"/>
+<path class="dg-a dg-a-muted" d="M 272,76 L 308,76" marker-end="url(#fig-1-2-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 556,76 L 592,76" marker-end="url(#fig-1-2-m-muted)"/>
+<rect class="dg-mask" x="24" y="48" width="248" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="24" y="48" width="248" height="56" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="32" y="54" width="44" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="54" y="63">YEAR 1</text>
+<text class="dg-name" x="148" y="82">9 engineers</text>
+<text class="dg-sub" x="148" y="97">one team</text>
+<rect class="dg-mask" x="308" y="48" width="248" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="308" y="48" width="248" height="56" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="316" y="54" width="44" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="338" y="63">YEAR 4</text>
+<text class="dg-name" x="432" y="82">70 engineers</text>
+<text class="dg-sub" x="432" y="97">nine teams</text>
+<rect class="dg-mask" x="592" y="48" width="248" height="56" rx="6"/>
+<rect class="dg-n dg-n-backend" x="592" y="48" width="248" height="56" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="600" y="54" width="44" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="622" y="63">YEAR 7</text>
+<text class="dg-name" x="716" y="82">400 engineers</text>
+<text class="dg-sub" x="716" y="97">40 teams and a platform group</text>
+<text class="dg-note" x="48" y="128" text-anchor="end">9</text>
+<text class="dg-eyebrow" x="24" y="160" style="text-anchor:start">CODE</text>
+<text class="dg-note" x="24" y="176" text-anchor="start">One modular monolith</text>
+<text class="dg-note" x="24" y="190" text-anchor="start">in one repository</text>
+<text class="dg-eyebrow" x="24" y="240" style="text-anchor:start">PATH TO PRODUCTION</text>
+<text class="dg-note" x="24" y="256" text-anchor="start">A pipeline one founder wrote;</text>
+<text class="dg-note" x="24" y="270" text-anchor="start">a few deploys a week</text>
+<text class="dg-eyebrow" x="36" y="342" style="text-anchor:start">DECISION MADE BY DEFAULT</text>
+<text class="dg-name" x="36" y="370" style="text-anchor:start">Everyone reads everything,</text>
+<text class="dg-name" x="36" y="386" style="text-anchor:start">so nothing needs an owner</text>
+<text class="dg-note" x="332" y="128" text-anchor="end">70</text>
+<text class="dg-eyebrow" x="308" y="160" style="text-anchor:start">CODE</text>
+<text class="dg-note" x="308" y="176" text-anchor="start">Seven services split from the</text>
+<text class="dg-note" x="308" y="190" text-anchor="start">monolith; its repository kept</text>
+<text class="dg-note" x="308" y="204" text-anchor="start">as the shared repository</text>
+<text class="dg-eyebrow" x="308" y="240" style="text-anchor:start">PATH TO PRODUCTION</text>
+<text class="dg-note" x="308" y="256" text-anchor="start">A pipeline per service;</text>
+<text class="dg-note" x="308" y="270" text-anchor="start">about 20 deploys a day</text>
+<text class="dg-eyebrow" x="320" y="342" style="text-anchor:start">DECISION MADE BY DEFAULT</text>
+<text class="dg-name" x="320" y="364" style="text-anchor:start">Code that did not move with a</text>
+<text class="dg-name" x="320" y="380" style="text-anchor:start">service stays where it is, owned</text>
+<text class="dg-name" x="320" y="396" style="text-anchor:start">by whoever last touched it</text>
+<text class="dg-note" x="616" y="128" text-anchor="end">400</text>
+<text class="dg-eyebrow" x="592" y="160" style="text-anchor:start">CODE</text>
+<text class="dg-note" x="592" y="176" text-anchor="start">Services in the shared repository</text>
+<text class="dg-note" x="592" y="190" text-anchor="start">and in their own; web and mobile</text>
+<text class="dg-note" x="592" y="204" text-anchor="start">frontends on one design system</text>
+<text class="dg-eyebrow" x="592" y="240" style="text-anchor:start">PATH TO PRODUCTION</text>
+<text class="dg-note" x="592" y="256" text-anchor="start">Golden path, trunk-based</text>
+<text class="dg-note" x="592" y="270" text-anchor="start">development, canaries; about</text>
+<text class="dg-note" x="592" y="284" text-anchor="start">180 deploys a working day</text>
+<text class="dg-eyebrow" x="604" y="342" style="text-anchor:start">DECISION MADE BY DEFAULT</text>
+<text class="dg-name" x="604" y="370" style="text-anchor:start">Code that works</text>
+<text class="dg-name" x="604" y="386" style="text-anchor:start">is left alone</text>
+<line class="dg-rule" x1="24" y1="436" x2="840" y2="436"/>
+<rect class="dg-n dg-n-backend" x="24" y="447" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="455">Stage of growth</text>
+<rect class="dg-n dg-n-focal" x="158" y="447" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="180" y="455">Default nobody wrote down at the time</text>
+<line class="dg-a dg-a-muted" x1="415" y1="452" x2="439" y2="452" marker-end="url(#fig-1-2-m-muted)"/>
+<text class="dg-legend" x="447" y="455">Growth; each default constrains the next size</text>
+</svg></div></div>

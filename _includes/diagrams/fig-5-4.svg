@@ -1,0 +1,85 @@
+<div class="dg-figure" data-fig="fig-5-4" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 424" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-5-4-title fig-5-4-desc">
+<title id="fig-5-4-title">The validation ladder</title>
+<desc id="fig-5-4-desc">Five rungs, run in order from left to right on each of the 60 agent-generated changes, one per call site, in 11 repositories owned by seven teams. Each rung costs more than the one before. Rung 1, build and static checks, run by CI (continuous integration): the change compiles and passes lint and fitness functions; at Encore it caught 4 changes that imported the lookup client in a forbidden direction. Rung 2, characterization and unit tests, run by CI with tests the agent cannot edit: old behavior preserved where it should be; it caught 7 changes that altered behavior at an edge. Rung 3, the sponsor&#x27;s inspection by Ines: the change does what the spec says and nothing else; it caught 9 changes with unrelated improvements, reverted hunk by hunk. Rung 4, owner review, one shard per team, by the owning team: the change is right for this code and its context; one shard, Venue Entry&#x27;s, was rejected outright (Section 5.3). Rung 5, progressive delivery by canary, as for any change: behavior in production; it caught nothing.</desc>
+<defs><marker id="fig-5-4-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-4-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-4-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="20" y="96" width="328" height="268" rx="8"/><rect class="dg-mask" x="32" y="90" width="88" height="12" rx="2"/><text class="dg-eyebrow" x="76" y="99">MACHINE CHECKS</text>
+<rect class="dg-zone" x="356" y="96" width="328" height="268" rx="8"/><rect class="dg-mask" x="368" y="90" width="44" height="12" rx="2"/><text class="dg-eyebrow" x="390" y="99">PEOPLE</text>
+<rect class="dg-zone" x="692" y="96" width="160" height="268" rx="8"/><rect class="dg-mask" x="704" y="90" width="64" height="12" rx="2"/><text class="dg-eyebrow" x="736" y="99">PRODUCTION</text>
+<path class="dg-a dg-a-muted" d="M 24,60 L 848,60" marker-end="url(#fig-5-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 176,156 L 192,156" marker-end="url(#fig-5-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 344,156 L 360,156" marker-end="url(#fig-5-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 512,156 L 528,156" marker-end="url(#fig-5-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 680,156 L 696,156" marker-end="url(#fig-5-4-m-muted)"/>
+<rect class="dg-mask" x="322" y="68" width="228" height="12" rx="2"/><text class="dg-label" x="436" y="77">EACH RUNG COSTS MORE THAN THE ONE BEFORE</text>
+<rect class="dg-mask" x="24" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-n dg-n-backend" x="24" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="32" y="126" width="44" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="54" y="135">1 · CI</text>
+<text class="dg-name" x="100" y="162">Build, static</text>
+<text class="dg-sub" x="100" y="177">lint, fitness functions</text>
+<rect class="dg-mask" x="192" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-n dg-n-backend" x="192" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="200" y="126" width="116" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="258" y="135">2 · CI, LOCKED TESTS</text>
+<text class="dg-name" x="268" y="162">Tests</text>
+<text class="dg-sub" x="268" y="177">characterization + unit</text>
+<rect class="dg-mask" x="360" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-n dg-n-backend" x="360" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="368" y="126" width="68" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="402" y="135">3 · SPONSOR</text>
+<text class="dg-name" x="436" y="162">Sponsor&#x27;s look</text>
+<text class="dg-sub" x="436" y="177">Ines inspects</text>
+<rect class="dg-mask" x="528" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-n dg-n-focal" x="528" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-tagbox dg-t-focal" x="536" y="126" width="88" height="12" rx="2"/>
+<text class="dg-tag dg-t-focal" x="580" y="135">4 · OWNING TEAM</text>
+<text class="dg-name" x="604" y="162">Owner review</text>
+<text class="dg-sub" x="604" y="177">one shard per team</text>
+<rect class="dg-mask" x="696" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-n dg-n-backend" x="696" y="120" width="152" height="72" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="704" y="126" width="120" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="764" y="135">5 · AS FOR ANY CHANGE</text>
+<text class="dg-name" x="772" y="162">Canary</text>
+<text class="dg-sub" x="772" y="177">progressive delivery</text>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">60 AGENT CHANGES · ONE PER CALL SITE · 11 REPOSITORIES · 7 OWNING TEAMS</text>
+<text class="dg-eyebrow" x="28" y="224" style="text-anchor:start">CHECKS</text>
+<text class="dg-note" x="28" y="240" text-anchor="start">compiles; passes lint</text>
+<text class="dg-note" x="28" y="254" text-anchor="start">and fitness functions</text>
+<text class="dg-eyebrow" x="28" y="304" style="text-anchor:start">CAUGHT AT ENCORE</text>
+<text class="dg-note" x="28" y="320" text-anchor="start">4 changes importing the</text>
+<text class="dg-note" x="28" y="334" text-anchor="start">lookup client in a</text>
+<text class="dg-note" x="28" y="348" text-anchor="start">forbidden direction</text>
+<text class="dg-eyebrow" x="196" y="224" style="text-anchor:start">CHECKS</text>
+<text class="dg-note" x="196" y="240" text-anchor="start">old behavior preserved</text>
+<text class="dg-note" x="196" y="254" text-anchor="start">where it should be;</text>
+<text class="dg-note" x="196" y="268" text-anchor="start">agent cannot edit tests</text>
+<text class="dg-eyebrow" x="196" y="304" style="text-anchor:start">CAUGHT AT ENCORE</text>
+<text class="dg-note" x="196" y="320" text-anchor="start">7 changes that altered</text>
+<text class="dg-note" x="196" y="334" text-anchor="start">behavior at an edge</text>
+<text class="dg-eyebrow" x="364" y="224" style="text-anchor:start">CHECKS</text>
+<text class="dg-note" x="364" y="240" text-anchor="start">does what the spec says,</text>
+<text class="dg-note" x="364" y="254" text-anchor="start">and nothing else</text>
+<text class="dg-eyebrow" x="364" y="304" style="text-anchor:start">CAUGHT AT ENCORE</text>
+<text class="dg-note" x="364" y="320" text-anchor="start">9 changes with unrelated</text>
+<text class="dg-note" x="364" y="334" text-anchor="start">&quot;improvements&quot;, reverted</text>
+<text class="dg-note" x="364" y="348" text-anchor="start">hunk by hunk</text>
+<text class="dg-eyebrow" x="532" y="224" style="text-anchor:start">CHECKS</text>
+<text class="dg-note" x="532" y="240" text-anchor="start">right for this code</text>
+<text class="dg-note" x="532" y="254" text-anchor="start">and its context</text>
+<text class="dg-eyebrow" x="532" y="304" style="text-anchor:start">CAUGHT AT ENCORE</text>
+<text class="dg-note" x="532" y="320" text-anchor="start">one shard rejected</text>
+<text class="dg-note" x="532" y="334" text-anchor="start">outright: Venue Entry&#x27;s</text>
+<text class="dg-note" x="532" y="348" text-anchor="start">offline scanner (5.3)</text>
+<text class="dg-eyebrow" x="700" y="224" style="text-anchor:start">CHECKS</text>
+<text class="dg-note" x="700" y="240" text-anchor="start">behavior in production</text>
+<text class="dg-eyebrow" x="700" y="304" style="text-anchor:start">CAUGHT AT ENCORE</text>
+<text class="dg-note" x="700" y="320" text-anchor="start">nothing</text>
+<line class="dg-rule" x1="24" y1="384" x2="840" y2="384"/>
+<rect class="dg-n dg-n-backend" x="24" y="395" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="403">Rung of checks</text>
+<rect class="dg-n dg-n-focal" x="152" y="395" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="174" y="403">The rung that caught what every test passed</text>
+<line class="dg-a dg-a-muted" x1="442" y1="400" x2="466" y2="400" marker-end="url(#fig-5-4-m-muted)"/>
+<text class="dg-legend" x="474" y="403">Changes move on to the next rung</text>
+</svg></div></div>

@@ -1,0 +1,50 @@
+<div class="dg-figure" data-fig="fig-9-2" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 404" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-9-2-title fig-9-2-desc">
+<title id="fig-9-2-title">People as stocks and flows</title>
+<desc id="fig-9-2-desc">A stock-and-flow diagram. Hires flow into a stock of engineers who are ramping up. Ramping engineers flow into the stock of productive engineers through a valve whose rate is set by onboarding capacity, the time of experienced people; a buddy can usefully take one newcomer at a time. Productive engineers leave through two outflows, attrition and moves into management, and they also feed back into the valve, because they are the buddies for the next cohort; a cohort that ramped slowly becomes poorly prepared buddies. Each flow has a limit, and a growth target must be checked against all of them. Encore&#x27;s year six, shown as an example: 150 hired, 20 left, and 145 of 250 engineers had joined within the previous 12 months.</desc>
+<defs><marker id="fig-9-2-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-9-2-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-9-2-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<path class="dg-a dg-a-muted" d="M 152,132 L 272,132" marker-end="url(#fig-9-2-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 456,132 L 576,132" marker-end="url(#fig-9-2-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 668,172 L 668,252" marker-end="url(#fig-9-2-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 760,172 L 760,252" marker-end="url(#fig-9-2-m-muted)"/>
+<path class="dg-a dg-a-accent" d="M 620,92 L 620,72 Q 620,64 612,64 L 524,64 Q 516,64 516,72 L 516,116" marker-end="url(#fig-9-2-m-accent)"/>
+<rect class="dg-mask" x="220" y="112" width="40" height="12" rx="2"/><text class="dg-label" x="240" y="121">HIRES</text>
+<rect class="dg-mask" x="452" y="44" width="232" height="12" rx="2"/><text class="dg-label dg-l-accent" x="568" y="53">EXPERIENCED TIME · ONE NEWCOMER PER BUDDY</text>
+<rect class="dg-mask" x="460" y="152" width="112" height="12" rx="2"/><text class="dg-label" x="516" y="161">ONBOARDING CAPACITY</text>
+<rect class="dg-mask" x="24" y="104" width="128" height="56" rx="6"/>
+<rect class="dg-n dg-n-external" x="24" y="104" width="128" height="56" rx="6"/>
+<text class="dg-name" x="88" y="134">Candidates</text>
+<text class="dg-sub" x="88" y="149">outside Encore</text>
+<rect class="dg-mask" x="272" y="92" width="184" height="80" rx="6"/>
+<rect class="dg-n dg-n-focal" x="272" y="92" width="184" height="80" rx="6"/>
+<text class="dg-name" x="364" y="134">Ramping</text>
+<text class="dg-sub" x="364" y="149">stock: still learning</text>
+<rect class="dg-mask" x="576" y="92" width="264" height="80" rx="6"/>
+<rect class="dg-n dg-n-store" x="576" y="92" width="264" height="80" rx="6"/>
+<text class="dg-name" x="708" y="134">Productive</text>
+<text class="dg-sub" x="708" y="149">stock: can ship and teach</text>
+<rect class="dg-mask" x="612" y="252" width="112" height="48" rx="6"/>
+<rect class="dg-n dg-n-external" x="612" y="252" width="112" height="48" rx="6"/>
+<text class="dg-name" x="668" y="278">Attrition</text>
+<text class="dg-sub" x="668" y="293">regretted or not</text>
+<rect class="dg-mask" x="732" y="252" width="108" height="48" rx="6"/>
+<rect class="dg-n dg-n-external" x="732" y="252" width="108" height="48" rx="6"/>
+<text class="dg-name" x="786" y="278">Management</text>
+<text class="dg-sub" x="786" y="293">leaves the stock</text>
+<text class="dg-eyebrow" x="24" y="32" style="text-anchor:start">ENGINEERS AS STOCKS AND FLOWS · EVERY FLOW HAS A LIMIT</text>
+<path class="dg-mask" d="M 186,120 L 206,120 L 186,144 L 206,144 Z"/><path class="dg-ill-ink" d="M 186,120 L 206,120 L 186,144 L 206,144 Z"/>
+<path class="dg-mask" d="M 506,120 L 526,120 L 506,144 L 526,144 Z"/><path class="dg-ill-ink" d="M 506,120 L 526,120 L 506,144 L 526,144 Z"/>
+<text class="dg-note" x="24" y="196" text-anchor="start">Year six at Encore: 150 hired, 20 left; 145 of 250 had joined within 12 months.</text>
+<text class="dg-note" x="24" y="212" text-anchor="start">Fewer engineers with a year&#x27;s tenure than newcomers, so buddies were</text>
+<text class="dg-note" x="24" y="228" text-anchor="start">doubled up, borrowed from other teams or skipped.</text>
+<text class="dg-note" x="24" y="340" text-anchor="start">Slow ramping one year leaves poorly trained buddies the next; the limit is a stock, not effort.</text>
+<line class="dg-rule" x1="24" y1="364" x2="840" y2="364"/>
+<rect class="dg-n dg-n-focal" x="24" y="375" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="383">Stock that grows when the valve is narrow</text>
+<rect class="dg-n dg-n-store" x="303" y="375" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="325" y="383">Stock</text>
+<rect class="dg-n dg-n-external" x="381" y="375" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="403" y="383">Source or sink</text>
+<line class="dg-a dg-a-accent" x1="509" y1="380" x2="533" y2="380" marker-end="url(#fig-9-2-m-accent)"/>
+<text class="dg-legend" x="541" y="383">Feedback: who teaches</text>
+</svg></div></div>

@@ -1,0 +1,61 @@
+<div class="dg-figure" data-fig="fig-6-3" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 464" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-6-3-title fig-6-3-desc">
+<title id="fig-6-3-title">The Resale team&#x27;s first deploy</title>
+<desc id="fig-6-3-desc">Seven steps laid end to end across 23 working days, with waiting shaded. Create the repository and service from the template: 1 day, no waiting. Walking-skeleton build with the pipeline green: 2 days, no waiting. Sandbox partner credential: 5 days, all waiting, on a ticket to Security Engineering and a certificate issued by hand. Production partner credential: 4 days, all waiting, on a second ticket with a separate approval. Write a webhook sender, copied from Partner APIs&#x27;: 3 days, no waiting. Security review of the new sender: 6 days, all waiting, in the review queue with questions about the signing scheme. First production deploy and first webhook to Rowmate&#x27;s sandbox: 2 days, no waiting. In total 23 working days, of which 15 were waiting: 9 for credentials and 6 for the review of a sender the platform did not offer.</desc>
+<defs><marker id="fig-6-3-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-6-3-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-6-3-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="320" y1="348" x2="780" y2="348"/>
+<line class="dg-axis" x1="320" y1="348" x2="320" y2="352"/>
+<line class="dg-grid" x1="320" y1="56" x2="320" y2="348"/>
+<line class="dg-axis" x1="420" y1="348" x2="420" y2="352"/>
+<line class="dg-grid" x1="420" y1="56" x2="420" y2="348"/>
+<line class="dg-axis" x1="520" y1="348" x2="520" y2="352"/>
+<line class="dg-grid" x1="520" y1="56" x2="520" y2="348"/>
+<line class="dg-axis" x1="620" y1="348" x2="620" y2="352"/>
+<line class="dg-grid" x1="620" y1="56" x2="620" y2="348"/>
+<line class="dg-axis" x1="720" y1="348" x2="720" y2="352"/>
+<line class="dg-grid" x1="720" y1="56" x2="720" y2="348"/>
+<line class="dg-axis" x1="780" y1="348" x2="780" y2="352"/>
+<line class="dg-grid" x1="780" y1="56" x2="780" y2="348"/>
+<path class="dg-ill-soft" d="M 380,390 v 6 h 180 v -6"/>
+<path class="dg-ill-soft" d="M 620,390 v 6 h 120 v -6"/>
+<rect class="dg-mask" x="614" y="32" width="164" height="12" rx="2"/><text class="dg-label dg-l-accent" x="696" y="41">23 DAYS · 15 OF THEM WAITING</text>
+<rect class="dg-n dg-n-backend" x="320" y="64" width="20" height="24" rx="3"/>
+<rect class="dg-n dg-n-backend" x="340" y="104" width="40" height="24" rx="3"/>
+<rect class="dg-n dg-n-backend" x="560" y="224" width="60" height="24" rx="3"/>
+<rect class="dg-n dg-n-backend" x="740" y="304" width="40" height="24" rx="3"/>
+<path class="dg-ill-fill-accent" d="M 383,144 h 94 a 3 3 0 0 1 3 3 v 18 a 3 3 0 0 1 -3 3 h -94 a 3 3 0 0 1 -3 -3 v -18 a 3 3 0 0 1 3 -3 z M 483,184 h 74 a 3 3 0 0 1 3 3 v 18 a 3 3 0 0 1 -3 3 h -74 a 3 3 0 0 1 -3 -3 v -18 a 3 3 0 0 1 3 -3 z M 623,264 h 114 a 3 3 0 0 1 3 3 v 18 a 3 3 0 0 1 -3 3 h -114 a 3 3 0 0 1 -3 -3 v -18 a 3 3 0 0 1 3 -3 z"/>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">VERIFIED RESALE · REPOSITORY CREATED TO FIRST PRODUCTION DEPLOY · WORKING DAYS</text>
+<text class="dg-note" x="24" y="80" style="fill:var(--dg-ink)">Create repository and service from the template</text>
+<text class="dg-sub" x="330" y="79">1</text>
+<text class="dg-note" x="24" y="120" style="fill:var(--dg-ink)">Walking-skeleton build; pipeline green</text>
+<text class="dg-sub" x="360" y="119">2</text>
+<text class="dg-note" x="24" y="154" style="fill:var(--dg-ink)">Sandbox partner credential</text>
+<text class="dg-note" x="24" y="167" text-anchor="start">ticket to Security Eng.; cert by hand</text>
+<text class="dg-sub" x="430" y="159">5</text>
+<text class="dg-note" x="24" y="194" style="fill:var(--dg-ink)">Production partner credential</text>
+<text class="dg-note" x="24" y="207" text-anchor="start">second ticket, separate approval</text>
+<text class="dg-sub" x="520" y="199">4</text>
+<text class="dg-note" x="24" y="234" style="fill:var(--dg-ink)">Write a webhook sender</text>
+<text class="dg-note" x="24" y="247" text-anchor="start">copied from Partner APIs&#x27; sender</text>
+<text class="dg-sub" x="590" y="239">3</text>
+<text class="dg-note" x="24" y="274" style="fill:var(--dg-ink)">Security review of the new sender</text>
+<text class="dg-note" x="24" y="287" text-anchor="start">review queue; signing-scheme questions</text>
+<text class="dg-sub" x="680" y="279">6</text>
+<text class="dg-note" x="24" y="314" style="fill:var(--dg-ink)">First production deploy</text>
+<text class="dg-note" x="24" y="327" text-anchor="start">and first webhook to Rowmate&#x27;s sandbox</text>
+<text class="dg-sub" x="760" y="319">2</text>
+<text class="dg-tick" x="320" y="364" text-anchor="middle">0</text>
+<text class="dg-tick" x="420" y="364" text-anchor="middle">5</text>
+<text class="dg-tick" x="520" y="364" text-anchor="middle">10</text>
+<text class="dg-tick" x="620" y="364" text-anchor="middle">15</text>
+<text class="dg-tick" x="720" y="364" text-anchor="middle">20</text>
+<text class="dg-tick" x="780" y="364" text-anchor="middle">23</text>
+<text class="dg-axis-label" x="780" y="380" text-anchor="end">WORKING DAYS</text>
+<text class="dg-note" x="470" y="412" text-anchor="middle">CREDENTIALS · 9 DAYS WAITING</text>
+<text class="dg-note" x="680" y="412" text-anchor="middle">SENDER REVIEW · 6 DAYS WAITING</text>
+<line class="dg-rule" x1="24" y1="424" x2="840" y2="424"/>
+<rect class="dg-n dg-n-backend" x="24" y="435" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="443">The team&#x27;s own work</text>
+<rect class="dg-n dg-n-focal" x="180" y="435" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="202" y="443">Waiting on another team</text>
+</svg></div></div>

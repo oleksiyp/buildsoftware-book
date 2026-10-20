@@ -1,0 +1,73 @@
+<div class="dg-figure" data-fig="fig-7-4" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 476" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-7-4-title fig-7-4-desc">
+<title id="fig-7-4-title">Encore&#x27;s tenant lifecycle</title>
+<desc id="fig-7-4-desc">Five states owned by the tenant directory, left to right. Trial, entered by sign-up: no public sales yet; services allow setup and test sales only. Live, entered when onboarding&#x27;s verify step passes: normal sales and resale; services serve normally. Suspended, highlighted, entered only by a person&#x27;s decision with a reason (event TenantSuspended): valid tickets stay valid and there are no new sales; services stop new sales, pause resale listings and hold payouts. A suspended tenant can be reinstated to live (TenantReinstated). Offboarding, entered from live by notice of termination or a switch (TenantOffboardingStarted): future events are honored or re-homed; services run the export, stop new events and keep serving existing tickets. Closed, entered when the retrieval period ends and irreversible: no tickets remain; services erase per schedule and issue a deletion record. Each transition is an event, and each consumer&#x27;s handling of it is checked by a contract test. Separately, an event can be in the sub-state resale paused.</desc>
+<defs><marker id="fig-7-4-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-7-4-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-7-4-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-rule" x1="24" y1="224" x2="840" y2="224"/>
+<line class="dg-rule" x1="24" y1="284" x2="840" y2="284"/>
+<line class="dg-rule" x1="24" y1="344" x2="840" y2="344"/>
+<path class="dg-a dg-a-muted" d="M 96,74 L 96,120" marker-end="url(#fig-7-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 164,144 L 196,144" marker-end="url(#fig-7-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 332,144 L 364,144" marker-end="url(#fig-7-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 432,168 L 432,188 Q 432,196 424,196 L 272,196 Q 264,196 264,188 L 264,168" marker-end="url(#fig-7-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 288,120 L 288,92 Q 288,84 296,84 L 592,84 Q 600,84 600,92 L 600,120" marker-end="url(#fig-7-4-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 668,144 L 700,144" marker-end="url(#fig-7-4-m-muted)"/>
+<rect class="dg-mask" x="316" y="204" width="64" height="12" rx="2"/><text class="dg-label" x="348" y="213">REINSTATED</text>
+<rect class="dg-mask" x="354" y="64" width="180" height="12" rx="2"/><text class="dg-label" x="444" y="73">NOTICE OF TERMINATION OR SWITCH</text>
+<circle class="dg-start" cx="96" cy="68" r="6"/>
+<rect class="dg-mask" x="28" y="120" width="136" height="48" rx="8"/>
+<rect class="dg-n dg-n-backend" x="28" y="120" width="136" height="48" rx="8"/>
+<text class="dg-name" x="96" y="148">trial</text>
+<rect class="dg-mask" x="196" y="120" width="136" height="48" rx="8"/>
+<rect class="dg-n dg-n-backend" x="196" y="120" width="136" height="48" rx="8"/>
+<text class="dg-name" x="264" y="148">live</text>
+<rect class="dg-mask" x="364" y="120" width="136" height="48" rx="8"/>
+<rect class="dg-n dg-n-focal" x="364" y="120" width="136" height="48" rx="8"/>
+<text class="dg-name" x="432" y="142">suspended</text>
+<text class="dg-sub" x="432" y="156">only by a person</text>
+<rect class="dg-mask" x="532" y="120" width="136" height="48" rx="8"/>
+<rect class="dg-n dg-n-backend" x="532" y="120" width="136" height="48" rx="8"/>
+<text class="dg-name" x="600" y="148">offboarding</text>
+<rect class="dg-mask" x="700" y="120" width="136" height="48" rx="8"/>
+<rect class="dg-n dg-n-backend" x="700" y="120" width="136" height="48" rx="8"/>
+<text class="dg-name" x="768" y="142">closed</text>
+<text class="dg-sub" x="768" y="156">irreversible</text>
+<text class="dg-eyebrow" x="24" y="32" style="text-anchor:start">OWNED BY THE TENANT DIRECTORY · EVERY TRANSITION IS AN EVENT</text>
+<text class="dg-eyebrow" x="24" y="236" style="text-anchor:start">ENTERED BY</text>
+<text class="dg-note" x="28" y="252" text-anchor="start">Sign-up</text>
+<text class="dg-note" x="196" y="252" text-anchor="start">Onboarding&#x27;s verify</text>
+<text class="dg-note" x="196" y="265" text-anchor="start">step passes</text>
+<text class="dg-note" x="364" y="252" text-anchor="start">A person&#x27;s decision,</text>
+<text class="dg-note" x="364" y="265" text-anchor="start">with reason</text>
+<text class="dg-note" x="532" y="252" text-anchor="start">Notice of termination</text>
+<text class="dg-note" x="532" y="265" text-anchor="start">or switch</text>
+<text class="dg-note" x="700" y="252" text-anchor="start">Retrieval period ends</text>
+<text class="dg-eyebrow" x="24" y="296" style="text-anchor:start">WHAT IT MEANS FOR FANS</text>
+<text class="dg-note" x="28" y="312" text-anchor="start">No public sales yet</text>
+<text class="dg-note" x="196" y="312" text-anchor="start">Normal sales and resale</text>
+<text class="dg-note" x="364" y="312" text-anchor="start">Valid tickets stay</text>
+<text class="dg-note" x="364" y="325" text-anchor="start">valid; no new sales</text>
+<text class="dg-note" x="532" y="312" text-anchor="start">Future events honored</text>
+<text class="dg-note" x="532" y="325" text-anchor="start">or re-homed</text>
+<text class="dg-note" x="700" y="312" text-anchor="start">None remain</text>
+<text class="dg-eyebrow" x="24" y="356" style="text-anchor:start">WHAT EVERY SERVICE MUST DO</text>
+<text class="dg-note" x="28" y="372" text-anchor="start">Allow setup and</text>
+<text class="dg-note" x="28" y="385" text-anchor="start">test sales only</text>
+<text class="dg-note" x="196" y="372" text-anchor="start">Serve normally</text>
+<text class="dg-note" x="364" y="372" text-anchor="start">Stop new sales; pause</text>
+<text class="dg-note" x="364" y="385" text-anchor="start">resale listings;</text>
+<text class="dg-note" x="364" y="398" text-anchor="start">hold payouts</text>
+<text class="dg-note" x="532" y="372" text-anchor="start">Run export; stop new</text>
+<text class="dg-note" x="532" y="385" text-anchor="start">events; keep serving</text>
+<text class="dg-note" x="532" y="398" text-anchor="start">existing tickets</text>
+<text class="dg-note" x="700" y="372" text-anchor="start">Erase per schedule;</text>
+<text class="dg-note" x="700" y="385" text-anchor="start">issue deletion record</text>
+<text class="dg-note" x="24" y="432" text-anchor="start">Resale paused is a separate sub-state of one event: listings hidden, primary sales and valid tickets untouched.</text>
+<line class="dg-rule" x1="24" y1="436" x2="840" y2="436"/>
+<rect class="dg-n dg-n-backend" x="24" y="447" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="455">Lifecycle state</text>
+<rect class="dg-n dg-n-focal" x="158" y="447" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="180" y="455">The delicate state</text>
+<line class="dg-a dg-a-muted" x1="308" y1="452" x2="332" y2="452" marker-end="url(#fig-7-4-m-muted)"/>
+<text class="dg-legend" x="340" y="455">Transition, published as an event</text>
+</svg></div></div>

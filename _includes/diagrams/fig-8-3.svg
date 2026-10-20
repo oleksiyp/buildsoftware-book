@@ -1,0 +1,85 @@
+<div class="dg-figure" data-fig="fig-8-3" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 548" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-8-3-title fig-8-3-desc">
+<title id="fig-8-3-title">The listing state machine</title>
+<desc id="fig-8-3-desc">A listing&#x27;s states and transitions in Verified Resale. A seller lists on a partner or in Encore&#x27;s app, and the listing becomes listed if it passes Gate provenance, the per-fan listing limit, a price at or below the cap, resale enabled for the event, the resale window open, and step-up sign-in after a recent credential change; owner Resale. When a buyer starts checkout the listing moves from listed to reserved, guarded by Bot Screening, the per-buyer limit and the window being open; owners Resale and Bot Screening. If payment is not authorized within 5 minutes it returns from reserved to listed. When payment is authorized with strong customer authentication it moves from reserved to sold, guarded by the primary payment service provider being available; owner Orders &amp; Payments. When the sale is recorded it moves from sold to reissued: the old ticket identity is voided and a new one issued in one step; owner Inventory. From listed, a listing is withdrawn when the seller withdraws, the organizer disables resale, a rule change makes it invalid or the event is cancelled, and it expires when the window closes two hours before doors. The return, withdrawn and expired transitions have no guards and are owned by Resale. Partners are told of every transition by webhook and reconcile their copies hourly.</desc>
+<defs><marker id="fig-8-3-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-8-3-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-8-3-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="24" y="292" width="192" height="176" rx="8"/><rect class="dg-mask" x="36" y="286" width="76" height="12" rx="2"/><text class="dg-eyebrow" x="74" y="295">1 · → LISTED</text>
+<rect class="dg-zone" x="232" y="292" width="192" height="176" rx="8"/><rect class="dg-mask" x="244" y="286" width="124" height="12" rx="2"/><text class="dg-eyebrow" x="306" y="295">2 · LISTED → RESERVED</text>
+<rect class="dg-zone" x="440" y="292" width="192" height="176" rx="8"/><rect class="dg-mask" x="452" y="286" width="112" height="12" rx="2"/><text class="dg-eyebrow" x="508" y="295">3 · RESERVED → SOLD</text>
+<rect class="dg-zone" x="648" y="292" width="192" height="176" rx="8"/><rect class="dg-mask" x="660" y="286" width="112" height="12" rx="2"/><text class="dg-eyebrow" x="716" y="295">4 · SOLD → REISSUED</text>
+<path class="dg-a dg-a-muted" d="M 120,168 L 120,88" marker-end="url(#fig-8-3-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 184,168 L 184,136 Q 184,128 192,128 L 256,128 Q 264,128 264,120 L 264,88" marker-end="url(#fig-8-3-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 34,192 L 96,192" marker-end="url(#fig-8-3-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 200,192 L 320,192" marker-end="url(#fig-8-3-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 424,192 L 552,192" marker-end="url(#fig-8-3-m-muted)"/>
+<path class="dg-a dg-a-accent" d="M 648,192 L 744,192" marker-end="url(#fig-8-3-m-accent)"/>
+<path class="dg-a dg-a-muted" d="M 372,216 L 372,240 Q 372,248 364,248 L 156,248 Q 148,248 148,240 L 148,216" marker-end="url(#fig-8-3-m-muted)"/>
+<rect class="dg-mask" x="222" y="172" width="76" height="12" rx="2"/><text class="dg-label" x="260" y="181">2 · CHECKOUT</text>
+<rect class="dg-mask" x="436" y="172" width="104" height="12" rx="2"/><text class="dg-label" x="488" y="181">3 · PAID WITH SCA</text>
+<rect class="dg-mask" x="658" y="172" width="76" height="12" rx="2"/><text class="dg-label dg-l-accent" x="696" y="181">4 · RECORDED</text>
+<rect class="dg-mask" x="186" y="256" width="148" height="12" rx="2"/><text class="dg-label" x="260" y="265">NOT PAID WITHIN 5 MINUTES</text>
+<rect class="dg-mask" x="36" y="156" width="56" height="12" rx="2"/><text class="dg-label" x="64" y="165">1 · LIST</text>
+<circle class="dg-start" cx="28" cy="192" r="6"/>
+<rect class="dg-mask" x="96" y="168" width="104" height="48" rx="8"/>
+<rect class="dg-n dg-n-backend" x="96" y="168" width="104" height="48" rx="8"/>
+<text class="dg-name" x="148" y="196">listed</text>
+<rect class="dg-mask" x="320" y="168" width="104" height="48" rx="8"/>
+<rect class="dg-n dg-n-backend" x="320" y="168" width="104" height="48" rx="8"/>
+<text class="dg-name" x="372" y="196">reserved</text>
+<rect class="dg-mask" x="552" y="168" width="96" height="48" rx="8"/>
+<rect class="dg-n dg-n-backend" x="552" y="168" width="96" height="48" rx="8"/>
+<text class="dg-name" x="600" y="196">sold</text>
+<rect class="dg-mask" x="744" y="168" width="96" height="48" rx="8"/>
+<rect class="dg-n dg-n-focal" x="744" y="168" width="96" height="48" rx="8"/>
+<text class="dg-name" x="792" y="190">reissued</text>
+<text class="dg-sub" x="792" y="204">new identity</text>
+<rect class="dg-mask" x="40" y="40" width="128" height="48" rx="8"/>
+<rect class="dg-n dg-n-optional" x="40" y="40" width="128" height="48" rx="8"/>
+<text class="dg-name" x="104" y="68">withdrawn</text>
+<rect class="dg-mask" x="216" y="40" width="96" height="48" rx="8"/>
+<rect class="dg-n dg-n-optional" x="216" y="40" width="96" height="48" rx="8"/>
+<text class="dg-name" x="264" y="68">expired</text>
+<text class="dg-note" x="344" y="52" text-anchor="start">WITHDRAWN: THE SELLER WITHDRAWS, THE ORGANIZER DISABLES RESALE,</text>
+<text class="dg-note" x="344" y="67" text-anchor="start">A RULE CHANGE MAKES THE LISTING INVALID, OR THE EVENT IS CANCELLED</text>
+<text class="dg-note" x="344" y="82" text-anchor="start">EXPIRED: THE WINDOW CLOSES, TWO HOURS BEFORE DOORS</text>
+<text class="dg-note" x="344" y="97" text-anchor="start">NO GUARDS ON THESE EXITS OR ON THE RETURN · OWNER: RESALE</text>
+<text class="dg-note" x="36" y="314" text-anchor="start">SELLER LISTS ON A PARTNER</text>
+<text class="dg-note" x="36" y="327" text-anchor="start">OR IN ENCORE&#x27;S APP</text>
+<text class="dg-note" x="36" y="348" text-anchor="start">GUARDS</text>
+<text class="dg-note" x="80" y="348" text-anchor="start">Gate provenance</text>
+<text class="dg-note" x="80" y="361" text-anchor="start">per-fan listing limit</text>
+<text class="dg-note" x="80" y="374" text-anchor="start">price at or below cap</text>
+<text class="dg-note" x="80" y="387" text-anchor="start">resale enabled</text>
+<text class="dg-note" x="80" y="400" text-anchor="start">window open</text>
+<text class="dg-note" x="80" y="413" text-anchor="start">step-up sign-in after</text>
+<text class="dg-note" x="80" y="426" text-anchor="start">a recent credential</text>
+<text class="dg-note" x="80" y="439" text-anchor="start">change</text>
+<text class="dg-note" x="36" y="456" text-anchor="start">OWNER: RESALE</text>
+<text class="dg-note" x="244" y="314" text-anchor="start">BUYER STARTS CHECKOUT</text>
+<text class="dg-note" x="244" y="348" text-anchor="start">GUARDS</text>
+<text class="dg-note" x="288" y="348" text-anchor="start">Bot Screening</text>
+<text class="dg-note" x="288" y="361" text-anchor="start">per-buyer limit</text>
+<text class="dg-note" x="288" y="374" text-anchor="start">window open</text>
+<text class="dg-note" x="244" y="456" text-anchor="start">OWNER: RESALE, BOT SCREENING</text>
+<text class="dg-note" x="452" y="314" text-anchor="start">PAYMENT AUTHORIZED WITH</text>
+<text class="dg-note" x="452" y="327" text-anchor="start">STRONG CUSTOMER AUTHENTICATION</text>
+<text class="dg-note" x="452" y="348" text-anchor="start">GUARDS</text>
+<text class="dg-note" x="496" y="348" text-anchor="start">primary PSP available</text>
+<text class="dg-note" x="452" y="456" text-anchor="start">OWNER: ORDERS &amp; PAYMENTS</text>
+<text class="dg-note" x="660" y="314" text-anchor="start">SALE RECORDED</text>
+<text class="dg-note" x="660" y="348" text-anchor="start">GUARDS</text>
+<text class="dg-note" x="704" y="348" text-anchor="start">old identity voided,</text>
+<text class="dg-note" x="704" y="361" text-anchor="start">new one issued,</text>
+<text class="dg-note" x="704" y="374" text-anchor="start">in one step</text>
+<text class="dg-note" x="660" y="456" text-anchor="start">OWNER: INVENTORY</text>
+<text class="dg-note" x="432" y="496" text-anchor="middle">PARTNERS ARE TOLD OF EVERY TRANSITION BY WEBHOOK AND RECONCILE THEIR COPIES HOURLY</text>
+<line class="dg-rule" x1="24" y1="508" x2="840" y2="508"/>
+<circle class="dg-start" cx="30" cy="524" r="5"/>
+<text class="dg-legend" x="40" y="527">Created</text>
+<rect class="dg-n dg-n-backend" x="107" y="519" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="129" y="527">Live state</text>
+<rect class="dg-n dg-n-optional" x="213" y="519" width="16" height="10" rx="2" stroke-dasharray="4,3"/>
+<text class="dg-legend" x="235" y="527">Terminal, no sale</text>
+<rect class="dg-n dg-n-focal" x="358" y="519" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="380" y="527">The trust step</text>
+</svg></div></div>

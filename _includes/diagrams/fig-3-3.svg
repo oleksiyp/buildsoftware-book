@@ -1,0 +1,56 @@
+<div class="dg-figure" data-fig="fig-3-3" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 496" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-3-3-title fig-3-3-desc">
+<title id="fig-3-3-title">Sorting code by what it deserves</title>
+<desc id="fig-3-3-desc">A two-by-two grid after Khorikov. The horizontal axis is the number of collaborators the code talks to, few to many; the vertical axis is its complexity or domain significance, low to high. Top left, complex with few collaborators: domain model and algorithms, which deserve thorough unit tests because that is where the bugs that matter live; Encore&#x27;s fee split, made a pure function, sits here. Top right, complex and entangled with many collaborators: overcomplicated code, which deserves a refactoring before a test, because any test written now is large, slow and brittle; Encore&#x27;s barcode issuance sits here. Bottom left, simple with few collaborators: trivial code such as getters and data classes, which deserves no tests, though that never covers glue where money or seats move. Bottom right, simple with many collaborators: controllers, which deserve a few integration tests of the wiring; Encore&#x27;s resale purchase saga is mostly wiring and every link of it is integration-tested. An arrow shows Meszaros&#x27;s Humble Object refactoring moving the decisions out of overcomplicated code into a plain testable object, leaving a thin shell behind with the controllers. A heuristic, not a measured result.</desc>
+<defs><marker id="fig-3-3-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-3-3-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-3-3-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="96" y1="408" x2="816" y2="408"/>
+<line class="dg-axis" x1="96" y1="408" x2="96" y2="88"/>
+<line class="dg-axis" x1="276.0" y1="408" x2="276.0" y2="412"/>
+<text class="dg-tick" x="276.0" y="424" text-anchor="middle">FEW</text>
+<line class="dg-axis" x1="636.0" y1="408" x2="636.0" y2="412"/>
+<text class="dg-tick" x="636.0" y="424" text-anchor="middle">MANY</text>
+<text class="dg-tick" x="88" y="331.0" text-anchor="end">LOW</text>
+<text class="dg-tick" x="88" y="171.0" text-anchor="end">HIGH</text>
+<text class="dg-axis-label" x="816" y="440" text-anchor="end">NUMBER OF COLLABORATORS</text>
+<text class="dg-axis-label" x="96" y="78" text-anchor="start">COMPLEXITY OR DOMAIN SIGNIFICANCE</text>
+<line class="dg-grid" x1="456" y1="88" x2="456" y2="408" stroke-dasharray="4 4"/><line class="dg-grid" x1="96" y1="248" x2="816" y2="248" stroke-dasharray="4 4"/>
+<path class="dg-a dg-a-accent" d="M 552,104 L 552,72 Q 552,64 544,64 L 368,64 Q 360,64 360,72 L 360,104" marker-end="url(#fig-3-3-m-accent)"/>
+<path class="dg-a dg-a-muted dg-dash" d="M 736,232 L 736,264" marker-end="url(#fig-3-3-m-muted)"/>
+<rect class="dg-mask" x="350" y="44" width="212" height="12" rx="2"/><text class="dg-label dg-l-accent" x="456" y="53">HUMBLE OBJECT: THE DECISIONS MOVE OUT</text>
+<rect class="dg-mask" x="744" y="242" width="108" height="12" rx="2"/><text class="dg-label" x="798" y="251">A THIN SHELL STAYS</text>
+<rect class="dg-mask" x="112" y="104" width="328" height="128" rx="6"/>
+<rect class="dg-n dg-n-backend" x="112" y="104" width="328" height="128" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="120" y="110" width="116" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="178" y="119">UNIT-TEST THOROUGHLY</text>
+<text class="dg-name" x="276" y="174">Domain model and algorithms</text>
+<text class="dg-sub" x="276" y="189">where the bugs that matter live</text>
+<rect class="dg-mask" x="472" y="104" width="328" height="128" rx="6"/>
+<rect class="dg-n dg-n-focal" x="472" y="104" width="328" height="128" rx="6"/>
+<rect class="dg-tagbox dg-t-focal" x="480" y="110" width="84" height="12" rx="2"/>
+<text class="dg-tag dg-t-focal" x="522" y="119">REFACTOR FIRST</text>
+<text class="dg-name" x="636" y="174">Overcomplicated code</text>
+<text class="dg-sub" x="636" y="189">any test now: large, slow, brittle</text>
+<rect class="dg-mask" x="112" y="264" width="328" height="128" rx="6"/>
+<rect class="dg-n dg-n-backend" x="112" y="264" width="328" height="128" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="120" y="270" width="52" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="146" y="279">NO TESTS</text>
+<text class="dg-name" x="276" y="334">Trivial code</text>
+<text class="dg-sub" x="276" y="349">getters and data classes</text>
+<rect class="dg-mask" x="472" y="264" width="328" height="128" rx="6"/>
+<rect class="dg-n dg-n-backend" x="472" y="264" width="328" height="128" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="480" y="270" width="132" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="546" y="279">A FEW INTEGRATION TESTS</text>
+<text class="dg-name" x="636" y="334">Controllers</text>
+<text class="dg-sub" x="636" y="349">simple; tests check the wiring</text>
+<text class="dg-note" x="276" y="212" text-anchor="middle">Encore: the fee split, made a pure function</text>
+<text class="dg-note" x="636" y="212" text-anchor="middle">Encore: barcode issuance</text>
+<text class="dg-note" x="276" y="372" text-anchor="middle">but not glue where money or seats move</text>
+<text class="dg-note" x="636" y="372" text-anchor="middle">Encore: resale purchase saga, every link</text>
+<line class="dg-rule" x1="24" y1="456" x2="840" y2="456"/>
+<rect class="dg-n dg-n-focal" x="24" y="467" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="475">Refactor before testing</text>
+<line class="dg-a dg-a-accent" x1="202" y1="472" x2="226" y2="472" marker-end="url(#fig-3-3-m-accent)"/>
+<text class="dg-legend" x="234" y="475">Humble Object (Meszaros)</text>
+<line class="dg-a dg-a-muted dg-dash" x1="396" y1="472" x2="420" y2="472" marker-end="url(#fig-3-3-m-muted)"/>
+<text class="dg-legend" x="428" y="475">The shell left behind is a controller</text>
+</svg></div></div>

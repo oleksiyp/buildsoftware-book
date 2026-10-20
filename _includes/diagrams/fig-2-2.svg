@@ -1,0 +1,80 @@
+<div class="dg-figure" data-fig="fig-2-2" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 352" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-2-2-title fig-2-2-desc">
+<title id="fig-2-2-title">The debt metaphor, 1980 to 2016</title>
+<desc id="fig-2-2-desc">A timeline from 1978 to 2018 on a proportional scale. Above the line: Lakoff and Johnson&#x27;s Metaphors We Live By (1980), the book Cunningham later said shaped his interest in metaphor; Ward Cunningham&#x27;s WyCash experience report, dated 26 March 1992 and presented at OOPSLA in Vancouver in October 1992, which coins the debt metaphor and says the debt is paid back with a rewrite; Martin Fowler&#x27;s Refactoring (1999), which made refactoring a working vocabulary; and Cunningham&#x27;s 2009 video, which retells the repayment as refactoring and says the metaphor was never a license to write code poorly. Below the line: William Opdyke&#x27;s Illinois doctoral thesis (1992), which first defined refactoring in depth, in the same year as the report; Fowler&#x27;s technical debt quadrant (2009), crossing reckless with prudent and deliberate with inadvertent; and the Dagstuhl seminar of April 2016, which agreed a definition centred on constructs expedient in the short term that make future change more costly or impossible. A bracket marks the 17 years between the coinage and Cunningham&#x27;s gloss. The two Cunningham entries are highlighted.</desc>
+<defs><marker id="fig-2-2-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-2-2-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-2-2-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="48" y1="168" x2="816" y2="168"/>
+<line class="dg-axis" x1="86" y1="168" x2="86" y2="172"/>
+<line class="dg-axis" x1="278" y1="168" x2="278" y2="172"/>
+<line class="dg-axis" x1="470" y1="168" x2="470" y2="172"/>
+<line class="dg-axis" x1="662" y1="168" x2="662" y2="172"/>
+<line class="dg-ill-soft" x1="84" y1="128" x2="84" y2="168"/>
+<line class="dg-ill-soft" x1="316" y1="128" x2="316" y2="168"/>
+<line class="dg-ill-soft" x1="448" y1="128" x2="448" y2="168"/>
+<line class="dg-ill-soft" x1="640" y1="128" x2="640" y2="168"/>
+<line class="dg-ill-soft" x1="316" y1="168" x2="316" y2="216"/>
+<line class="dg-ill-soft" x1="640" y1="168" x2="640" y2="216"/>
+<line class="dg-ill-soft" x1="776" y1="168" x2="776" y2="216"/>
+<path class="dg-ill-soft" d="M 324,192 v 4 H 632 v -4"/>
+<rect class="dg-mask" x="392" y="198" width="172" height="12" rx="2"/><text class="dg-label" x="478" y="207">17 YEARS: KEEP THE DATES APART</text>
+<rect class="dg-mask" x="40" y="64" width="160" height="64" rx="6"/>
+<rect class="dg-n dg-n-backend" x="40" y="64" width="160" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="48" y="70" width="132" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="114" y="79">1980 · LAKOFF &amp; JOHNSON</text>
+<text class="dg-name" x="120" y="102">Metaphors We Live By</text>
+<text class="dg-sub" x="120" y="117">metaphors shape thought</text>
+<rect class="dg-mask" x="236" y="64" width="168" height="64" rx="6"/>
+<rect class="dg-n dg-n-focal" x="236" y="64" width="168" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-focal" x="244" y="70" width="132" height="12" rx="2"/>
+<text class="dg-tag dg-t-focal" x="310" y="79">MARCH 1992 · CUNNINGHAM</text>
+<text class="dg-name" x="320" y="102">The WyCash report</text>
+<text class="dg-sub" x="320" y="117">debt paid with a rewrite</text>
+<rect class="dg-mask" x="432" y="64" width="160" height="64" rx="6"/>
+<rect class="dg-n dg-n-backend" x="432" y="64" width="160" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="440" y="70" width="80" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="480" y="79">1999 · FOWLER</text>
+<text class="dg-name" x="512" y="102">Refactoring</text>
+<text class="dg-sub" x="512" y="117">a working vocabulary</text>
+<rect class="dg-mask" x="620" y="64" width="168" height="64" rx="6"/>
+<rect class="dg-n dg-n-focal" x="620" y="64" width="168" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-focal" x="628" y="70" width="100" height="12" rx="2"/>
+<text class="dg-tag dg-t-focal" x="678" y="79">2009 · CUNNINGHAM</text>
+<text class="dg-name" x="704" y="102">The debt video</text>
+<text class="dg-sub" x="704" y="117">repaid by refactoring</text>
+<rect class="dg-mask" x="236" y="216" width="168" height="64" rx="6"/>
+<rect class="dg-n dg-n-backend" x="236" y="216" width="168" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="244" y="222" width="132" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="310" y="231">1992 · OPDYKE, ILLINOIS</text>
+<text class="dg-name" x="320" y="254">Doctoral thesis</text>
+<text class="dg-sub" x="320" y="269">refactoring defined</text>
+<rect class="dg-mask" x="524" y="216" width="168" height="64" rx="6"/>
+<rect class="dg-n dg-n-backend" x="524" y="216" width="168" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="532" y="222" width="80" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="572" y="231">2009 · FOWLER</text>
+<text class="dg-name" x="608" y="254">The debt quadrant</text>
+<text class="dg-sub" x="608" y="269">reckless vs prudent</text>
+<rect class="dg-mask" x="712" y="216" width="128" height="64" rx="6"/>
+<rect class="dg-n dg-n-backend" x="712" y="216" width="128" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-backend" x="720" y="222" width="64" height="12" rx="2"/>
+<text class="dg-tag dg-t-backend" x="752" y="231">APRIL 2016</text>
+<text class="dg-name" x="776" y="254">Dagstuhl 16162</text>
+<text class="dg-sub" x="776" y="269">agreed definition</text>
+<text class="dg-eyebrow" x="24" y="32" style="text-anchor:start">HOW ONE METAPHOR WAS COINED, RETOLD AND REDEFINED · PROPORTIONAL TIME</text>
+<circle class="dg-dot dg-dot-ink" cx="84" cy="168" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="316" cy="168" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="448" cy="168" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="640" cy="168" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="316" cy="168" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="640" cy="168" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="776" cy="168" r="3.5"/>
+<text class="dg-note" x="608" y="298" text-anchor="middle">× DELIBERATE VS INADVERTENT</text>
+<text class="dg-tick" x="86" y="184" text-anchor="middle">1980</text>
+<text class="dg-tick" x="278" y="162" text-anchor="middle">1990</text>
+<text class="dg-tick" x="470" y="184" text-anchor="middle">2000</text>
+<text class="dg-tick" x="662" y="162" text-anchor="middle">2010</text>
+<line class="dg-rule" x1="24" y1="312" x2="840" y2="312"/>
+<rect class="dg-n dg-n-focal" x="24" y="323" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="331">Cunningham&#x27;s own words</text>
+<rect class="dg-n dg-n-backend" x="197" y="323" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="219" y="331">Work on the idea by others</text>
+</svg></div></div>

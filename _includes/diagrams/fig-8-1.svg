@@ -1,0 +1,92 @@
+<div class="dg-figure" data-fig="fig-8-1" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 576" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-8-1-title fig-8-1-desc">
+<title id="fig-8-1-title">The four-party system and its default fee</title>
+<desc id="fig-8-1-desc">Schematic. Top: the four-party system the Eleventh Circuit described. A cardholder buys with the card from a merchant; the bank that issued the card issued it to the cardholder; the merchant passes the charge to its own bank, the merchant&#x27;s bank. Inside National BankAmericard Inc. (NBI), formed in 1970 and owned by its member banks, who went on competing for cardholders and merchants, the charge clears from the merchant&#x27;s bank through NBI to the issuing bank. From late 1971 the merchant&#x27;s bank pays the issuer a uniform fee set by the network on every transaction that clears through NBI, to carry part of the issuer&#x27;s costs: credit losses, the interest-free period and the absence of a cardholder fee. The fee is a default: two banks could bypass the network&#x27;s clearing and negotiate another rate privately. Bottom: a timeline of events in order, not to scale. 1958, BankAmericard launched in California. 1966, licensed to banks across the United States. 1968, Columbus, Ohio meeting; Hock heads a committee. 1969, Sausalito design meetings. 1970, NBI formed with Hock as president. Late 1971, the uniform interchange fee. 1973, VisaNet. 1976, renamed Visa. 1984, Hock resigns and the district court finds for Visa in NaBanco&#x27;s suit. 1986, the Eleventh Circuit affirms.</desc>
+<defs><marker id="fig-8-1-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-8-1-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-8-1-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="24" y="136" width="816" height="192" rx="8"/><rect class="dg-mask" x="36" y="130" width="108" height="12" rx="2"/><text class="dg-eyebrow" x="90" y="139">THE NETWORK (1970)</text>
+<line class="dg-ill-soft" x1="48" y1="468" x2="816" y2="468"/>
+<path class="dg-a dg-a-muted" d="M 224,64 L 640,64" marker-end="url(#fig-8-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 176,160 L 176,88" marker-end="url(#fig-8-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 728,88 L 728,160" marker-end="url(#fig-8-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 640,184 L 520,184" marker-end="url(#fig-8-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 344,184 L 224,184" marker-end="url(#fig-8-1-m-muted)"/>
+<path class="dg-a dg-a-accent" d="M 728,208 L 728,248 Q 728,256 720,256 L 144,256 Q 136,256 136,248 L 136,208" marker-end="url(#fig-8-1-m-accent)"/>
+<path class="dg-a dg-a-muted dg-dash" d="M 784,208 L 784,296 Q 784,304 776,304 L 88,304 Q 80,304 80,296 L 80,208" marker-end="url(#fig-8-1-m-muted)"/>
+<rect class="dg-mask" x="378" y="44" width="108" height="12" rx="2"/><text class="dg-label" x="432" y="53">BUYS WITH THE CARD</text>
+<rect class="dg-mask" x="184" y="118" width="92" height="12" rx="2"/><text class="dg-label" x="230" y="127">ISSUES THE CARD</text>
+<rect class="dg-mask" x="656" y="118" width="64" height="12" rx="2"/><text class="dg-label" x="688" y="127">THE CHARGE</text>
+<rect class="dg-mask" x="558" y="164" width="44" height="12" rx="2"/><text class="dg-label" x="580" y="173">CLEARS</text>
+<rect class="dg-mask" x="262" y="164" width="44" height="12" rx="2"/><text class="dg-label" x="284" y="173">CLEARS</text>
+<rect class="dg-mask" x="310" y="236" width="244" height="12" rx="2"/><text class="dg-label dg-l-accent" x="432" y="245">UNIFORM FEE, SET BY THE NETWORK (LATE 1971)</text>
+<rect class="dg-mask" x="310" y="284" width="244" height="12" rx="2"/><text class="dg-label" x="432" y="293">OR A RATE THE TWO BANKS NEGOTIATE PRIVATELY</text>
+<rect class="dg-mask" x="48" y="40" width="176" height="48" rx="6"/>
+<rect class="dg-n dg-n-input" x="48" y="40" width="176" height="48" rx="6"/>
+<text class="dg-name" x="136" y="66">Cardholder</text>
+<text class="dg-sub" x="136" y="81">pays no card fee</text>
+<rect class="dg-mask" x="640" y="40" width="176" height="48" rx="6"/>
+<rect class="dg-n dg-n-input" x="640" y="40" width="176" height="48" rx="6"/>
+<text class="dg-name" x="728" y="68">Merchant</text>
+<rect class="dg-mask" x="48" y="160" width="176" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="48" y="160" width="176" height="48" rx="6"/>
+<text class="dg-name" x="136" y="186">Issuing bank</text>
+<text class="dg-sub" x="136" y="201">issued the card</text>
+<rect class="dg-mask" x="344" y="160" width="176" height="48" rx="6"/>
+<rect class="dg-n dg-n-store" x="344" y="160" width="176" height="48" rx="6"/>
+<text class="dg-name" x="432" y="186">NBI</text>
+<text class="dg-sub" x="432" y="201">shared rules · clearing</text>
+<rect class="dg-mask" x="640" y="160" width="176" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="640" y="160" width="176" height="48" rx="6"/>
+<text class="dg-name" x="728" y="186">Merchant&#x27;s bank</text>
+<text class="dg-sub" x="728" y="201">serves the merchant</text>
+<circle class="dg-dot dg-dot-ink" cx="108" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="180" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="252" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="324" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="396" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-accent" cx="468" cy="468" r="5"/>
+<circle class="dg-dot dg-dot-ink" cx="540" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="612" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="684" cy="468" r="3.5"/>
+<circle class="dg-dot dg-dot-ink" cx="756" cy="468" r="3.5"/>
+<text class="dg-note" x="432" y="352" text-anchor="middle">NBI WAS OWNED BY ITS MEMBER BANKS, WHO WENT ON COMPETING FOR CARDHOLDERS AND MERCHANTS.</text>
+<text class="dg-note" x="432" y="366" text-anchor="middle">THE FEE CARRIED PART OF THE ISSUER&#x27;S COSTS: CREDIT LOSSES, THE INTEREST-FREE PERIOD,</text>
+<text class="dg-note" x="432" y="380" text-anchor="middle">AND NO FEE FROM THE CARDHOLDER. A DEFAULT, SO NOBODY HAD TO NEGOTIATE.</text>
+<text class="dg-note" x="24" y="404" text-anchor="start">HOW THE LICENSEES BECAME A NETWORK · EVENTS IN ORDER, NOT TO SCALE</text>
+<text class="dg-name" x="108" y="452">1958</text>
+<text class="dg-note" x="108" y="423" text-anchor="middle">BANKAMERICARD</text>
+<text class="dg-note" x="108" y="436" text-anchor="middle">IN CALIFORNIA</text>
+<text class="dg-name" x="180" y="492">1966</text>
+<text class="dg-note" x="180" y="506" text-anchor="middle">LICENSED ACROSS</text>
+<text class="dg-note" x="180" y="519" text-anchor="middle">THE U.S.</text>
+<text class="dg-name" x="252" y="452">1968</text>
+<text class="dg-note" x="252" y="423" text-anchor="middle">COLUMBUS:</text>
+<text class="dg-note" x="252" y="436" text-anchor="middle">HOCK&#x27;S COMMITTEE</text>
+<text class="dg-name" x="324" y="492">1969</text>
+<text class="dg-note" x="324" y="506" text-anchor="middle">SAUSALITO</text>
+<text class="dg-note" x="324" y="519" text-anchor="middle">DESIGN MEETINGS</text>
+<text class="dg-name" x="396" y="452">1970</text>
+<text class="dg-note" x="396" y="423" text-anchor="middle">NBI FORMED,</text>
+<text class="dg-note" x="396" y="436" text-anchor="middle">HOCK PRESIDENT</text>
+<text class="dg-name" x="468" y="492">1971</text>
+<text class="dg-note" x="468" y="506" text-anchor="middle">UNIFORM</text>
+<text class="dg-note" x="468" y="519" text-anchor="middle">INTERCHANGE FEE</text>
+<text class="dg-name" x="540" y="452">1973</text>
+<text class="dg-note" x="540" y="436" text-anchor="middle">VISANET</text>
+<text class="dg-name" x="612" y="492">1976</text>
+<text class="dg-note" x="612" y="506" text-anchor="middle">RENAMED VISA</text>
+<text class="dg-name" x="684" y="452">1984</text>
+<text class="dg-note" x="684" y="423" text-anchor="middle">HOCK RESIGNS;</text>
+<text class="dg-note" x="684" y="436" text-anchor="middle">COURT FOR VISA</text>
+<text class="dg-name" x="756" y="492">1986</text>
+<text class="dg-note" x="756" y="506" text-anchor="middle">ELEVENTH CIRCUIT</text>
+<text class="dg-note" x="756" y="519" text-anchor="middle">AFFIRMS</text>
+<line class="dg-rule" x1="24" y1="536" x2="840" y2="536"/>
+<line class="dg-a dg-a-muted" x1="24" y1="552" x2="48" y2="552" marker-end="url(#fig-8-1-m-muted)"/>
+<text class="dg-legend" x="56" y="555">The card and its charge</text>
+<line class="dg-a dg-a-accent" x1="212" y1="552" x2="236" y2="552" marker-end="url(#fig-8-1-m-accent)"/>
+<text class="dg-legend" x="244" y="555">Network-set default fee</text>
+<line class="dg-a dg-a-muted dg-dash" x1="400" y1="552" x2="424" y2="552" marker-end="url(#fig-8-1-m-muted)"/>
+<text class="dg-legend" x="432" y="555">Private bilateral rate</text>
+<rect class="dg-n dg-n-store" x="583" y="547" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="605" y="555">The network</text>
+</svg></div></div>

@@ -1,0 +1,67 @@
+<div class="dg-figure" data-fig="fig-5-1" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 448" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-5-1-title fig-5-1-desc">
+<title id="fig-5-1-title">A-0, the compiling routine</title>
+<desc id="fig-5-1-desc">Schematic, not a reproduction of any document. On the left, the mathematician&#x27;s specification: a list of entries, each naming a subroutine by its call number, with its arguments. Below the centre, a catalogued library of subroutines. In the centre, the A-0 compiling routine on the UNIVAC I fetches the named subroutines from the library and adjusts their addresses so they fit together. On the right, the result: a complete machine-code program made of those subroutines, with duplicate data transfers between them, which is then run. Below it, a person removes the duplicate transfers by hand, as Hopper proposed in 1952: the machine generates, a person refines and owns the result.</desc>
+<defs><marker id="fig-5-1-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-1-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-1-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="232" y="304" width="232" height="72" rx="8"/><rect class="dg-mask" x="244" y="298" width="108" height="12" rx="2"/><text class="dg-eyebrow" x="298" y="307">CATALOGUED LIBRARY</text>
+<path class="dg-a dg-a-muted" d="M 192,172 L 248,172" marker-end="url(#fig-5-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 424,324 L 424,204" marker-end="url(#fig-5-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 448,172 L 520,172" marker-end="url(#fig-5-1-m-muted)"/>
+<path class="dg-a dg-a-muted" d="M 688,172 L 744,172" marker-end="url(#fig-5-1-m-muted)"/>
+<path class="dg-a dg-a-muted dg-dash" d="M 604,324 L 604,272" marker-end="url(#fig-5-1-m-muted)"/>
+<rect class="dg-mask" x="204" y="152" width="32" height="12" rx="2"/><text class="dg-label" x="220" y="161">READ</text>
+<rect class="dg-mask" x="304" y="258" width="112" height="12" rx="2"/><text class="dg-label" x="360" y="267">FETCHED BY CALL NO.</text>
+<rect class="dg-mask" x="456" y="152" width="56" height="12" rx="2"/><text class="dg-label" x="484" y="161">PRODUCES</text>
+<rect class="dg-mask" x="702" y="152" width="28" height="12" rx="2"/><text class="dg-label" x="716" y="161">RUN</text>
+<rect class="dg-mask" x="612" y="292" width="48" height="12" rx="2"/><text class="dg-label" x="636" y="301">BY HAND</text>
+<path class="dg-ill-fill" d="M 24,72 h 148 l 20,20 v 180 h -168 z"/><path class="dg-ill-soft" d="M 172,72 v 20 h 20"/>
+<rect class="dg-ill-fill" x="248" y="324" width="28" height="36" rx="2"/><line class="dg-ill-soft" x1="254" y1="336" x2="270" y2="336"/><line class="dg-ill-soft" x1="254" y1="344" x2="266" y2="344"/>
+<rect class="dg-ill-fill" x="282" y="324" width="28" height="36" rx="2"/><line class="dg-ill-soft" x1="288" y1="336" x2="304" y2="336"/><line class="dg-ill-soft" x1="288" y1="344" x2="300" y2="344"/>
+<rect class="dg-ill-fill" x="316" y="324" width="28" height="36" rx="2"/><line class="dg-ill-soft" x1="322" y1="336" x2="338" y2="336"/><line class="dg-ill-soft" x1="322" y1="344" x2="334" y2="344"/>
+<rect class="dg-ill-fill" x="350" y="324" width="28" height="36" rx="2"/><line class="dg-ill-soft" x1="356" y1="336" x2="372" y2="336"/><line class="dg-ill-soft" x1="356" y1="344" x2="368" y2="344"/>
+<rect class="dg-ill-fill" x="384" y="324" width="28" height="36" rx="2"/><line class="dg-ill-soft" x1="390" y1="336" x2="406" y2="336"/><line class="dg-ill-soft" x1="390" y1="344" x2="402" y2="344"/>
+<rect class="dg-ill-fill" x="418" y="324" width="28" height="36" rx="2"/><line class="dg-ill-soft" x1="424" y1="336" x2="440" y2="336"/><line class="dg-ill-soft" x1="424" y1="344" x2="436" y2="344"/>
+<rect class="dg-mask" x="248" y="140" width="200" height="64" rx="6"/>
+<rect class="dg-n dg-n-focal" x="248" y="140" width="200" height="64" rx="6"/>
+<rect class="dg-tagbox dg-t-focal" x="256" y="146" width="52" height="12" rx="2"/>
+<text class="dg-tag dg-t-focal" x="282" y="155">UNIVAC I</text>
+<text class="dg-name" x="348" y="178">A-0 compiling routine</text>
+<text class="dg-sub" x="348" y="193">fetch, adjust addresses</text>
+<rect class="dg-ill-fill" x="520" y="72" width="168" height="200" rx="2"/>
+<rect class="dg-mask" x="744" y="140" width="96" height="64" rx="6"/>
+<rect class="dg-n dg-n-backend" x="744" y="140" width="96" height="64" rx="6"/>
+<text class="dg-name" x="792" y="174">Run</text>
+<text class="dg-sub" x="792" y="189">on the UNIVAC</text>
+<rect class="dg-mask" x="520" y="324" width="168" height="52" rx="6"/>
+<rect class="dg-n dg-n-input" x="520" y="324" width="168" height="52" rx="6"/>
+<text class="dg-name" x="604" y="352">A person refines</text>
+<text class="dg-sub" x="604" y="367">removes the duplication</text>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">SCHEMATIC · A-0 ON THE UNIVAC I · 1951–52</text>
+<text class="dg-eyebrow" x="36" y="96" style="text-anchor:start">SPECIFICATION</text>
+<rect class="dg-ill-soft" x="36" y="116" width="56" height="20" rx="2"/><text class="dg-sub" x="64" y="129">CALL NO.</text><line class="dg-ill-soft" x1="100" y1="126" x2="176" y2="126" stroke-dasharray="3 3"/>
+<rect class="dg-ill-soft" x="36" y="152" width="56" height="20" rx="2"/><text class="dg-sub" x="64" y="165">CALL NO.</text><line class="dg-ill-soft" x1="100" y1="162" x2="176" y2="162" stroke-dasharray="3 3"/>
+<rect class="dg-ill-soft" x="36" y="188" width="56" height="20" rx="2"/><text class="dg-sub" x="64" y="201">CALL NO.</text><line class="dg-ill-soft" x1="100" y1="198" x2="176" y2="198" stroke-dasharray="3 3"/>
+<rect class="dg-ill-soft" x="36" y="224" width="56" height="20" rx="2"/><text class="dg-sub" x="64" y="237">CALL NO.</text><line class="dg-ill-soft" x1="100" y1="234" x2="176" y2="234" stroke-dasharray="3 3"/>
+<text class="dg-note" x="100" y="112" text-anchor="start">arguments</text>
+<text class="dg-note" x="24" y="292" text-anchor="start">written by the mathematician:</text>
+<text class="dg-note" x="24" y="306" text-anchor="start">subroutines named by call</text>
+<text class="dg-note" x="24" y="320" text-anchor="start">number, with their arguments</text>
+<text class="dg-note" x="348" y="396" text-anchor="middle">routines once recopied by hand</text>
+<text class="dg-eyebrow" x="532" y="92" style="text-anchor:start">MACHINE-CODE PROGRAM</text>
+<rect class="dg-ill-soft" x="532" y="104" width="144" height="40" rx="2"/><text class="dg-sub" x="604" y="127">subroutine</text>
+<rect class="dg-ill-soft" x="532" y="164" width="144" height="40" rx="2"/><text class="dg-sub" x="604" y="187">subroutine</text>
+<rect class="dg-ill-soft" x="532" y="224" width="144" height="36" rx="2"/><text class="dg-sub" x="604" y="245">subroutine</text>
+<path class="dg-ill-fill-accent" d="M 560,148 h 88 v 12 h -88 z M 560,208 h 88 v 12 h -88 z"/>
+<text class="dg-note" x="700" y="220" text-anchor="start">duplicate</text>
+<text class="dg-note" x="700" y="233" text-anchor="start">data transfers</text>
+<path class="dg-ill-soft" d="M 648,214 h 48"/>
+<line class="dg-rule" x1="24" y1="408" x2="840" y2="408"/>
+<rect class="dg-n dg-n-focal" x="24" y="419" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="427">The compiling routine</text>
+<rect class="dg-n dg-n-input" x="191" y="419" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="213" y="427">A person&#x27;s part</text>
+<line class="dg-a dg-a-muted" x1="325" y1="424" x2="349" y2="424" marker-end="url(#fig-5-1-m-muted)"/>
+<text class="dg-legend" x="357" y="427">The machine&#x27;s path</text>
+<line class="dg-a dg-a-muted dg-dash" x1="485" y1="424" x2="509" y2="424" marker-end="url(#fig-5-1-m-muted)"/>
+<text class="dg-legend" x="517" y="427">Refined by hand</text>
+</svg></div></div>

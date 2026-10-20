@@ -1,0 +1,46 @@
+<div class="dg-figure" data-fig="fig-5-2" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-5-2-title fig-5-2-desc">
+<title id="fig-5-2-title">Belief against measurement</title>
+<desc id="fig-5-2-desc">Two randomized trials, each plotted on one row, on a scale of how much faster developers were with AI, from 30% slower to 60% faster. Peng and colleagues, 2023, 95 freelance developers on one JavaScript task: participants guessed a gain of about 35%; the measured gain was 55.8% faster (71.17 against 160.89 minutes), so they underestimated it. METR, 2025, 16 experienced maintainers on 246 issues in their own repositories: before starting they expected a 24% speedup, afterward they believed they had been 20% faster, and the measured result was 19% slower, a gap of about 40 percentage points in the opposite direction.</desc>
+<defs><marker id="fig-5-2-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-2-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-5-2-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="240" y1="232" x2="816" y2="232"/>
+<line class="dg-axis" x1="240" y1="232" x2="240" y2="56"/>
+<line class="dg-axis" x1="240.0" y1="232" x2="240.0" y2="236"/>
+<text class="dg-tick" x="240.0" y="248" text-anchor="middle">-30%</text>
+<line class="dg-axis" x1="336.0" y1="232" x2="336.0" y2="236"/>
+<text class="dg-tick" x="336.0" y="248" text-anchor="middle">-15%</text>
+<line class="dg-axis" x1="432.0" y1="232" x2="432.0" y2="236"/>
+<text class="dg-tick" x="432.0" y="248" text-anchor="middle">0</text>
+<line class="dg-axis" x1="528.0" y1="232" x2="528.0" y2="236"/>
+<text class="dg-tick" x="528.0" y="248" text-anchor="middle">+15%</text>
+<line class="dg-axis" x1="624.0" y1="232" x2="624.0" y2="236"/>
+<text class="dg-tick" x="624.0" y="248" text-anchor="middle">+30%</text>
+<line class="dg-axis" x1="720.0" y1="232" x2="720.0" y2="236"/>
+<text class="dg-tick" x="720.0" y="248" text-anchor="middle">+45%</text>
+<line class="dg-axis" x1="816.0" y1="232" x2="816.0" y2="236"/>
+<text class="dg-tick" x="816.0" y="248" text-anchor="middle">+60%</text>
+<text class="dg-axis-label" x="816" y="264" text-anchor="end">FASTER WITH AI (%) · NEGATIVE = SLOWER</text>
+<rect class="dg-mask" x="568.0" y="83.9" width="80" height="12" rx="2"/><text class="dg-label" x="608.0" y="92.9">GUESSED ≈ 35%</text>
+<rect class="dg-mask" x="693.1" y="113.9" width="88" height="12" rx="2"/><text class="dg-label dg-l-accent" x="737.1" y="122.9">MEASURED 55.8%</text>
+<rect class="dg-mask" x="593.6" y="160.2" width="80" height="12" rx="2"/><text class="dg-label" x="633.6" y="169.2">EXPECTED +24%</text>
+<rect class="dg-mask" x="568.0" y="190.2" width="80" height="12" rx="2"/><text class="dg-label" x="608.0" y="199.2">BELIEVED +20%</text>
+<rect class="dg-mask" x="298.4" y="190.2" width="112" height="12" rx="2"/><text class="dg-label dg-l-accent" x="354.4" y="199.2">MEASURED 19% SLOWER</text>
+<line class="dg-series dg-s-soft" x1="432.0" y1="56" x2="432.0" y2="232" stroke-dasharray="5 4"/>
+<polyline class="dg-series dg-s-soft" points="656.0,102.9 789.1,102.9"/>
+<circle class="dg-dot dg-dot-ink" cx="656.0" cy="102.9" r="4"/>
+<circle class="dg-dot dg-dot-accent" cx="789.1" cy="102.9" r="5"/>
+<polyline class="dg-series dg-s-soft" points="310.4,179.2 585.6,179.2"/>
+<circle class="dg-dot dg-dot-ink" cx="585.6" cy="179.2" r="4"/>
+<circle class="dg-dot dg-dot-ink" cx="560.0" cy="179.2" r="4"/>
+<circle class="dg-dot dg-dot-accent" cx="310.4" cy="179.2" r="5"/>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">TWO RANDOMIZED TRIALS · WHAT DEVELOPERS BELIEVED, AND WHAT WAS MEASURED</text>
+<text class="dg-note" x="24" y="100" text-anchor="start">Peng et al., 2023</text>
+<text class="dg-note" x="24" y="114" text-anchor="start">95 freelancers · one task</text>
+<text class="dg-note" x="24" y="177" text-anchor="start">METR, 2025</text>
+<text class="dg-note" x="24" y="191" text-anchor="start">16 maintainers · 246 issues</text>
+<line class="dg-rule" x1="24" y1="280" x2="840" y2="280"/>
+<rect class="dg-n dg-n-input" x="24" y="291" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="299">What developers expected or believed</text>
+<rect class="dg-n dg-n-focal" x="275" y="291" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="297" y="299">What the trial measured</text>
+</svg></div></div>

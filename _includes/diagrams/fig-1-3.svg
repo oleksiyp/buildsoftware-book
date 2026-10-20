@@ -1,0 +1,57 @@
+<div class="dg-figure" data-fig="fig-1-3" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 412" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-1-3-title fig-1-3-desc">
+<title id="fig-1-3-title">What slows Encore&#x27;s engineers</title>
+<desc id="fig-1-3-desc">Horizontal bars give the share of engineers naming each answer in their top three, in Encore&#x27;s latest quarterly survey, which about 68% answered. Waiting for CI on the shared repository, 54%, Chapter 4. Waiting for review, especially from other teams, 46%, Chapters 4 and 10. Flaky end-to-end tests that fail for no reason anyone can find, 39%, Chapter 3. Fear of changing old code nobody fully understands, 31%, Chapter 2, highlighted because Verified Resale must change the oldest code. Building plumbing the platform should provide, such as partner webhooks, 24%, Chapter 6. New engineers taking about a quarter to make a meaningful change, 21%, Chapter 9.</desc>
+<defs><marker id="fig-1-3-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-1-3-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-1-3-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-axis" x1="312" y1="332" x2="312" y2="336"/>
+<line class="dg-grid" x1="445.333" y1="52" x2="445.333" y2="332"/>
+<line class="dg-axis" x1="445.333" y1="332" x2="445.333" y2="336"/>
+<line class="dg-grid" x1="578.667" y1="52" x2="578.667" y2="332"/>
+<line class="dg-axis" x1="578.667" y1="332" x2="578.667" y2="336"/>
+<line class="dg-grid" x1="712" y1="52" x2="712" y2="332"/>
+<line class="dg-axis" x1="712" y1="332" x2="712" y2="336"/>
+<line class="dg-axis" x1="312" y1="332" x2="712" y2="332"/>
+<line class="dg-axis" x1="312" y1="52" x2="312" y2="332"/>
+<rect class="dg-ill-fill" x="312" y="64" width="360" height="24" rx="2"/>
+<rect class="dg-ill-fill" x="312" y="108" width="306.667" height="24" rx="2"/>
+<rect class="dg-ill-fill" x="312" y="152" width="260" height="24" rx="2"/>
+<rect class="dg-ill-fill-accent" x="312" y="196" width="206.667" height="24" rx="2"/>
+<rect class="dg-ill-fill" x="312" y="240" width="160" height="24" rx="2"/>
+<rect class="dg-ill-fill" x="312" y="284" width="140" height="24" rx="2"/>
+<text class="dg-eyebrow" x="24" y="36" style="text-anchor:start">ENCORE DEVELOPER SURVEY · LATEST QUARTER · ABOUT 68% ANSWERED</text>
+<text class="dg-eyebrow" x="840" y="36" style="text-anchor:end">WHERE THE BOOK TAKES IT UP</text>
+<text class="dg-tick" x="312" y="348" text-anchor="middle">0%</text>
+<text class="dg-tick" x="445.333" y="348" text-anchor="middle">20%</text>
+<text class="dg-tick" x="578.667" y="348" text-anchor="middle">40%</text>
+<text class="dg-tick" x="712" y="348" text-anchor="middle">60%</text>
+<text class="dg-axis-label" x="712" y="364" text-anchor="end">SHARE NAMING IT IN THEIR TOP THREE</text>
+<text class="dg-name" x="24" y="74" style="text-anchor:start">Waiting for CI</text>
+<text class="dg-sub" x="24" y="88" style="text-anchor:start">on the shared repository</text>
+<text class="dg-label" x="680" y="79" style="text-anchor:start;font-size:10px">54%</text>
+<text class="dg-label" x="840" y="79" style="text-anchor:end">CHAPTER 4</text>
+<text class="dg-name" x="24" y="118" style="text-anchor:start">Waiting for review</text>
+<text class="dg-sub" x="24" y="132" style="text-anchor:start">especially from other teams</text>
+<text class="dg-label" x="626.667" y="123" style="text-anchor:start;font-size:10px">46%</text>
+<text class="dg-label" x="840" y="123" style="text-anchor:end">CHAPTERS 4 AND 10</text>
+<text class="dg-name" x="24" y="162" style="text-anchor:start">Flaky end-to-end tests</text>
+<text class="dg-sub" x="24" y="176" style="text-anchor:start">that fail for no reason anyone can find</text>
+<text class="dg-label" x="580" y="167" style="text-anchor:start;font-size:10px">39%</text>
+<text class="dg-label" x="840" y="167" style="text-anchor:end">CHAPTER 3</text>
+<text class="dg-name" x="24" y="206" style="text-anchor:start">Fear of changing old code</text>
+<text class="dg-sub" x="24" y="220" style="text-anchor:start">nobody fully understands</text>
+<text class="dg-label dg-l-accent" x="526.667" y="211" style="text-anchor:start;font-size:10px">31%</text>
+<text class="dg-label" x="840" y="211" style="text-anchor:end">CHAPTER 2</text>
+<text class="dg-name" x="24" y="250" style="text-anchor:start">Building plumbing</text>
+<text class="dg-sub" x="24" y="264" style="text-anchor:start">the platform should provide, like webhooks</text>
+<text class="dg-label" x="480" y="255" style="text-anchor:start;font-size:10px">24%</text>
+<text class="dg-label" x="840" y="255" style="text-anchor:end">CHAPTER 6</text>
+<text class="dg-name" x="24" y="294" style="text-anchor:start">New engineers&#x27; first change</text>
+<text class="dg-sub" x="24" y="308" style="text-anchor:start">about a quarter to make a meaningful one</text>
+<text class="dg-label" x="460" y="299" style="text-anchor:start;font-size:10px">21%</text>
+<text class="dg-label" x="840" y="299" style="text-anchor:end">CHAPTER 9</text>
+<line class="dg-rule" x1="24" y1="372" x2="840" y2="372"/>
+<rect class="dg-n dg-n-backend" x="24" y="383" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="391">Share naming the answer</text>
+<rect class="dg-n dg-n-focal" x="202" y="383" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="224" y="391">The pain Verified Resale meets first: old code</text>
+</svg></div></div>

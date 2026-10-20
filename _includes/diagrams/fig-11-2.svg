@@ -1,0 +1,104 @@
+<div class="dg-figure" data-fig="fig-11-2" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 552" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-11-2-title fig-11-2-desc">
+<title id="fig-11-2-title">Where nine dependencies went</title>
+<desc id="fig-11-2-desc">Verified Resale&#x27;s cross-team dependencies by the team that must deliver, at the first quarterly plan (month 4) and at month 9, drawn as one square per dependency: solid squares remained, dashed squares were cut, lettered by how the work moved (R taken over by Resale, P moved to the platform, F folded into a change already planned). Inventory: 3 to 2; Proof of a Gate purchase built by Resale from existing TicketIssued events instead of a new call. Venue Entry: 3 to 2; The revocation feed folded into Inventory&#x27;s reissue change as TicketRevoked, which Venue Entry&#x27;s list builder consumes. Orders &amp; Payments: 2 to 2; —. Bot Screening: 2 to 1; Per-buyer limits written by Resale in the rules engine, reviewed by Bot Screening. Billing &amp; Payouts: 3 to 3; —. Partner APIs: 3 to 1; Webhook delivery moved to the platform; listing endpoints written by Resale. Organizer Console: 1 to 1; —. Mobile App: 2 to 1; The Resale module in the fan app taken over by Resale; the release train and version floor remain. Fan Messaging: 2 to 1; The two messages written by Resale on Fan Messaging&#x27;s templates; pass replacement remains, as a contract. Design System: 1 to 0; Badge and capped-price field contributed by Resale through the contribution path. Security Engineering: 1 to 0; Partner credentials became self-service on the platform&#x27;s partner-facing path. Of Inventory&#x27;s two that remained, one is VR-01, the void and reissue in one step inside the barcode core, the dependency that blocked. Total: 23 at month 4, 14 at month 9; the nine cuts were six taken over by Resale, two moved to the platform and one folded into a change already planned.</desc>
+<defs><marker id="fig-11-2-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-11-2-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-11-2-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<line class="dg-rule" x1="24" y1="94" x2="840" y2="94"/>
+<line class="dg-rule" x1="24" y1="130" x2="840" y2="130"/>
+<line class="dg-rule" x1="24" y1="166" x2="840" y2="166"/>
+<line class="dg-rule" x1="24" y1="202" x2="840" y2="202"/>
+<line class="dg-rule" x1="24" y1="238" x2="840" y2="238"/>
+<line class="dg-rule" x1="24" y1="274" x2="840" y2="274"/>
+<line class="dg-rule" x1="24" y1="310" x2="840" y2="310"/>
+<line class="dg-rule" x1="24" y1="346" x2="840" y2="346"/>
+<line class="dg-rule" x1="24" y1="382" x2="840" y2="382"/>
+<line class="dg-rule" x1="24" y1="418" x2="840" y2="418"/>
+<line class="dg-axis" x1="24" y1="454" x2="840" y2="454"/>
+<rect class="dg-ill-fill-accent" x="192" y="68" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="216" y="68" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="240" y="68" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-backend" x="192" y="104" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="216" y="104" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="240" y="104" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-backend" x="192" y="140" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="216" y="140" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="192" y="176" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="216" y="176" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-backend" x="192" y="212" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="216" y="212" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="240" y="212" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="192" y="248" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="216" y="248" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-optional" x="240" y="248" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-backend" x="192" y="284" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-backend" x="192" y="320" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="216" y="320" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-backend" x="192" y="356" width="16" height="16" rx="2"/>
+<rect class="dg-n dg-n-optional" x="216" y="356" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-optional" x="192" y="392" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<rect class="dg-n dg-n-optional" x="192" y="428" width="16" height="16" rx="2" stroke-dasharray="3,2"/>
+<text class="dg-eyebrow" x="24" y="44" style="text-anchor:start">TEAM THAT MUST DELIVER</text>
+<text class="dg-eyebrow" x="192" y="44" style="text-anchor:start">MONTH 4</text>
+<text class="dg-eyebrow" x="280" y="44" style="text-anchor:start">4 → 9</text>
+<text class="dg-eyebrow" x="336" y="44" style="text-anchor:start">HOW THE DIFFERENCE WENT</text>
+<text class="dg-name" x="24" y="80" style="text-anchor:start">Inventory</text>
+<text class="dg-label" x="248" y="79">R</text>
+<text class="dg-tick" x="280" y="79">3 → 2</text>
+<text class="dg-note" x="336" y="73" text-anchor="start">Proof of a Gate purchase built by Resale from existing</text>
+<text class="dg-note" x="336" y="85" text-anchor="start">TicketIssued events instead of a new call</text>
+<text class="dg-name" x="24" y="116" style="text-anchor:start">Venue Entry</text>
+<text class="dg-label" x="248" y="115">F</text>
+<text class="dg-tick" x="280" y="115">3 → 2</text>
+<text class="dg-note" x="336" y="109" text-anchor="start">The revocation feed folded into Inventory&#x27;s reissue change</text>
+<text class="dg-note" x="336" y="121" text-anchor="start">as TicketRevoked, which Venue Entry&#x27;s list builder consumes</text>
+<text class="dg-name" x="24" y="152" style="text-anchor:start">Orders &amp; Payments</text>
+<text class="dg-tick" x="280" y="151">2 → 2</text>
+<text class="dg-note" x="336" y="151" text-anchor="start">—</text>
+<text class="dg-name" x="24" y="188" style="text-anchor:start">Bot Screening</text>
+<text class="dg-label" x="224" y="187">R</text>
+<text class="dg-tick" x="280" y="187">2 → 1</text>
+<text class="dg-note" x="336" y="181" text-anchor="start">Per-buyer limits written by Resale in the rules engine,</text>
+<text class="dg-note" x="336" y="193" text-anchor="start">reviewed by Bot Screening</text>
+<text class="dg-name" x="24" y="224" style="text-anchor:start">Billing &amp; Payouts</text>
+<text class="dg-tick" x="280" y="223">3 → 3</text>
+<text class="dg-note" x="336" y="223" text-anchor="start">—</text>
+<text class="dg-name" x="24" y="260" style="text-anchor:start">Partner APIs</text>
+<text class="dg-label" x="224" y="259">P</text>
+<text class="dg-label" x="248" y="259">R</text>
+<text class="dg-tick" x="280" y="259">3 → 1</text>
+<text class="dg-note" x="336" y="253" text-anchor="start">Webhook delivery moved to the platform;</text>
+<text class="dg-note" x="336" y="265" text-anchor="start">listing endpoints written by Resale</text>
+<text class="dg-name" x="24" y="296" style="text-anchor:start">Organizer Console</text>
+<text class="dg-tick" x="280" y="295">1 → 1</text>
+<text class="dg-note" x="336" y="295" text-anchor="start">—</text>
+<text class="dg-name" x="24" y="332" style="text-anchor:start">Mobile App</text>
+<text class="dg-label" x="224" y="331">R</text>
+<text class="dg-tick" x="280" y="331">2 → 1</text>
+<text class="dg-note" x="336" y="325" text-anchor="start">The Resale module in the fan app taken over by Resale;</text>
+<text class="dg-note" x="336" y="337" text-anchor="start">the release train and version floor remain</text>
+<text class="dg-name" x="24" y="368" style="text-anchor:start">Fan Messaging</text>
+<text class="dg-label" x="224" y="367">R</text>
+<text class="dg-tick" x="280" y="367">2 → 1</text>
+<text class="dg-note" x="336" y="361" text-anchor="start">The two messages written by Resale on Fan Messaging&#x27;s templates;</text>
+<text class="dg-note" x="336" y="373" text-anchor="start">pass replacement remains, as a contract</text>
+<text class="dg-name" x="24" y="404" style="text-anchor:start">Design System</text>
+<text class="dg-label" x="200" y="403">R</text>
+<text class="dg-tick" x="280" y="403">1 → 0</text>
+<text class="dg-note" x="336" y="397" text-anchor="start">Badge and capped-price field contributed by Resale</text>
+<text class="dg-note" x="336" y="409" text-anchor="start">through the contribution path</text>
+<text class="dg-name" x="24" y="440" style="text-anchor:start">Security Engineering</text>
+<text class="dg-label" x="200" y="439">P</text>
+<text class="dg-tick" x="280" y="439">1 → 0</text>
+<text class="dg-note" x="336" y="433" text-anchor="start">Partner credentials became self-service</text>
+<text class="dg-note" x="336" y="445" text-anchor="start">on the platform&#x27;s partner-facing path</text>
+<text class="dg-name" x="24" y="476" style="text-anchor:start">Total</text>
+<text class="dg-tick" x="280" y="475">23 → 14</text>
+<text class="dg-note" x="336" y="475" text-anchor="start">Taken over by Resale 6 · moved to the platform 2 · folded into a change already planned 1</text>
+<line class="dg-rule" x1="24" y1="512" x2="840" y2="512"/>
+<rect class="dg-n dg-n-backend" x="24" y="523" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="531">Remained at month 9</text>
+<rect class="dg-n dg-n-optional" x="180" y="523" width="16" height="10" rx="2" stroke-dasharray="4,3"/>
+<text class="dg-legend" x="202" y="531">Cut: R by Resale · P platform · F folded</text>
+<rect class="dg-n dg-n-focal" x="454" y="523" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="476" y="531">VR-01, reissue in the barcode core: the one that blocked</text>
+</svg></div></div>

@@ -1,0 +1,65 @@
+<div class="dg-figure" data-fig="fig-4-3" style="--dg-w:864px"><div class="dg-scroll"><svg class="dg" viewBox="0 0 864 404" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig-4-3-title fig-4-3-desc">
+<title id="fig-4-3-title">A request-routed preview</title>
+<desc id="fig-4-3-desc">Encore&#x27;s staging cell runs a shared baseline of every service, continuously updated; the resale journey touches four of them: the Resale service, encore-core (the Orders &amp; Payments purchase saga and Inventory&#x27;s reissue), Venue Entry&#x27;s revocation feed and Notifications, which replaces the seller&#x27;s wallet pass. A preview for one change deploys only the services the change altered, here Resale, encore-core and the revocation feed, three repositories under one preview key. Ordinary requests flow through the baseline. Requests carrying the key are routed by the mesh to the preview versions wherever one exists, and to the baseline elsewhere, so the key-carrying request reaches the baseline Notifications, which the change did not touch. This works because every service propagates request context, as Encore&#x27;s services already propagate traceparent, and the mesh can route on headers. The preview versions are torn down when the change merges; a full slice is kept only for journeys whose test data cannot be isolated in the baseline.</desc>
+<defs><marker id="fig-4-3-m-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-muted" points="0 0, 8 3, 0 6"/></marker><marker id="fig-4-3-m-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-accent" points="0 0, 8 3, 0 6"/></marker><marker id="fig-4-3-m-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon class="dg-head dg-head-link" points="0 0, 8 3, 0 6"/></marker></defs>
+<rect class="dg-paper" width="100%" height="100%" rx="8"/>
+<rect class="dg-zone" x="184" y="40" width="656" height="108" rx="8"/><rect class="dg-mask" x="196" y="34" width="292" height="12" rx="2"/><text class="dg-eyebrow" x="342" y="43">STAGING CELL · SHARED BASELINE, CONTINUOUSLY UPDATED</text>
+<rect class="dg-zone" x="184" y="184" width="504" height="88" rx="8"/><rect class="dg-mask" x="196" y="178" width="312" height="12" rx="2"/><text class="dg-eyebrow" x="352" y="187">PREVIEW · ONLY THE CHANGED SERVICES · TORN DOWN ON MERGE</text>
+<path class="dg-a dg-a-muted" d="M 160,128 L 200,128" marker-end="url(#fig-4-3-m-muted)"/>
+<path class="dg-a dg-a-link" d="M 160,240 L 200,240" marker-end="url(#fig-4-3-m-link)"/>
+<path class="dg-a dg-a-muted" d="M 336,128 L 368,128" marker-end="url(#fig-4-3-m-muted)"/>
+<path class="dg-a dg-a-link" d="M 336,240 L 368,240" marker-end="url(#fig-4-3-m-link)"/>
+<path class="dg-a dg-a-muted" d="M 504,128 L 536,128" marker-end="url(#fig-4-3-m-muted)"/>
+<path class="dg-a dg-a-link" d="M 504,240 L 536,240" marker-end="url(#fig-4-3-m-link)"/>
+<path class="dg-a dg-a-muted" d="M 268,104 L 268,84 Q 268,76 276,76 L 764,76 Q 772,76 772,84 L 772,104" marker-end="url(#fig-4-3-m-muted)"/>
+<path class="dg-a dg-a-link" d="M 268,264 L 268,292 Q 268,300 276,300 L 764,300 Q 772,300 772,292 L 772,152" marker-end="url(#fig-4-3-m-link)"/>
+<rect class="dg-mask" x="484" y="56" width="72" height="12" rx="2"/><text class="dg-label" x="520" y="65">WALLET PASS</text>
+<rect class="dg-mask" x="384" y="308" width="272" height="12" rx="2"/><text class="dg-label dg-l-link" x="520" y="317">NOT CHANGED: THE KEYED REQUEST USES THE BASELINE</text>
+<rect class="dg-mask" x="24" y="104" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-input" x="24" y="104" width="136" height="48" rx="6"/>
+<text class="dg-name" x="92" y="130">Ordinary request</text>
+<text class="dg-sub" x="92" y="145">no preview key</text>
+<rect class="dg-mask" x="24" y="216" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-focal" x="24" y="216" width="136" height="48" rx="6"/>
+<text class="dg-name" x="92" y="242">Keyed request</text>
+<text class="dg-sub" x="92" y="257">header: preview key</text>
+<rect class="dg-mask" x="200" y="104" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="200" y="104" width="136" height="48" rx="6"/>
+<text class="dg-name" x="268" y="130">Resale service</text>
+<text class="dg-sub" x="268" y="145">baseline</text>
+<rect class="dg-mask" x="368" y="104" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="368" y="104" width="136" height="48" rx="6"/>
+<text class="dg-name" x="436" y="130">encore-core</text>
+<text class="dg-sub" x="436" y="145">saga · reissue</text>
+<rect class="dg-mask" x="536" y="104" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="536" y="104" width="136" height="48" rx="6"/>
+<text class="dg-name" x="604" y="130">Venue Entry</text>
+<text class="dg-sub" x="604" y="145">revocation feed</text>
+<rect class="dg-mask" x="704" y="104" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-backend" x="704" y="104" width="136" height="48" rx="6"/>
+<text class="dg-name" x="772" y="130">Notifications</text>
+<text class="dg-sub" x="772" y="145">wallet passes</text>
+<rect class="dg-mask" x="200" y="216" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-optional" x="200" y="216" width="136" height="48" rx="6" stroke-dasharray="4,3"/>
+<text class="dg-name" x="268" y="242">Resale service</text>
+<text class="dg-sub" x="268" y="257">changed version</text>
+<rect class="dg-mask" x="368" y="216" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-optional" x="368" y="216" width="136" height="48" rx="6" stroke-dasharray="4,3"/>
+<text class="dg-name" x="436" y="242">encore-core</text>
+<text class="dg-sub" x="436" y="257">changed version</text>
+<rect class="dg-mask" x="536" y="216" width="136" height="48" rx="6"/>
+<rect class="dg-n dg-n-optional" x="536" y="216" width="136" height="48" rx="6" stroke-dasharray="4,3"/>
+<text class="dg-name" x="604" y="242">Venue Entry</text>
+<text class="dg-sub" x="604" y="257">changed feed</text>
+<text class="dg-note" x="24" y="340" text-anchor="start">One key covers changes in three repositories. It works because every service propagates the</text>
+<text class="dg-note" x="24" y="354" text-anchor="start">request&#x27;s context (Encore already propagates traceparent) and the mesh can route on headers.</text>
+<line class="dg-rule" x1="24" y1="364" x2="840" y2="364"/>
+<rect class="dg-n dg-n-backend" x="24" y="375" width="16" height="10" rx="2"/>
+<text class="dg-legend" x="46" y="383">Baseline service</text>
+<rect class="dg-n dg-n-optional" x="163" y="375" width="16" height="10" rx="2" stroke-dasharray="4,3"/>
+<text class="dg-legend" x="185" y="383">Preview of a changed service</text>
+<line class="dg-a dg-a-muted" x1="369" y1="380" x2="393" y2="380" marker-end="url(#fig-4-3-m-muted)"/>
+<text class="dg-legend" x="401" y="383">Ordinary request</text>
+<line class="dg-a dg-a-link" x1="518" y1="380" x2="542" y2="380" marker-end="url(#fig-4-3-m-link)"/>
+<text class="dg-legend" x="550" y="383">Request carrying the preview key</text>
+</svg></div></div>
